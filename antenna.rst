@@ -6,17 +6,19 @@ Introduction
 The Sardinia Radio Telescope is a 64-meter single-dish radio telescope. It is located in the Pranu Sanguni area of San Basilio, Sardinia, Italy, 
 about 40 km north of Cagliari. 
 
-Its state-of-the-art technology includes an active surface with 1008 panels, which allows observations at high frequencies (up to 115 GHz). Receivers can be placed in the
-focus of the parabolic dish (currently: L,P and S band receivers). SRT's K-band receiver is located at the Gregorian focus, while SRT's C-band receiver is located at the Beam Wave Guide (BWG) focus.
-In total, the telescope can accomodate up to 20 receivers. A number of additional receivers are currently being planned and built.
+Its state-of-the-art technology includes an active surface with 1008 panels, which allows observations at high frequencies (from 0.3 up to 115 GHz). 
+There are three main focal points where reveivers can be placed: primary focus (currently hosting the L-P dual band receiver); gregorian focus (K-band receiver), and Beam Wave Guide focus (C-band receiver).
+In total, the telescope can accomodate up to 20 receivers. A number of additional receivers are currently being planned and built. 
 
 The telescope can be operated in single-dish or VLBI mode for radio astronomy, geodynamical studies or space science.
 
 A general description of the SRT, including technical commissioning information and first light results, can be found in the technical commissioning paper:
-`Bolli et. al, Journal of Astronomical Instrumentation, Vol. 4, Nos. 3 & 4 (2015) 1550008 <https://www.worldscientific.com/doi/abs/10.1142/S2251171715500087>`_
+`Bolli et. al, Journal of Astronomical Instrumentation, Vol. 4, Nos. 3 & 4 (2015) 1550008 <https://www.worldscientific.com/doi/abs/10.1142/S2251171715500087>`_.
 
 Scientific tests and applications for the SRT are described in the following scientific validation paper:
-`Prandoni et. al, A&A 608, A40 (2017) <https://www.aanda.org/articles/aa/abs/2017/12/aa30243-16/aa30243-16.html>`_
+`Prandoni et. al, A&A 608, A40 (2017) <https://www.aanda.org/articles/aa/abs/2017/12/aa30243-16/aa30243-16.html>`_.
+
+Science done with SRT during its early-science run (2016) with the various hardware and software described below can be found here: `Science with SRT <http://www.srt.inaf.it/astronomers/science_srt/>`_. 
 
 In the following sections, we outline information that is useful for observing with the SRT.
 
@@ -73,43 +75,33 @@ Receivers
 
 * The L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but can be transformed to circular.
 
-* A mono-feed C-band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope.
+* A mono-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope.
 
-* A multi-feed, secondary focus K-band receiver is installed at the Gregorian focus. Both C and K band receivers require the shaped configuration. 
+* A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration. 
 
-* A multi-feed S-band receiver is undergoing testing and is placed at the primary focus of the telescope (requiring the parabolic configuration). 
-
-In the following table, we outline, for each receiver: its frequency coverage, its beam-size in arcmin/arcsec, measurements and estimations of the system temperature at 45 degrees of elevation, and antenna gain. 
-All receivers allow for two polarizations.
+In the following table, we outline, for each receiver: its frequency coverage, its beam-size in arcmin or arcsec, measurements of the system temperature at 45 degrees of elevation, and antenna gain. 
+Each receiver feed allows for two polarizations.
 
 ======== ========================= =======   =================   ===============  ========= ========== ========== =========
 Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position   Beam size Tsys (K)    Gain (%)  Sefd (Jy)
 ======== ========================= =======   =================   ===============  ========= ========== ========== =========
 P         0.305 -- 0.410              1        linear              primary           56.2'        65?       45?     125
 L         1.3 -- 1.8                  1        linear              primary           12.6'        21?       47?     36
-S         3.0 -- 4.5                  7        linear              primary             ?        ?        ?
-C         5.7 -- 7.7                  1        circular           beam waveguide    2.8'      26/33?    48?         43
-K         18 -- 26.5                  7        circular           gregorian         50"     70 -- 90    44?         138
+C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.8'         26(*)    48         43(*)
+K         18 -- 26                    7        circular           gregorian         50"         90(**)  44         138(**)
 ======== ========================= =======   =================   ===============  ========= ========== ========== =========
+
+(*) at 6.7 GHz
+(**) at 22.3 GHz with opacity 0.1 and ground air temperature of 293K.
 
 The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz)
 
 SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
 
-* Future receivers: the SRT was designed to accomodate up to 20 receivers. Besides the S-band receiver which has already been tested and had its first light (November 2016), a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a secondary-focus, cryocooled, 19-pixel dual-polarized Q-band system.
+Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for the central feed).  
+Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/gregorian focus. 
  
 More details about current and future receivers at Italian radio telescopes (SRT, Medicina and Noto) are included in this review document: `receivers <http://rx2017.inaf.it/RX2017/Review_v8.1.pdf>`_
-
-
-Pointing calibration
---------------------
-
-to be inserted here
-
-Gain curve calibration
-----------------------
-
-to be inserted here
 
 RF filters
 ----------
@@ -118,21 +110,19 @@ Different RF filters are available for the LP-band receiver. Although it is a co
 
 For the PPP receiver (P-band), available filters are:
 
-	#.	all band, 305--410 MHz (no filter)
-	#.	310--350 MHz
-	#.	305--410 MHz (band-pass filter, sharper band edges).
+	1.	all band, 305--410 MHz (no filter)
+	2.	310--350 MHz
+	3.	305--410 MHz (band-pass filter, sharper band edges).
 
 These are available for the LLP (L-band) configuration:
 
-	#.	all band, 1300--1800 MHz (no filter)
-	#.	1320--1780 MHz
-	#.	1350--1450 MHz (VLBI band)
-	#.	1300--1800 MHz (band-pass)
-	#.	1625--1715 MHz (VLBI band)
+	1.	all band, 1300--1800 MHz (no filter)
+	2.	1320--1780 MHz
+	3.	1350--1450 MHz (VLBI band)
+	4.	1300--1800 MHz (band-pass)
+	5.	1625--1715 MHz (VLBI band)
 
 For the simultaneous LP configuration, all combinations of the above configurations are allowed.
-
-Additional, so-called *Macaferri* filters are available at the level of the backends. They are: (to be included here).
 
 Backends 
 ========
@@ -144,13 +134,17 @@ Total Power backend
 
 This is a single-band, seven-beam backend for continuum observations. Located just below the dish, this backend is formed by 14 voltage-to-frequency converters that digitize the incoming RF signals. Different IF inputs can be selected from three focal points. Different bandwidths (maximum bandwidth: 0.1 - 2.1 GHz) and attenuation levels can be selected.
 
-This backend consists of 14 sections. Each section processes a single IF channel with a single polarization, as input. The signal is detected by a broadband square-law detector and then digitized by an A/D converter. The nominal IF band is 2 GHz (0.1-2.1 GHz). On-board filters can restrict the band to 250, 680, or 1200 MHz. The same boards also perform the focus selection for the SARDARA backend.
+This backend consists of 14 sections. Each section processes a single IF channel with a single polarization, as input. The signal is detected by a broadband square-law detector and then digitized by an A/D converter. The nominal IF band is 2 GHz (0.1-2.1 GHz). On-board filters can restrict the band to 250, 680, or 1200 MHz. The same boards also perform the focus selection for the SARDARA backend. Here are the possible configurations of the Total Power backend for different receivers:
 
-
-Pulsar Digital Filter Bank mark 3 (PDFB3)
------------------------------------------
-
-This is a FX correlator developed by the Australia Telescope National Facility that allows full-Stokes observations. It allows for four inputs, each with a 1024 MHz maximum bandwidth, and 8-bit sampling for a high dynamic range. The DFB3 is suitable for precise pulsar timing and searching, spectral line and continuum observations with a high time resolution. It allows for up to 8192 spectral channels in order to counter the effects of interstellar dispersion when it is operated in pulsar mode, and for power spectrum measurements in spectrometer mode.
+======== ======== ====================== ==================
+Receiver Sections Filters (MHz)          Sampling time (ms)
+======== ======== ====================== ==================
+K-band     14     300,680,1200,2000      1 -- 1000
+C-band      2     300,680,1200,2000      1 -- 1000
+L-band      2     2000                   1 -- 1000
+P-band      2     680                    1 -- 1000
+L-P dual    4     2000                   1 -- 1000 
+======== ======== ====================== ==================
 
 XARCOS
 ------
@@ -166,42 +160,222 @@ The observer can select the following configurations:
 * XK00, to use only the K-band central feed. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz, each having 2048(x4) channels. Each digital sample has an 8-bit range.
 * XC00 , to use the C-band receiver. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz.
 
-
 Digital Base Band Converter (DBBC)
 ----------------------------------
 
 This digital platform is based on a flexible architecture composed of four ADC boards, with 1 GHz of bandwidth each and four Xilinx FPGA boards for data processing. The platform is designed mainly for VLBI experiments; however, a wideband spectrometer has been developed for other purposes.
 
+Pulsar Digital Filter Bank mark 3 (PDFB3)
+-----------------------------------------
+
+This is a FX correlator developed by the Australia Telescope National Facility (ATNF) that performs full-Stokes observations. It allows for four inputs, each with a 1024 MHz maximum bandwidth, and 8-bit sampling for a high dynamic range. The DFB3 is suitable for precise pulsar timing and searching, as well as spectral line and continuum observations with a high time resolution. It allows for up to 8192 spectral channels in order to counter the effects of interstellar dispersion when it is operated in pulsar mode, and for power spectrum measurements in spectrometer mode.
+
+The main available configurations for pulsar observations are the following:
+
+========= ============ =============== =================
+Obs type  N. time bins Bandwidth (MHz) N. frequency bins
+========= ============ =============== =================
+folding   1024         1024            2048
+folding   1024         1024            1024
+folding   1024         1024            512
+folding   1024         512             2048
+folding   1024         512             1024
+folding   1024         512             512
+folding   512          1024            1024
+folding   512          512             1024
+folding   512          512             512
+folding   512          256             512
+folding   256          256             2048
+folding   256          256             1024
+search                 512             1024
+search                 512             128
+========= ============ =============== =================
+
+Further details about the DFB can be found in the ATNF `DFB manual <http://www.srt.inaf.it/media/uploads/astronomers/dfb.pdf>`_.
+
+At the SRT, DFB observations are piloted using the SEADAS software. For more information: 
+
+Additional, so-called *Maccaferri* filters are available at L-band at the level of the backends. The recommended filter for pulsar observations at L-band 
+is the *WIDE* filter (460 MHz of bandwidth).
+
+
 ROACH backend
 -------------
 
-This backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire baseband data (voltages) or for real-time folding of pulsar data. The currently available bandwidth is 128 MHz thanks a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
+This backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire baseband data (voltages) or for real-time folding of pulsar data, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
+
+The ROACH backend has been the backend of choice for the Large European Array for Pulsars (LEAP) project. More information on the implementation of the LEAP project with the ROACH backend can be found here: `Internal Report N. 39 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=3>`_. It is also used to perform all P-band pulsar observations at SRT. Its ability to perform coherent de-dispersion makes it a superior backend compared to the DFB. 
 
 SARDARA
 -------
 
-This backend can be used as a spectro-polarimeter and is based on 7 ROACH2 boards.
-
-SARDARA is a wide-band ROACH-2 based backend for full-Stokes continuum and spectral lines observations.The sampling time can be set from 5ms to 1 s. It is the backend of choice for OTF spectro-polarimetric observations.
-Available configurations are:
+SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band, full-Stokes observations. The many observing modes covered by SARDARA include: continuum, spectroscopy, spectro-polarimetry, as well as high-time resolution for pulsars and fast transients . Its sampling time can be set from 5ms to 1 s. It is the backend of choice for OTF spectro-polarimetric observations.
+Available configurations consist of:
 
 * 300 MHz bandwith with 1024 or 16384  channels
 * 1500 MHz bandwidth with 1024 or 16384 channels
 
-Currently, the 300 MHz configurations should be used only with the L-Band receiver and the RF filters: 1350 - 1450 MHz or 1625 - 1715 MHz, in order to avoid aliasing.
+The 300 MHz configurations should only be used with the L-Band receiver and the following RF filters: (3) 1350 - 1450 MHz or (5) 1625 - 1715 MHz, in order to avoid aliasing.
 
-User guide
-==========
+More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
+
+Calibration
+===========
+
+Pointing calibration
+--------------------
+
+* C-band
+
+========== ===========
+Parameter  Value (deg)
+========== ===========
+Az-mean    +0.000440
+Az-rms     +0.000790
+El-mean    -0.001660
+El-rms     +0.000910
+========== ===========
+
+Note: updated as of 2018
+
+* K-band
+
+========== ===========
+Parameter  Value (deg)
+========== ===========
+Az-mean    +0.000850
+Az-rms     +0.000870
+El-mean    -0.001280
+El-rms     +0.001200
+========== ===========
+
+Note: for K-band, we are keeping the Pointing Model derived in 2012 and used during the ESP (2016).
+
+Focus curve calibration
+-----------------------
+
+* C-band
+
+Figure to attach
+
+We fit the curve with a polynomial of degree 6, such as: y = a x^6+ b x^5 + c x^4 + d x^3 + e x^2 + f x + g
+
+========== ===================
+Parameter  Value
+========== ===================
+a          2.36410838911e-08
+b          -6.62393455442e-06
+c          0.000733782714288
+d          -0.040640240455
+e          1.16941963489
+f          -16.4202062811 
+g          91.5590595452
+========== ===================
+
+* K-band
+
+We derive the focus curve shown in the Figure below where, as a comparison, we report also the previous focus curve. We report an anomalous behaviour at elevations below 30° that cause severe defocusing. 
+For this reason, we decide to adopt the old focus curve.
+
+Need table?
+
+Gain curve calibration
+----------------------
+
+* C-band
+
+Plot of Gain (K/Jy) vs. El (degrees)
+
+=========== ============
+Parameter   Value
+=========== ============
+C0          0.545439
+C1          0.00525597
+C2          -4.55697e-5
+=========== ============
+
+Time range valid from May 2018 until... 2017? 2016?
+
+* K-band
+
+=========== ============
+Parameter   Value
+=========== ============
+C0          0.505427
+C1          0.00864506
+C2          -6.37184e-5
+=========== ============
+
+Due to an issue of misalignment of subscans we could not compute the gain curve from OTF maps. Therefore, as long as the problem is not resolved, we give as a reference the gain curves presented in Prandoni et al. (2017).
+
+Beam shape
+----------
+
+* C-band
+
+The beam size and beam deformations in C-band are fully consistent with the measurements reported during the AV and the first commissioning.
+
+===================== =============== ==============
+Elevation range (deg) Second lobe (%) Third lobe (%)
+===================== =============== ==============
+15-25                 1.7             0.65
+25-35                 1.7             0.42
+35-50                 1.4             0.41
+50-65                 1.0             0.41
+65-75                 1.5             0.43
+75-85                 2.0             0.40
+===================== =============== ==============
+
+* K-band
+
+
+
+
+List of calibrators
+-------------------
+
+Here is a list of useful calibrators for various types of calibration:
+
+========== =================== =========================
+Flux       Polarization angle  Instrumental polarization
+========== =================== =========================
+3C286      3C286               3C84
+3C147      3C138               NGC7027
+3C48
+3C123(*)
+3C295
+========== =================== =========================
+
+(*) 3C123 is partially resolved with the K-Band because its angular size is about 45 arcsec, therefore this source is not good enough as a calibrator for that frequency.
+
+Pointing calibration: see Tarchi et al (2013) and Ricci et al (2016)
+
+
+Useful links
+============
+
+A general description of the SRT, including technical commissioning information and first light results, can be found in the technical commissioning paper:
+`Bolli et. al, Journal of Astronomical Instrumentation, Vol. 4, Nos. 3 & 4 (2015) 1550008 <https://www.worldscientific.com/doi/abs/10.1142/S2251171715500087>`_.
+
+Scientific tests and applications for the SRT are described in the following scientific validation paper:
+`Prandoni et. al, A&A 608, A40 (2017) <https://www.aanda.org/articles/aa/abs/2017/12/aa30243-16/aa30243-16.html>`_.
+
+Science done with SRT during its early-science run (2016) with the various hardware and software described below can be found here: `Science with SRT <http://www.srt.inaf.it/astronomers/science_srt/>`_. 
+
+Spectral-polarimetric techniques with SRT: ` Sardinia Radio Telescope wide-band spectral-polarimetric observations of the galaxy cluster 3C 129 <https://arxiv.org/abs/1607.03636>`_.
+
+User guide and observing modes
+==============================
 
 Instructions for observing at the SRT with different modalities (receivers, backends, modes) are provided here: `instructions <http://srt-procedures.readthedocs.io/en/latest/>`_
 
-A complete manual about the Italian radio antennas is found here: `DISCOS <http://discos.readthedocs.io/en/latest/index.html>`_
+A complete manual about the Italian radio antennas is found here: `DISCOS <http://discos.readthedocs.io/en/latest/index.html>`_.
 
 Observing tools
 ===============
 
 Source visibilites can be determined using the `CASTIA online tool <http://www.ira.inaf.it/Observing/castia/site/index.php>`_.
 
-.. note:: This is really interesting stuff. Thanks for reading.
+The online Exposure Time Calculator (ETC) can be found here: `ETC tool  <http://www.ira.inaf.it/expotime/all_ETC.html>`_.
 
 
