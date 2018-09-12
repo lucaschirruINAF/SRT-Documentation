@@ -73,31 +73,34 @@ The shaped configuration is used for receivers in the Gregorian and BWG foci, wh
 Receivers
 =========
 
-* The L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but can be transformed to circular.
+* The L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but can be transformed to circular thanks to a hybrid converter. 
 
-* A mono-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope.
+* A single-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope.
 
 * A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration. 
 
-In the following table, we outline, for each receiver: its frequency coverage, its beam-size in arcmin or arcsec, measurements of the system temperature at 45 degrees of elevation, and antenna gain. 
-Each receiver feed allows for two polarizations.
+In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec, measurements of the system temperature Tsys at 45 degrees of elevation, antenna gain and system equivalent flux density (Sefd) (the system 
+equivalent flux density is the flux density of a radio source that doubles the system temperature). Each receiver feed allows for two polarizations.
 
-======== ========================= =======   =================   ===============  ========= ========== ========== =========
-Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position   Beam size Tsys (K)    Gain (%)  Sefd (Jy)
-======== ========================= =======   =================   ===============  ========= ========== ========== =========
-P         0.300 -- 0.360              1        linear              primary           56.2'   [50-80]       [45]     125
-L         1.3 -- 1.8                  1        linear              primary           12.6'    25-35        [47]     36
-C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.8'      32-37(*)   48         43(*)
-K         18 -- 26                    7        circular           gregorian         50"         90(**)   44         138(**)
-======== ========================= =======   =================   ===============  ========= ========== ========== =========
+======== ========================= =======   =================   ===============  ========= ========== =========== ==========
+Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position   Beam size Tsys (K)   Gain (K/Jy)  Sefd (Jy)
+======== ========================= =======   =================   ===============  ========= ========== =========== ==========
+P         0.30 -- 0.36                1        linear              primary           56.2'   [50-80]       [0.45]     125
+L         1.3 -- 1.8                  1        linear              primary           12.6'    25-35        [0.47]     36
+C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.8'      32-37(*)   0.48         43(*)
+K         18 -- 26                    7        circular           gregorian         50"(**)    90(**)   0.44         138(**)
+======== ========================= =======   =================   ===============  ========= ========== =========== ==========
 
 [ ] is an estimate
+
 (*) at 6.7 GHz
+
 (**) at 22.3 GHz with opacity 0.1 and ground air temperature of 293K.
 
 The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz)
 
 SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
+However, the use of a gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected. 
 
 Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for the central feed).  
 Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/gregorian focus. 
@@ -109,7 +112,7 @@ RF filters
 
 Different RF filters are available for the LP-band receiver. Although it is a coaxial receiver package, the control system sees it as a group of three different receivers, each one with its own code:
 
-For the PPP receiver (P-band), there is one available filter (L2):  300--360 MHz (needed to exclude RFI at higher frequencies).
+For the PPP receiver (P-band), there is one available filter (L2):  300--360 MHz (which is needed to exclude RFI at higher frequencies).
 
 These are available for the LLP (L-band) configuration:
 
@@ -121,23 +124,26 @@ These are available for the LLP (L-band) configuration:
 
 For the simultaneous LP configuration, all combinations of the above configurations are allowed.
 
+Additional, so-called *Maccaferri* filters (128 MHz, 256 MHz and 460 MHz) are available at L-band at the level of the backends (DFB, ROACH1 and SARDARA). The recommended filter for pulsar observations at L-band 
+is the *WIDE* filter (460 MHz of bandwidth).
+
 Backends 
 ========
 
 The frontend (receiver) outputs are connected to the backend instruments either by coaxial cables or optical fibers, depending on whether the backend is located in the main building or below the dish. The following backends, designed for specific scientific activities, are available at the site:
 
-Total Power backend
--------------------
+Total Power 
+-----------
 
-This is a single-band, seven-beam backend for continuum observations. Located just below the dish, this backend is formed by 14 voltage-to-frequency converters that digitize the incoming RF signals. Different IF inputs can be selected from three focal points. Different bandwidths (maximum bandwidth: 0.1 - 2.1 GHz) and attenuation levels can be selected.
+The Total Power backend is a single-band, seven-beam backend for continuum observations. Located just below the dish, this backend is formed by 14 voltage-to-frequency converters that digitize the incoming RF signals. Different IF inputs can be selected from three focal points. Different bandwidths (maximum bandwidth: 0.1 - 2.1 GHz) and attenuation levels can be selected.
 
 This backend consists of 14 sections. Each section processes a single IF channel with a single polarization, as input. The signal is detected by a broadband square-law detector and then digitized by an A/D converter. The nominal IF band is 2 GHz (0.1-2.1 GHz). On-board filters can restrict the band to 250, 680, or 1200 MHz. The same boards also perform the focus selection for the SARDARA backend. Here are the possible configurations of the Total Power backend for different receivers:
 
 ======== ======== ====================== ==================
 Receiver Sections Filters (MHz)          Sampling time (ms)
 ======== ======== ====================== ==================
-K-band     14     300,680,1200,2000      1 -- 1000
-C-band      2     300,680,1200,2000      1 -- 1000
+K-band     14     250,680,1200,2000      1 -- 1000
+C-band      2     250,680,1200,2000      1 -- 1000
 L-band      2     2000                   1 -- 1000
 P-band      2     680                    1 -- 1000
 L-P dual    4     2000                   1 -- 1000 
@@ -192,16 +198,14 @@ Further details about the DFB can be found in the ATNF `DFB manual <http://www.s
 
 At the SRT, DFB observations are piloted using the SEADAS software. 
 
-Additional, so-called *Maccaferri* filters are available at L-band at the level of the backends. The recommended filter for pulsar observations at L-band 
-is the *WIDE* filter (460 MHz of bandwidth).
+ROACH1
+------
 
+The ROACH1 (or ROACH) backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire baseband data (voltages) or for real-time folding of pulsar data, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
 
-ROACH backend
--------------
-
-This backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire baseband data (voltages) or for real-time folding of pulsar data, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
-
-The ROACH backend has been the backend of choice for the Large European Array for Pulsars (LEAP) project. More information on the implementation of the LEAP project with the ROACH backend can be found here: `Internal Report N. 39 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=3>`_. It is also used to perform all P-band pulsar observations at SRT. Its ability to perform coherent de-dispersion makes it a superior backend compared to the DFB. 
+The ROACH1 backend has been the backend of choice for the Large European Array for Pulsars (LEAP) project. More information on the implementation of the LEAP project with the ROACH1 backend can be found here: `OAC Internal Report N. 39 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=3>`_. It is also used to perform all P-band pulsar observations at SRT. Its ability to perform coherent de-dispersion makes it a superior backend compared to the DFB; however only 128 MHz of its 512 MHz capabilities is currently available because of the number of installed CPU nodes. In the near future, access to 
+GPU nodes will increase the bandwidth to 512 MHz. 
+ 
 
 SARDARA
 -------
@@ -224,49 +228,30 @@ Calibration
 Pointing calibration
 --------------------
 
-Pointing model: this procedure was used to calculate the pointing errors compared to ideal conditions, at night without sunlight. Actual conditions could 
-require pointing measurements to take into account possible errors due to environmental factors (pointing measurements can be included in the observation schedule).
+Pointing model: this procedure is used to calculate the pointing errors compared to ideal conditions, at night without sunlight. Actual conditions will most likely 
+require new pointing measurements in order to take into account possible errors due to environmental factors. Pointing measurements before starting an observing session are highly recommended
+and can be included in the observation schedule.
 
-* L-band
+========== ====================== ======================= ======================
+Parameter  Value (deg) for L-band  Value (deg) for C-band Value (deg) for K-band
+========== ====================== ======================= ======================
+Az-mean                                +0.000440               +0.000850
+Az-rms       +0.001944(*)              +0.000790               +0.000870
+El-mean                                -0.001660               -0.001280
+El-rms       +0.001944(*)              +0.000910               +0.001200
+========== ====================== ======================= ======================
 
-Values adopted same as Bolli et al (2015)
-
-* C-band
-
-========== ====================== ======================
-Parameter  Value (deg) for C-band Value (deg) for K-band
-========== ====================== ======================
-Az-mean    +0.000440               +0.000850
-Az-rms     +0.000790               +0.000870
-El-mean    -0.001660               -0.001280
-El-rms     +0.000910               +0.001200
-========== ====================== ======================
+* values for L-band from Bolli et al (2015)
 
 Focus curve calibration
 -----------------------
 
-The focus curve is applied in real time. 
-
-* C-band
-
-We fit the curve with a polynomial of degree 6, such as: y = a x^6+ b x^5 + c x^4 + d x^3 + e x^2 + f x + g
-
-========== ===================
-Parameter  Value
-========== ===================
-a          2.36410838911e-08
-b          -6.62393455442e-06
-c          0.000733782714288
-d          -0.040640240455
-e          1.16941963489
-f          -16.4202062811 
-g          91.5590595452
-========== ===================
-
-* K-band
+The observer should perform a focus calibration before starting an observing session. The focus curve is then applied in real time. 
 
 Gain curve calibration
 ----------------------
+
+From the measured gain curves (Gain vs. Elevation), one fits a 2-degree polynomial with the following parameters C0, C1 and C2:
 
 * L-band
 
@@ -282,12 +267,15 @@ C1          0.00525597      0.00864506
 C2          -4.55697e-5     -6.37184e-5
 =========== ============== ==============
 
-C-band Time range valid from 2018.
+C-band: valid from 2018.
 
 K-band: from Prandoni et al. (2017).
 
 Beam shape
 ----------
+
+In the following tables, the second lobe and third lobe percentages correspond to the contribution of the counts in that lobe as compared to the
+central beam. 
 
 * C-band
 
@@ -324,13 +312,10 @@ Flux       Polarization angle  Instrumental polarization
 3C286      3C286               3C84
 3C147      3C138               NGC7027
 3C48
-3C123(*)
 3C295
 ========== =================== =========================
 
-(*) 3C123 is partially resolved with the K-Band because its angular size is about 45 arcsec, therefore this source is not good enough as a calibrator for that frequency.
-
-Pointing calibration: see Tarchi et al (2013) and Ricci et al (2016)
+For more details, see below in "Useful links": "Pointing calibration" 
 
 
 Useful links
@@ -345,6 +330,12 @@ Scientific tests and applications for the SRT are described in the following sci
 Science done with SRT during its early-science run (2016) with the various hardware and software described below can be found here: `Science with SRT <http://www.srt.inaf.it/astronomers/science_srt/>`_. 
 
 Spectral-polarimetric techniques with SRT: `Sardinia Radio Telescope wide-band spectral-polarimetric observations of the galaxy cluster 3C 129 <https://arxiv.org/abs/1607.03636>`_.
+
+ROACH1 backend for baseband data recording and pulsar observations: `OAC Internal Report N. 39 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=3>`_.  
+
+SARDARA backend description: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
+
+Pointing calibration: \Tarchi et al. (2013) OAC Internal Report N. 27 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=4>~_ & Ricci et al (2016).
 
 User guide and observing modes
 ==============================
