@@ -79,7 +79,7 @@ Receivers
 
 * A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration. 
 
-In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec, measurements of the system temperature Tsys at 45 degrees of elevation, antenna gain and system equivalent flux density (Sefd) (the system 
+In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec; measurements of the system temperature Tsys at 45 degrees of elevation; antenna gain; and system equivalent flux density (Sefd) (the system 
 equivalent flux density is the flux density of a radio source that doubles the system temperature). Each receiver feed allows for two polarizations.
 
 ======== ========================= =======   =================   ===============  ========= ========== =========== ==========
@@ -92,9 +92,7 @@ K         18 -- 26                    7        circular           gregorian     
 ======== ========================= =======   =================   ===============  ========= ========== =========== ==========
 
 [ ] is an estimate
-
 (*) at 6.7 GHz
-
 (**) at 22.3 GHz with opacity 0.1 and ground air temperature of 293K.
 
 The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz)
@@ -102,7 +100,7 @@ The FWHM beam size, as a function of the frequency f,  can be approximated by th
 SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
 However, the use of a gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected. 
 
-Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for the central feed).  
+Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2019.   
 Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/gregorian focus. 
  
 More details about current and future receivers at Italian radio telescopes (SRT, Medicina and Noto) are included in this review document: `receivers <http://rx2017.inaf.it/RX2017/Review_v8.1.pdf>`_
@@ -203,8 +201,8 @@ ROACH1
 
 The ROACH1 (or ROACH) backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire baseband data (voltages) or for real-time folding of pulsar data, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
 
-The ROACH1 backend has been the backend of choice for the Large European Array for Pulsars (LEAP) project. More information on the implementation of the LEAP project with the ROACH1 backend can be found here: `OAC Internal Report N. 39 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=3>`_. It is also used to perform all P-band pulsar observations at SRT. Its ability to perform coherent de-dispersion makes it a superior backend compared to the DFB; however only 128 MHz of its 512 MHz capabilities is currently available because of the number of installed CPU nodes. In the near future, access to 
-GPU nodes will increase the bandwidth to 512 MHz. 
+The ROACH1 backend has been the backend of choice for the Large European Array for Pulsars (LEAP) project. More information on the implementation of the LEAP project with the ROACH1 backend can be found here: `OAC Internal Report N. 39 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=3>`_. It is also used to perform all P-band pulsar observations at SRT. Its ability to perform coherent de-dispersion makes it a superior backend compared to the DFB. Its 128 MHz of available bandwidth (only 128 MHz of its 512 MHz capability is currently available because of the limited number of installed CPU nodes) is largely sufficient for P-band but more limited for L-band. In the near future, access to 
+GPU nodes will increase the available bandwidth to 512 MHz. 
  
 
 SARDARA
@@ -213,10 +211,10 @@ SARDARA
 SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band, full-Stokes observations. The many observing modes covered by SARDARA include: continuum, spectroscopy, spectro-polarimetry, as well as high-time resolution for pulsars and fast transients . Its sampling time can be set from 5ms to 1 s. It is the backend of choice for OTF spectro-polarimetric observations.
 Available configurations consist of:
 
-* 420 MHz bandwith with 1024 or 16384  channels
+* 420 MHz bandwith with 1024 or 16384 channels
 * 1500 MHz bandwidth with 1024 or 16384 channels
 
-The 420 MHz configurations should only be used with the L-Band receiver and the following RF filters: (3) 1350 - 1450 MHz or (5) 1625 - 1715 MHz, in order to avoid aliasing.
+The 420 MHz configurations are most suitable for the L-band receiver and the following RF filters: (3) 1350 - 1450 MHz or (5) 1625 - 1715 MHz, in order to avoid aliasing.
 
 SARDARA's spectral resolution and sensitivity is defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend is being used as input to SARDARA. 
 
@@ -225,10 +223,10 @@ More detailed information on the SARDARA backend can be found here: `SARDARA <ht
 Calibration
 ===========
 
-Pointing calibration
---------------------
+Pointing model
+---------------
 
-Pointing model: this procedure is used to calculate the pointing errors compared to ideal conditions, at night without sunlight. Actual conditions will most likely 
+This procedure is used to calculate the pointing errors compared to ideal conditions, i.e. at night without sunlight. Actual conditions will most likely 
 require new pointing measurements in order to take into account possible errors due to environmental factors. Pointing measurements before starting an observing session are highly recommended
 and can be included in the observation schedule.
 
@@ -241,7 +239,7 @@ El-mean                                -0.001660               -0.001280
 El-rms       +0.001944(*)              +0.000910               +0.001200
 ========== ====================== ======================= ======================
 
-* values for L-band from Bolli et al (2015)
+(*) values for L-band from Bolli et al (2015)
 
 Focus curve calibration
 -----------------------
@@ -335,7 +333,7 @@ ROACH1 backend for baseband data recording and pulsar observations: `OAC Interna
 
 SARDARA backend description: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
-Pointing calibration: \Tarchi et al. (2013) OAC Internal Report N. 27 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=4>~_ & Ricci et al (2016).
+Pointing calibration: `Tarchi et al. (2013) OAC Internal Report N. 27 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=4>`_ & Ricci et al (2016).
 
 User guide and observing modes
 ==============================
