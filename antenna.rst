@@ -34,10 +34,10 @@ The antenna's main characheristics are:
 
    * - Position
      - Pranu Sanguni, San Basilio, Sardinia
-   * - Coordinates 
-     - Lat 39° 29' 34.93742" N;  Long 9° 14' 42.5764" E
+   * - Geodetic Coordinates 
+     - Lat 39° 29' 34.93742" N;  Long 9° 14' 42.5764" E (WGS84)
    * - Optical configuration 
-     - Gregorian & Beam Waveguide (BWG)
+     - Primary, Gregorian & Beam Waveguide (BWG)
    * - Primary mirror diameter
      - 64 m
    * - Subreflector diameter
@@ -45,7 +45,7 @@ The antenna's main characheristics are:
    * - Focal positions
      - primary f/D = 0.33; Gregorian f/D = 2.34; Beam waveguide (BWG) f/D = 1.8
    * - Azimuth range
-     - --90 -- 450 degrees
+     - --90 to 450 degrees
    * - Elevation range
      - 5 -- 90 degrees
    * - Slew rate
@@ -53,13 +53,13 @@ The antenna's main characheristics are:
    * - Frequency coverage
      - 0.3 -- 115 GHz
    * - Primary surface accuracy
-     - 65 μm rms
+     - 300 μm rms
    * - Pointing accuracy (rms)
      - 2 -- 5"
 
 Active surface
 
-The primary reflector, which is 64 m across, is made of 1008 aluminium panels (with RMS ≤ 65 μm) driven by 1116 electromechanical actuators. This *active surface*
+The primary reflector, which is 64 m across, is made of 1008 aluminium panels (with an RMS ≤ 65 μm each) driven by 1116 electromechanical actuators. This *active surface*
 is designed to compensate for the gravitational deformations of the whole surface at different elevations.
 
 The observer can choose among three configurations:
@@ -85,12 +85,13 @@ Each receiver feed allows for two polarizations.
 ======== ========================= =======   =================   ===============  ========= ========== ========== =========
 Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position   Beam size Tsys (K)    Gain (%)  Sefd (Jy)
 ======== ========================= =======   =================   ===============  ========= ========== ========== =========
-P         0.305 -- 0.410              1        linear              primary           56.2'        65?       45?     125
-L         1.3 -- 1.8                  1        linear              primary           12.6'        21?       47?     36
-C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.8'         26(*)    48         43(*)
-K         18 -- 26                    7        circular           gregorian         50"         90(**)  44         138(**)
+P         0.300 -- 0.360              1        linear              primary           56.2'   [50-80]       [45]     125
+L         1.3 -- 1.8                  1        linear              primary           12.6'    25-35        [47]     36
+C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.8'      32-37(*)   48         43(*)
+K         18 -- 26                    7        circular           gregorian         50"         90(**)   44         138(**)
 ======== ========================= =======   =================   ===============  ========= ========== ========== =========
 
+[ ] is an estimate
 (*) at 6.7 GHz
 (**) at 22.3 GHz with opacity 0.1 and ground air temperature of 293K.
 
@@ -108,11 +109,7 @@ RF filters
 
 Different RF filters are available for the LP-band receiver. Although it is a coaxial receiver package, the control system sees it as a group of three different receivers, each one with its own code:
 
-For the PPP receiver (P-band), available filters are:
-
-	1.	all band, 305--410 MHz (no filter)
-	2.	310--350 MHz
-	3.	305--410 MHz (band-pass filter, sharper band edges).
+For the PPP receiver (P-band), there is one available filter (L2):  300--360 MHz (needed to exclude RFI at higher frequencies).
 
 These are available for the LLP (L-band) configuration:
 
@@ -168,32 +165,32 @@ This digital platform is based on a flexible architecture composed of four ADC b
 Pulsar Digital Filter Bank mark 3 (PDFB3)
 -----------------------------------------
 
-This is a FX correlator developed by the Australia Telescope National Facility (ATNF) that performs full-Stokes observations. It allows for four inputs, each with a 1024 MHz maximum bandwidth, and 8-bit sampling for a high dynamic range. The DFB3 is suitable for precise pulsar timing and searching, as well as spectral line and continuum observations with a high time resolution. It allows for up to 8192 spectral channels in order to counter the effects of interstellar dispersion when it is operated in pulsar mode, and for power spectrum measurements in spectrometer mode.
+This is an FX correlator developed by the Australia Telescope National Facility (ATNF) that performs full-Stokes observations. It allows for four inputs, each with a 1024 MHz maximum bandwidth and 8-bit sampling for a high dynamic range. The DFB3 is suitable for precise pulsar timing and searching. It allows for up to 8192 spectral channels in order to counter the effects of interstellar dispersion.
 
 The main available configurations for pulsar observations are the following:
 
-========= ============ =============== =================
-Obs type  N. time bins Bandwidth (MHz) N. frequency bins
-========= ============ =============== =================
-folding   1024         1024            2048
-folding   1024         1024            1024
-folding   1024         1024            512
-folding   1024         512             2048
-folding   1024         512             1024
-folding   1024         512             512
-folding   512          1024            1024
-folding   512          512             1024
-folding   512          512             512
-folding   512          256             512
-folding   256          256             2048
-folding   256          256             1024
-search                 512             1024
-search                 512             128
-========= ============ =============== =================
+========= ============= =============== ==================
+Obs type  N. time bins  Bandwidth (MHz) N. frequency bins
+========= ============= =============== ==================
+folding   1024          1024            2048
+folding   1024          1024            1024
+folding   1024          1024            512
+folding   1024          512             2048
+folding   1024          512             1024
+folding   1024          512             512
+folding   512           1024            1024
+folding   512           512             1024
+folding   512           512             512
+folding   512           256             512
+folding   256           256             2048
+folding   256           256             1024
+search                  512             1024
+search                  512             128
+========= ============= =============== ==================
 
 Further details about the DFB can be found in the ATNF `DFB manual <http://www.srt.inaf.it/media/uploads/astronomers/dfb.pdf>`_.
 
-At the SRT, DFB observations are piloted using the SEADAS software. For more information: 
+At the SRT, DFB observations are piloted using the SEADAS software. 
 
 Additional, so-called *Maccaferri* filters are available at L-band at the level of the backends. The recommended filter for pulsar observations at L-band 
 is the *WIDE* filter (460 MHz of bandwidth).
@@ -212,10 +209,12 @@ SARDARA
 SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band, full-Stokes observations. The many observing modes covered by SARDARA include: continuum, spectroscopy, spectro-polarimetry, as well as high-time resolution for pulsars and fast transients . Its sampling time can be set from 5ms to 1 s. It is the backend of choice for OTF spectro-polarimetric observations.
 Available configurations consist of:
 
-* 300 MHz bandwith with 1024 or 16384  channels
+* 420 MHz bandwith with 1024 or 16384  channels
 * 1500 MHz bandwidth with 1024 or 16384 channels
 
-The 300 MHz configurations should only be used with the L-Band receiver and the following RF filters: (3) 1350 - 1450 MHz or (5) 1625 - 1715 MHz, in order to avoid aliasing.
+The 420 MHz configurations should only be used with the L-Band receiver and the following RF filters: (3) 1350 - 1450 MHz or (5) 1625 - 1715 MHz, in order to avoid aliasing.
+
+SARDARA's spectral resolution and sensitivity is defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend is being used as input to SARDARA. 
 
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
@@ -225,38 +224,30 @@ Calibration
 Pointing calibration
 --------------------
 
+Pointing model: this procedure was used to calculate the pointing errors compared to ideal conditions, at night without sunlight. Actual conditions could 
+require pointing measurements to take into account possible errors due to environmental factors (pointing measurements can be included in the observation schedule).
+
+* L-band
+
+Values adopted same as Bolli et al (2015)
+
 * C-band
 
-========== ===========
-Parameter  Value (deg)
-========== ===========
-Az-mean    +0.000440
-Az-rms     +0.000790
-El-mean    -0.001660
-El-rms     +0.000910
-========== ===========
-
-Note: updated as of 2018
-
-* K-band
-
-========== ===========
-Parameter  Value (deg)
-========== ===========
-Az-mean    +0.000850
-Az-rms     +0.000870
-El-mean    -0.001280
-El-rms     +0.001200
-========== ===========
-
-Note: for K-band, we are keeping the Pointing Model derived in 2012 and used during the ESP (2016).
+========== ====================== ======================
+Parameter  Value (deg) for C-band Value (deg) for K-band
+========== ====================== ======================
+Az-mean    +0.000440               +0.000850
+Az-rms     +0.000790               +0.000870
+El-mean    -0.001660               -0.001280
+El-rms     +0.000910               +0.001200
+========== ====================== ======================
 
 Focus curve calibration
 -----------------------
 
-* C-band
+The focus curve is applied in real time. 
 
-Figure to attach
+* C-band
 
 We fit the curve with a polynomial of degree 6, such as: y = a x^6+ b x^5 + c x^4 + d x^3 + e x^2 + f x + g
 
@@ -274,46 +265,31 @@ g          91.5590595452
 
 * K-band
 
-We derive the focus curve shown in the Figure below where, as a comparison, we report also the previous focus curve. We report an anomalous behaviour at elevations below 30° that cause severe defocusing. 
-For this reason, we decide to adopt the old focus curve.
-
-Need table?
-
 Gain curve calibration
 ----------------------
 
+* L-band
+
+Values adopted same as Bolli et al (2015)
+
 * C-band
 
-Plot of Gain (K/Jy) vs. El (degrees)
+=========== ============== ==============
+Parameter   Value (C-band) Value (K-band)
+=========== ============== ==============
+C0          0.545439        0.505427
+C1          0.00525597      0.00864506
+C2          -4.55697e-5     -6.37184e-5
+=========== ============== ==============
 
-=========== ============
-Parameter   Value
-=========== ============
-C0          0.545439
-C1          0.00525597
-C2          -4.55697e-5
-=========== ============
+C-band Time range valid from 2018.
 
-Time range valid from May 2018 until... 2017? 2016?
-
-* K-band
-
-=========== ============
-Parameter   Value
-=========== ============
-C0          0.505427
-C1          0.00864506
-C2          -6.37184e-5
-=========== ============
-
-Due to an issue of misalignment of subscans we could not compute the gain curve from OTF maps. Therefore, as long as the problem is not resolved, we give as a reference the gain curves presented in Prandoni et al. (2017).
+K-band: from Prandoni et al. (2017).
 
 Beam shape
 ----------
 
 * C-band
-
-The beam size and beam deformations in C-band are fully consistent with the measurements reported during the AV and the first commissioning.
 
 ===================== =============== ==============
 Elevation range (deg) Second lobe (%) Third lobe (%)
@@ -328,7 +304,13 @@ Elevation range (deg) Second lobe (%) Third lobe (%)
 
 * K-band
 
-
+===================== =============== ==============
+Elevation range (deg) Second lobe (%) Third lobe (%)
+===================== =============== ==============
+20-40                 11              0.6
+40-60                 4.9             0.5
+60-80                 3.4             0.5
+===================== =============== ==============
 
 
 List of calibrators
@@ -362,7 +344,7 @@ Scientific tests and applications for the SRT are described in the following sci
 
 Science done with SRT during its early-science run (2016) with the various hardware and software described below can be found here: `Science with SRT <http://www.srt.inaf.it/astronomers/science_srt/>`_. 
 
-Spectral-polarimetric techniques with SRT: ` Sardinia Radio Telescope wide-band spectral-polarimetric observations of the galaxy cluster 3C 129 <https://arxiv.org/abs/1607.03636>`_.
+Spectral-polarimetric techniques with SRT: `Sardinia Radio Telescope wide-band spectral-polarimetric observations of the galaxy cluster 3C 129 <https://arxiv.org/abs/1607.03636>`_.
 
 User guide and observing modes
 ==============================
