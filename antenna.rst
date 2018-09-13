@@ -186,33 +186,33 @@ This is an FX correlator developed by the Australia Telescope National Facility 
 
 The available configurations for pulsar observations are the following:
 
-========= ============= =============== ====================== ================ ======= ====================
-Obs type  N. time bins  Bandwidth (MHz) N. frequency channels  N. polarizations N. bits  Time sampling (sec)
-========= ============= =============== ====================== ================ ======= ====================
-folding   1024          1024            2048
-folding   1024          1024            1024
-folding   1024          1024            512
-folding   1024          512             2048
-folding   1024          512             1024
-folding   1024          512             512
-folding   512           1024            1024
-folding   512           512             2048
-folding   512           512             1024
-folding   512           512             512
-folding   512           256             512
-folding   512           128             2048
-folding   256           256             2048
-folding   256           256             1024(*)
-folding   256           64              2048
-folding   256           64              1024
-search                  1024            512
-search                  512             1024                          1           1         0.000125
-search                  512             1024                          4           1         0.000512
-search                  512             1024                          4           8         0.000512
-search                  512             512                           1           8         0.000064    
-search                  512             512                           4           8         0.000256 
-search                  512             128
-========= ============= =============== ====================== ================ ======= ====================
+========= ===== ========= ===== ====== ======= =============
+Obs type  Nbins  BW(MHz)  Nfreq  Npols  Nbits  Time_samp(s)
+========= ===== ========= ===== ====== ======= ============= 
+folding   1024    1024    2048
+folding   1024    1024    1024
+folding   1024    1024     512
+folding   1024    512     2048
+folding   1024    512     1024
+folding   1024    512      512
+folding   512     1024    1024
+folding   512     512     2048
+folding   512     512     1024
+folding   512     512      512
+folding   512     256      512
+folding   512     128     2048
+folding   256     256     2048
+folding   256     25      1024   (*)
+folding   256     64      2048
+folding   256     64      1024
+search            1024    512
+search            512     1024    1      1         0.000125
+search            512     1024    4      1         0.000512
+search            512     1024    4      8         0.000512
+search            512      512    1      8         0.000064    
+search            512      512    4      8         0.000256 
+search            512      128
+========= ===== ========= ===== ====== ======= =============
 
 (*) This configuration does not work with millisecond pulsars.
 
