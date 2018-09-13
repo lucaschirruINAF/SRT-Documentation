@@ -7,10 +7,11 @@ The Sardinia Radio Telescope is a 64-meter single-dish radio telescope. It is lo
 about 40 km north of Cagliari. 
 
 Its state-of-the-art technology includes an active surface with 1008 panels, which allows observations at high frequencies (from 0.3 up to 115 GHz). 
-There are three main focal points where reveivers can be placed: primary focus (currently hosting the L-P dual band receiver); gregorian focus (K-band receiver), and Beam Wave Guide focus (C-band receiver).
+There are three main focal points where reveivers can be placed: primary focus (currently hosting the L-P dual band receiver); Gregorian focus (K-band receiver), and Beam Wave Guide focus (C-band receiver).
 In total, the telescope can accomodate up to 20 receivers. A number of additional receivers are currently being planned and built. 
 
-The telescope can be operated in single-dish or VLBI mode for radio astronomy, geodynamical studies or space science.
+The telescope can be operated in single-dish or VLBI mode for radio astronomy, geodynamical studies or space science. Its geographical location allows it
+to observe at declinations above -33 degrees.
 
 A general description of the SRT, including technical commissioning information and first light results, can be found in the technical commissioning paper:
 `Bolli et. al, Journal of Astronomical Instrumentation, Vol. 4, Nos. 3 & 4 (2015) 1550008 <https://www.worldscientific.com/doi/abs/10.1142/S2251171715500087>`_.
@@ -25,7 +26,7 @@ In the following sections, we outline information that is useful for observing w
 Antenna 
 =======
 
-The Sardinia Radio Telescope (SRT) is a 64-meter gregorian radio telescope with shaped optics, a quasi-parabolic main mirror and a quasi-elliptical subreflector. 
+The Sardinia Radio Telescope (SRT) is a 64-meter Gregorian radio telescope with shaped optics, a quasi-parabolic main mirror and a quasi-elliptical subreflector. 
 
 The antenna's main characheristics are:
 
@@ -73,12 +74,12 @@ The shaped configuration is used for receivers in the Gregorian and BWG foci, wh
 Receivers
 =========
 
-* The L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
+* The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
 
-* A single-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope.
+* A single-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope. The polarization type is circular.
 
-* A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration. 
-
+* A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration. The polarization type is circular.
+ 
 In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec; measurements of the system temperature Tsys at 45 degrees of elevation; antenna gain; and system equivalent flux density (Sefd) (the system 
 equivalent flux density is the flux density of a radio source that doubles the system temperature). Each receiver feed allows for two polarizations.
 
@@ -88,7 +89,7 @@ Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position 
 P         0.30 -- 0.36                1        linear              primary           56.2'   [50-80]       [0.45]     125
 L         1.3 -- 1.8                  1        linear              primary         12.6'    25-35        [0.47]     36
 C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.8'      32-37(*)   0.48         43(*)
-K         18 -- 26                    7        circular           gregorian         50"(**)    90(**)   0.44         138(**)
+K         18 -- 26                    7        circular           Gregorian         50"(**)    90(**)   0.44         138(**)
 ======== ========================= =======   =================   ===============  ========= ========== =========== ==========
 
 [ ] is an estimate
@@ -98,12 +99,15 @@ K         18 -- 26                    7        circular           gregorian     
 The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz)
 
 SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
-However, the use of a gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected. 
+However, the use of a Gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected. 
+
+Note about the L/P dual-band receiver: the RFI levels need to be minimized. The availability of the Gregorian cover for this purpose is not a priori guaranteed. 
 
 Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2019.   
-Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/gregorian focus. 
+Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/Gregorian focus. 
  
 More details about current and future receivers at Italian radio telescopes (SRT, Medicina and Noto) are included in this review document: `receivers <http://rx2017.inaf.it/RX2017/Review_v8.1.pdf>`_
+
 
 RF filters
 ----------
@@ -161,12 +165,21 @@ The observer can select the following configurations:
 * XK00, to use only the K-band central feed. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz, each having 2048(x4) channels. Each digital sample has an 8-bit range.
 * XC00 , to use the C-band receiver. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz.
 
+It is worth noting that, given a particular configuration (e.g. XK00), the sections are obtained simultaneously. For each section, the bandwidth and
+starting frequency can then be set. 
+
+For more information, see `XARCOS <https://discos.readthedocs.io/en/latest/user/srt/source/Backend.html#xarcos>`_.
+
+Note: The full-Stokes configuration is in shared-risk mode. 
+
+At C-band, standing waves have been identified that affect observations for Tcontinuum/Tsys > 0.05 (value to be confirmed). 
+
 Digital Base Band Converter (DBBC)
 ----------------------------------
 
 This digital platform is based on a flexible architecture composed of four ADC boards, with 1 GHz of bandwidth each and four Xilinx FPGA boards for data processing. The platform is designed mainly for VLBI experiments; however, a wideband spectrometer has been developed for other purposes.
 
-Pulsar Digital Filter Bank mark 3 (PDFB3)
+Digital Filter Bank mark 3 (DFB3)
 -----------------------------------------
 
 This is an FX correlator developed by the Australia Telescope National Facility (ATNF) that performs full-Stokes observations. It allows for four inputs, each with a 1024 MHz maximum bandwidth and 8-bit sampling for a high dynamic range. The DFB3 is suitable for precise pulsar timing and searching. It allows for up to 8192 spectral channels in order to counter the effects of interstellar dispersion.
@@ -329,6 +342,19 @@ Flux       Polarization angle  Instrumental polarization
 
 For more details, see below in "Useful links": "Pointing calibration" 
 
+Data quicklook
+==============
+
+Information about a data quicklook will be inserted here.
+
+Data conversion
+===============
+
+Conversion of data acquired in spectroscopic mode
+-------------------------------------------------
+
+Conversion to the GILDAS data format is provided for data acquired in Nodding and Position Switching mde with the SARDARA and XARCOS backends, including
+spectra containing the signal from the noise diode (when used).
 
 Useful links
 ============

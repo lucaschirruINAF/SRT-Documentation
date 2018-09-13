@@ -47,9 +47,10 @@
 <p>The Sardinia Radio Telescope is a 64-meter single-dish radio telescope. It is located in the Pranu Sanguni area of San Basilio, Sardinia, Italy,
 about 40 km north of Cagliari.</p>
 <p>Its state-of-the-art technology includes an active surface with 1008 panels, which allows observations at high frequencies (from 0.3 up to 115 GHz).
-There are three main focal points where reveivers can be placed: primary focus (currently hosting the L-P dual band receiver); gregorian focus (K-band receiver), and Beam Wave Guide focus (C-band receiver).
+There are three main focal points where reveivers can be placed: primary focus (currently hosting the L-P dual band receiver); Gregorian focus (K-band receiver), and Beam Wave Guide focus (C-band receiver).
 In total, the telescope can accomodate up to 20 receivers. A number of additional receivers are currently being planned and built.</p>
-<p>The telescope can be operated in single-dish or VLBI mode for radio astronomy, geodynamical studies or space science.</p>
+<p>The telescope can be operated in single-dish or VLBI mode for radio astronomy, geodynamical studies or space science. Its geographical location allows it
+to observe at declinations above -33 degrees.</p>
 <p>A general description of the SRT, including technical commissioning information and first light results, can be found in the technical commissioning paper:
 <a class="reference external" href="https://www.worldscientific.com/doi/abs/10.1142/S2251171715500087">Bolli et. al, Journal of Astronomical Instrumentation, Vol. 4, Nos. 3 &amp; 4 (2015) 1550008</a>.</p>
 <p>Scientific tests and applications for the SRT are described in the following scientific validation paper:
@@ -59,7 +60,7 @@ In total, the telescope can accomodate up to 20 receivers. A number of additiona
 </div>
 <div class="section" id="antenna">
 <h1>Antenna<a class="headerlink" href="#antenna" title="Permalink to this headline">¶</a></h1>
-<p>The Sardinia Radio Telescope (SRT) is a 64-meter gregorian radio telescope with shaped optics, a quasi-parabolic main mirror and a quasi-elliptical subreflector.</p>
+<p>The Sardinia Radio Telescope (SRT) is a 64-meter Gregorian radio telescope with shaped optics, a quasi-parabolic main mirror and a quasi-elliptical subreflector.</p>
 <p>The antenna’s main characheristics are:</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -119,9 +120,9 @@ is designed to compensate for the gravitational deformations of the whole surfac
 <div class="section" id="receivers">
 <h1>Receivers<a class="headerlink" href="#receivers" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>The L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter.</li>
-<li>A single-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope.</li>
-<li>A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration.</li>
+<li>The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter.</li>
+<li>A single-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope. The polarization type is circular.</li>
+<li>A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration. The polarization type is circular.</li>
 </ul>
 <p>In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec; measurements of the system temperature Tsys at 45 degrees of elevation; antenna gain; and system equivalent flux density (Sefd) (the system
 equivalent flux density is the flux density of a radio source that doubles the system temperature). Each receiver feed allows for two polarizations.</p>
@@ -184,7 +185,7 @@ equivalent flux density is the flux density of a radio source that doubles the s
 <td>18 – 26</td>
 <td>7</td>
 <td>circular</td>
-<td>gregorian</td>
+<td>Gregorian</td>
 <td>50”(**)</td>
 <td>90(**)</td>
 <td>0.44</td>
@@ -197,9 +198,10 @@ equivalent flux density is the flux density of a radio source that doubles the s
 (**) at 22.3 GHz with opacity 0.1 and ground air temperature of 293K.</p>
 <p>The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz)</p>
 <p>SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
-However, the use of a gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected.</p>
+However, the use of a Gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected.</p>
+<p>Note about the L/P dual-band receiver: the RFI levels need to be minimized. The availability of the Gregorian cover for this purpose is not a priori guaranteed.</p>
 <p>Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 – 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2019.
-Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/gregorian focus.</p>
+Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/Gregorian focus.</p>
 <p>More details about current and future receivers at Italian radio telescopes (SRT, Medicina and Noto) are included in this review document: <a class="reference external" href="http://rx2017.inaf.it/RX2017/Review_v8.1.pdf">receivers</a></p>
 <div class="section" id="rf-filters">
 <h2>RF filters<a class="headerlink" href="#rf-filters" title="Permalink to this headline">¶</a></h2>
@@ -282,13 +284,18 @@ The observer can select the following configurations:</p>
 <li>XK00, to use only the K-band central feed. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz, each having 2048(x4) channels. Each digital sample has an 8-bit range.</li>
 <li>XC00 , to use the C-band receiver. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz.</li>
 </ul>
+<p>It is worth noting that, given a particular configuration (e.g. XK00), the sections are obtained simultaneously. For each section, the bandwidth and
+starting frequency can then be set.</p>
+<p>For more information, see <a class="reference external" href="https://discos.readthedocs.io/en/latest/user/srt/source/Backend.html#xarcos">XARCOS</a>.</p>
+<p>Note: The full-Stokes configuration is in shared-risk mode.</p>
+<p>At C-band, standing waves have been identified that affect observations for Tcontinuum/Tsys &gt; 0.05 (value to be confirmed).</p>
 </div>
 <div class="section" id="digital-base-band-converter-dbbc">
 <h2>Digital Base Band Converter (DBBC)<a class="headerlink" href="#digital-base-band-converter-dbbc" title="Permalink to this headline">¶</a></h2>
 <p>This digital platform is based on a flexible architecture composed of four ADC boards, with 1 GHz of bandwidth each and four Xilinx FPGA boards for data processing. The platform is designed mainly for VLBI experiments; however, a wideband spectrometer has been developed for other purposes.</p>
 </div>
-<div class="section" id="pulsar-digital-filter-bank-mark-3-pdfb3">
-<h2>Pulsar Digital Filter Bank mark 3 (PDFB3)<a class="headerlink" href="#pulsar-digital-filter-bank-mark-3-pdfb3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="digital-filter-bank-mark-3-dfb3">
+<h2>Digital Filter Bank mark 3 (DFB3)<a class="headerlink" href="#digital-filter-bank-mark-3-dfb3" title="Permalink to this headline">¶</a></h2>
 <p>This is an FX correlator developed by the Australia Telescope National Facility (ATNF) that performs full-Stokes observations. It allows for four inputs, each with a 1024 MHz maximum bandwidth and 8-bit sampling for a high dynamic range. The DFB3 is suitable for precise pulsar timing and searching. It allows for up to 8192 spectral channels in order to counter the effects of interstellar dispersion.</p>
 <p>The available configurations for pulsar observations are the following:</p>
 <table border="1" class="docutils">
@@ -736,6 +743,18 @@ central beam.</p>
 </tbody>
 </table>
 <p>For more details, see below in “Useful links”: “Pointing calibration”</p>
+</div>
+</div>
+<div class="section" id="data-quicklook">
+<h1>Data quicklook<a class="headerlink" href="#data-quicklook" title="Permalink to this headline">¶</a></h1>
+<p>Information about a data quicklook will be inserted here.</p>
+</div>
+<div class="section" id="data-conversion">
+<h1>Data conversion<a class="headerlink" href="#data-conversion" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="conversion-of-data-acquired-in-spectroscopic-mode">
+<h2>Conversion of data acquired in spectroscopic mode<a class="headerlink" href="#conversion-of-data-acquired-in-spectroscopic-mode" title="Permalink to this headline">¶</a></h2>
+<p>Conversion to the GILDAS data format is provided for data acquired in Nodding and Position Switching mde with the SARDARA and XARCOS backends, including
+spectra containing the signal from the noise diode (when used).</p>
 </div>
 </div>
 <div class="section" id="useful-links">
