@@ -68,12 +68,12 @@ The observer can choose among three configurations:
 * parabolic  in fixed position (optimized for El=45°)
 * parabolic  in tracking (it adjusts according to the observed elevation position)
 
-The shaped configuration is used for receivers in the Gregorian and BWG foci, while the parabolic configurations are used for the Primary focus systems.
+The shaped configuration is used for receivers in the Gregorian and BWG foci, while the parabolic configurations are used for the primary focus systems.
 
 Receivers
 =========
 
-* The L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but can be transformed to circular thanks to a hybrid converter. 
+* The L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
 
 * A single-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope.
 
@@ -86,7 +86,7 @@ equivalent flux density is the flux density of a radio source that doubles the s
 Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position   Beam size Tsys (K)   Gain (K/Jy)  Sefd (Jy)
 ======== ========================= =======   =================   ===============  ========= ========== =========== ==========
 P         0.30 -- 0.36                1        linear              primary           56.2'   [50-80]       [0.45]     125
-L         1.3 -- 1.8                  1        linear              primary           12.6'    25-35        [0.47]     36
+L         1.3 -- 1.8                  1        linear              primary         12.6'    25-35        [0.47]     36
 C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.8'      32-37(*)   0.48         43(*)
 K         18 -- 26                    7        circular           gregorian         50"(**)    90(**)   0.44         138(**)
 ======== ========================= =======   =================   ===============  ========= ========== =========== ==========
@@ -171,11 +171,11 @@ Pulsar Digital Filter Bank mark 3 (PDFB3)
 
 This is an FX correlator developed by the Australia Telescope National Facility (ATNF) that performs full-Stokes observations. It allows for four inputs, each with a 1024 MHz maximum bandwidth and 8-bit sampling for a high dynamic range. The DFB3 is suitable for precise pulsar timing and searching. It allows for up to 8192 spectral channels in order to counter the effects of interstellar dispersion.
 
-The main available configurations for pulsar observations are the following:
+The available configurations for pulsar observations are the following:
 
-========= ============= =============== ==================
-Obs type  N. time bins  Bandwidth (MHz) N. frequency bins
-========= ============= =============== ==================
+========= ============= =============== ====================== ================ ======= ====================
+Obs type  N. time bins  Bandwidth (MHz) N. frequency channels  N. polarizations N. bits  Time sampling (sec)
+========= ============= =============== ====================== ================ ======= ====================
 folding   1024          1024            2048
 folding   1024          1024            1024
 folding   1024          1024            512
@@ -183,14 +183,30 @@ folding   1024          512             2048
 folding   1024          512             1024
 folding   1024          512             512
 folding   512           1024            1024
+folding   512           512             2048
 folding   512           512             1024
 folding   512           512             512
 folding   512           256             512
+folding   512           128             2048
 folding   256           256             2048
-folding   256           256             1024
-search                  512             1024
+folding   256           256             1024(*)
+folding   256           64              2048
+folding   256           64              1024
+search                  1024            512
+search                  512             1024                          1           1         0.000125
+search                  512             1024                          4           1         0.000512
+search                  512             1024                          4           8         0.000512
+search                  512             512                           1           8         0.000064    
+search                  512             512                           4           8         0.000256 
 search                  512             128
-========= ============= =============== ==================
+========= ============= =============== ====================== ================ ======= ====================
+
+(*) This configuration does not work with millisecond pulsars.
+
+For search configurations, choosing 512 frequency channels works well except for polarization in the case of very fast-rotating pulsars. 
+With 1024 frequency channels, doing full Stokes works well only for slow pulsars; it is not recommended for millisecond pulsars even with just total intensity.
+
+
 
 Further details about the DFB can be found in the ATNF `DFB manual <http://www.srt.inaf.it/media/uploads/astronomers/dfb.pdf>`_.
 
@@ -213,8 +229,6 @@ Available configurations consist of:
 
 * 420 MHz bandwith with 1024 or 16384 channels
 * 1500 MHz bandwidth with 1024 or 16384 channels
-
-The 420 MHz configurations are most suitable for the L-band receiver and the following RF filters: (3) 1350 - 1450 MHz or (5) 1625 - 1715 MHz, in order to avoid aliasing.
 
 SARDARA's spectral resolution and sensitivity is defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend is being used as input to SARDARA. 
 
