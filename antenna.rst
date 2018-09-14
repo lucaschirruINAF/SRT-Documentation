@@ -83,14 +83,14 @@ Receivers
 In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec; measurements of the system temperature Tsys at 45 degrees of elevation; antenna gain; and system equivalent flux density (Sefd) (the system 
 equivalent flux density is the flux density of a radio source that doubles the system temperature). Each receiver feed allows for two polarizations.
 
-======== ========================= =======   =================   ===============  ========= ========== =========== ==========
-Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position   Beam size Tsys (K)   Gain (K/Jy)  Sefd (Jy)
-======== ========================= =======   =================   ===============  ========= ========== =========== ==========
-P         0.30 -- 0.36                1        linear              primary           56.2'   [50-80]       [0.45]     125
-L         1.3 -- 1.8                  1        linear              primary         12.6'    25-35        [0.47]     36
-C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.8'      32-37(*)   0.48         43(*)
-K         18 -- 26                    7        circular           Gregorian         50"(**)    90(**)   0.44         138(**)
-======== ========================= =======   =================   ===============  ========= ========== =========== ==========
+======== ========================= =======   =================   ===============  ========== ========== =========== ==========
+Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position   Beam size  Tsys (K)   Gain (K/Jy)  Sefd (Jy)
+======== ========================= =======   =================   ===============  ========== ========== =========== ==========
+P         0.30 -- 0.36                1        linear              primary           48'     [50-80]       [0.52]     125
+L         1.3 -- 1.8                  1        linear              primary          11.4'     25-35        [0.55]     36
+C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.7'      32-37(*)   0.60         43(*)
+K         18 -- 26                    7        circular           Gregorian         0.8'(**)    90(**)   0.45-065    138(**)
+======== ========================= =======   =================   ===============  ========== ========== =========== ==========
 
 [ ] is an estimate
 (*) at 6.7 GHz
