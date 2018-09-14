@@ -83,14 +83,14 @@ Receivers
 In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec; measurements of the system temperature Tsys at 45 degrees of elevation; antenna gain; and system equivalent flux density (Sefd) (the system 
 equivalent flux density is the flux density of a radio source that doubles the system temperature). Each receiver feed allows for two polarizations.
 
-======== ========================= =======   =================   ===============  ========== ========== =========== ==========
-Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position   Beam size  Tsys (K)   Gain (K/Jy)  Sefd (Jy)
-======== ========================= =======   =================   ===============  ========== ========== =========== ==========
-P         0.30 -- 0.36                1        linear              primary           48'(*)     [50-80]      0.52     125
-L         1.3 -- 1.8                  1        linear              primary          11.4'(*)     25-35       0.55     36
-C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.7'      32-37(*)   0.60         43(*)
-K         18 -- 26                    7        circular           Gregorian         0.8'(**)    90(**)   0.45-0.65    138(**)
-======== ========================= =======   =================   ===============  ========== ========== =========== ==========
+======== ========================= =======   ========================== ================ ========== ========== =========== ==========
+Band     Frequency coverage (GHz)   Feeds     native polarization type   Focal position  Beam size  Tsys (K)   Gain (K/Jy)  Sefd (Jy)
+======== ========================= =======   ========================== ================ ========== ========== =========== ==========
+P         0.30 -- 0.36                1        linear                     primary          48'(*)     [50-80]      0.52     125
+L         1.3 -- 1.8                  1        linear                     primary         11.4'(*)     25-35       0.55     36
+C-high    5.7 -- 7.7                  1        circular                   beam waveguide   2.7'      32-37(*)   0.60         43(*)
+K         18 -- 26                    7        circular                   Gregorian       0.8'(**)    90(**)   0.45-0.65    138(**)
+======== ========================= =======   ========================== ================ ========== ========== =========== ==========
 
 [ ] is an estimate
 (*) at the band's central frequency
@@ -100,6 +100,7 @@ The FWHM beam size, as a function of the frequency f,  can be approximated by th
 
 SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
 However, the use of a Gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected. 
+An automatic system for the installation and removal of the Gregorian cover is currently under development and will permit smooth and efficient frequency changes.
 
 Note about the L/P dual-band receiver: the RFI levels need to be minimized. The availability of the Gregorian cover for this purpose is not a priori guaranteed. 
 
@@ -126,7 +127,7 @@ These are available for the LLP (L-band) configuration:
 
 For the simultaneous LP configuration, all combinations of the above configurations are allowed.
 
-Additional, so-called *Maccaferri* filters (128 MHz, 256 MHz and 460 MHz) are available at L-band at the level of the backends (DFB, ROACH1 and SARDARA). The recommended filter for pulsar observations at L-band 
+Additional filters (128 MHz, 256 MHz and 460 MHz) are available at L-band at the level of the backends (DFB, ROACH1 and SARDARA). The recommended filter for pulsar observations at L-band 
 is the *WIDE* filter (460 MHz of bandwidth).
 
 Backends 
@@ -156,7 +157,7 @@ XARCOS
 
 This is a seven-beam, narrow-band, digital spectro-polarimeter with 8x2 input channels. The working bandwidth is 135-240 MHz and the maximum number of spectral channels is 2x2048 per polarization and per output channel. The instantaneous bandwidth ranges between 0.488 and 62.5 MHz and the maximum effective spectral resolution is ~500 Hz.
 
-XARCOS is a spectro-polarimeter with a maximum bandwidth of 62.5 MHz capable of processing up to 16 IFs, thus fitting the seven-feed dual polarization K-band receiver array SRT is equipped with. Because its dump time is set to 10 seconds, it is not suitable for OTF observations. 
+XARCOS is a spectro-polarimeter with a maximum bandwidth of 62.5 MHz capable of processing up to 16 IFs, thus fitting the seven-feed dual polarization K-band receiver array SRT is equipped with. Because its dump time is set to 10 seconds, it is not suitable for On-The-Fly (OTF) observations. 
 The observer can select the following configurations:
 
 * XK77, to use the full K-band array; each digital sample has a 6-bit range. Full-Stokes sections are recorded, each having a 62.5MHz bandwidth and 2048(x4) channels.
@@ -165,14 +166,16 @@ The observer can select the following configurations:
 * XK00, to use only the K-band central feed. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz, each having 2048(x4) channels. Each digital sample has an 8-bit range.
 * XC00 , to use the C-band receiver. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz.
 
+More information about XARCOS configurations can be found here: 
+`Melis et al., OAC Internal report N. 52 <http://www.oa-cagliari.inaf.it/download.php?id_file=YQ9rg6JYb9mniCarnPrkZ6SZIvrwI1S%2FVGL58uBsIkX36r28s%2FDbSXyE0smKJiWa5FCsB7mRWR5SOZaxg83MVg%3D%3D>`_.
+
 It is worth noting that, given a particular configuration (e.g. XK00), the sections are obtained simultaneously. For each section, the bandwidth and
-starting frequency can then be set. 
+starting frequency can then be set. For more information about this procedure, see `XARCOS <https://discos.readthedocs.io/en/latest/user/srt/source/Backend.html#xarcos>`_.
 
-For more information, see `XARCOS <https://discos.readthedocs.io/en/latest/user/srt/source/Backend.html#xarcos>`_.
+Notes:
+* XARCOS has been tested in circular polarization. Linear polarization observations are also admitted but in shared-risk mode. The full-Stokes configuration is therefore in shared-risk mode. Please contact the antenna staff.
+* At C-band, standing waves have been identified that affect observations for Tcontinuum/Tsys > 0.05 (value to be confirmed). 
 
-Note: The full-Stokes configuration is in shared-risk mode. 
-
-At C-band, standing waves have been identified that affect observations for Tcontinuum/Tsys > 0.05 (value to be confirmed). 
 
 Digital Base Band Converter (DBBC)
 ----------------------------------
@@ -219,8 +222,6 @@ search            512      128
 For search configurations, choosing 512 frequency channels works well except for polarization in the case of very fast-rotating pulsars. 
 With 1024 frequency channels, doing full Stokes works well only for slow pulsars; it is not recommended for millisecond pulsars even with just total intensity.
 
-
-
 Further details about the DFB can be found in the ATNF `DFB manual <http://www.srt.inaf.it/media/uploads/astronomers/dfb.pdf>`_.
 
 At the SRT, DFB observations are piloted using the SEADAS software. 
@@ -228,22 +229,29 @@ At the SRT, DFB observations are piloted using the SEADAS software.
 ROACH1
 ------
 
+Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.
+
 The ROACH1 (or ROACH) backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire baseband data (voltages) or for real-time folding of pulsar data, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
 
 The ROACH1 backend has been the backend of choice for the Large European Array for Pulsars (LEAP) project. More information on the implementation of the LEAP project with the ROACH1 backend can be found here: `OAC Internal Report N. 39 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=3>`_. It is also used to perform all P-band pulsar observations at SRT. Its ability to perform coherent de-dispersion makes it a superior backend compared to the DFB. Its 128 MHz of available bandwidth (only 128 MHz of its 512 MHz capability is currently available because of the limited number of installed CPU nodes) is largely sufficient for P-band but more limited for L-band. In the near future, access to 
 GPU nodes will increase the available bandwidth to 512 MHz. 
- 
+
+Note: no real-time folding of data will be performed for pulsar observations with this backend. The data will be acquired in baseband mode and folded offline during the data post-processing. The final data output will be made available by antenna staff after a few hours or days.  
 
 SARDARA
 -------
 
-SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band, full-Stokes observations. The many observing modes covered by SARDARA include: continuum, spectroscopy, spectro-polarimetry, as well as high-time resolution for pulsars and fast transients . Its sampling time can be set from 5ms to 1 s. It is the backend of choice for OTF spectro-polarimetric observations.
+Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.
+
+SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 Available configurations consist of:
 
-* 420 MHz bandwith with 1024 or 16384 channels
-* 1500 MHz bandwidth with 1024 or 16384 channels
+* 420 MHz bandwith with 1024 or 16384 channels (only for C and K bands)
+* 1500 MHz bandwidth with 1024 or 16384 channels (only for C and K bands)
 
-SARDARA's spectral resolution and sensitivity is defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend is being used as input to SARDARA. 
+SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend is being used as input to SARDARA. 
+
+For spectro-polarimetric observations, the suggested bandwidth is 1500 MHz, while for spectroscopic observations, we recommend 128 MHz. 
 
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
@@ -253,9 +261,11 @@ Calibration
 Pointing model
 ---------------
 
-This procedure is used to calculate the pointing errors compared to ideal conditions, i.e. at night without sunlight. Actual conditions will most likely 
+This calibration procedure was used to calculate the pointing errors in ideal conditions, i.e. at night without sunlight. Actual conditions will most likely 
 require new pointing measurements in order to take into account possible errors due to environmental factors. Pointing measurements before starting an observing session are highly recommended
 and can be included in the observation schedule.
+
+In the table below, we report the calculated rms values in ideal conditions:
 
 ========== ====================== ======================= ======================
 Parameter  Value (deg) for L-band  Value (deg) for C-band Value (deg) for K-band
@@ -271,7 +281,7 @@ El-rms       +0.001944(*)              +0.000910               +0.001200
 Focus curve calibration
 -----------------------
 
-The observer should perform a focus calibration before starting an observing session. The focus curve is then applied in real time. 
+The focus curve is applied in real time. However, it is highly recommended that for C and K-band observations, the observer perform a focus calibration before starting an observing session. 
 
 Gain curve calibration
 ----------------------
@@ -338,7 +348,12 @@ Flux       Polarization angle  Instrumental polarization
 3C295
 ========== =================== =========================
 
-For more details, see below in "Useful links": "Pointing calibration" 
+For pointing calibration, see below in "Useful links".
+
+Derotator alignment
+-------------------
+
+The derotator has been aligned within 1-2 arcseconds.
 
 Data quicklook
 ==============
@@ -373,7 +388,7 @@ SARDARA backend description: `SARDARA <https://www.worldscientific.com/doi/full/
 
 Gain curve calibration at L-band: `Orlati et al. <http://www.ira.inaf.it/Library/rapp-int/499-16.pdf>`_.
 
-Pointing calibration: `Tarchi et al. (2013) OAC Internal Report N. 27 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=4>`
+Pointing calibration: `Tarchi et al. (2013) OAC Internal Report N. 27 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=4>`_.
 
 `Ricci et al., "A first extented catalogue of pointing/focus calibrators for the Sardinia Radio Telescope" <http://www.ira.inaf.it/Library/rapp-int/496-16.pdf>`_.
 
