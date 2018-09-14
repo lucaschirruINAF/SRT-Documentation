@@ -76,16 +76,16 @@ Receivers
 
 In the current call for proposals, the following (cryogenically-cooled) receivers are available in both single-dish and VLBI modes:
 
-=============== ============= =============== ================= =============== ===========================================
+=============== ============= =============== ================= =============== ================================================
 RF band (GHz)       Type      Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) connected backends
-=============== ============= =============== ================= =============== ===========================================
+=============== ============= =============== ================= =============== ================================================
 P 0.30-0.36     single-feed      50-80             48                 0.52        DBBC,ROACH1
 L 1.3-1.8       single-feed      25-35             11.4               0.55       DFB,DBBC,ROACH1,SARDARA
 C-high 5.7-7.7  single-feed      32-37             2.7                0.60       TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
-K 18-26.5        7-feed          90                0.8              0.45-0.65    TP,DFB,DBBC,ROACH1,SARDARA (MB),XARCOS(MB) 
-=============== ============= =============== ================= =============== ===========================================
+K 18-26.5        7-feed          90                0.8              0.45-0.65    TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),XARCOS(MB) 
+=============== ============= =============== ================= =============== ================================================
 
-(MB) means that the Multi-Beam option is available for observations in K-band with the XARCOS and SARDARA backends. 
+(MB) means that the Multi-Beam option is available for observations in K-band with the TP, XARCOS and SARDARA backends. 
 
 * The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
 
@@ -134,9 +134,13 @@ For the PPP receiver (P-band), there is one available filter (with code L2XX for
 For the LLP (L-band) configuration, the following filters are available for linear or circular polarizations:
 
 	XXL1 (for linear) or XXC1 (for circular):	all band, 1300--1800 MHz (no filter) (not recommended)
+
 	XXL2 (for linear) or XXC2 (for circular):	1320--1780 MHz
+
 	XXL3 (for linear) or XXC3 (for circular):	1350--1450 MHz (VLBI band)
+
 	XXL4 (for linear) or XXC4 (for circular): 	1300--1800 MHz (band-pass)
+
 	XXL5 (for linear) or XXC5 (for circular):	1625--1715 MHz (VLBI band)
 
 For simultaneous LP observations, all combinations of the above configurations are allowed.
@@ -150,6 +154,20 @@ Backends
 
 The frontend (receiver) outputs are connected to the backend instruments either by coaxial cables or optical fibers, depending on whether the backend is located in the main building or below the dish. The following backends, designed for specific scientific activities, are available at the site:
 
+These backends are available for the current call for proposals:
+
+=============== ========= ================== =================== =============== =====================
+Backend          Bands     Bandwidth (MHz)          Type           Sampling time    Max frequency bins  
+=============== ========= ================== =================== =============== =====================
+**Total Power**   C,K      250,680,1200,2000 analog/total power     1-1000 ms           1
+**XARCOS**        C,K      0.5,2.0,7.8,62.5  spectro-polarimeter      10s              2048
+**SARDARA**       C,K      420, 1500(1200)*  spectro-polarimeter    down to 5ms   1024 or 16384    
+**SARDARA**        L       128,256,460       spectro-polarimeter    down to 5ms   1024 or 16384
+**DFB3**         L,C,K     256,512,1024      pulsars                100 microsec  8192, pulsars: 2048
+**ROACH1**      P,L,C,K         128          baseband recorder          -             (varies)
+**DBBC**        P,L,C,K         512          VLBI                       -                -
+=============== ========= ================== =================== =============== =====================
+ 
 Total Power 
 -----------
 
@@ -162,7 +180,6 @@ Receiver Sections Filters (MHz)          Sampling time (ms)
 ======== ======== ====================== ==================
 K-band     14     250,680,1200,2000      1 -- 1000
 C-band      2     250,680,1200,2000      1 -- 1000
-L-band      2     2000                   1 -- 1000
 ======== ======== ====================== ==================
 
 XARCOS
@@ -258,14 +275,14 @@ SARDARA
 SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 Available configurations consist of:
 
-** in C and K bands: **
+**in C and K bands:**
 
 * 420 MHz bandwith with 1024 or 16384 channels 
 * 1500 MHz bandwidth with 1024 or 16384 channels 
 
 SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend's Focus Selector is being used as input to SARDARA. 
 
-** in L band: **
+**in L band:**
 
 The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be used (XXL4, XXL2 etc.) as well as additional backend filters (128, 256 or 460 MHz).
 
