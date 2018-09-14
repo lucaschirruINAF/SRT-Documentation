@@ -133,21 +133,17 @@ For the PPP receiver (P-band), there is one available filter (with code L2XX for
 
 For the LLP (L-band) configuration, the following filters are available for linear or circular polarizations:
 
-	XXL1 (for linear) or XXC1 (for circular):	all band, 1300--1800 MHz (no filter) (not recommended)
-
-	XXL2 (for linear) or XXC2 (for circular):	1320--1780 MHz
-
-	XXL3 (for linear) or XXC3 (for circular):	1350--1450 MHz (VLBI band)
-
-	XXL4 (for linear) or XXC4 (for circular): 	1300--1800 MHz (band-pass)
-
-	XXL5 (for linear) or XXC5 (for circular):	1625--1715 MHz (VLBI band)
+* XXL1 (for linear) or XXC1 (for circular):	all band, 1300--1800 MHz (no filter) (not recommended)
+* XXL2 (for linear) or XXC2 (for circular):	1320--1780 MHz
+* XXL3 (for linear) or XXC3 (for circular):	1350--1450 MHz (VLBI band)
+* XXL4 (for linear) or XXC4 (for circular): 	1300--1800 MHz (band-pass)
+* XXL5 (for linear) or XXC5 (for circular):	1625--1715 MHz (VLBI band)
 
 For simultaneous LP observations, all combinations of the above configurations are allowed.
 
 * Additional filters
 
-Additional filters (128 MHz, 256 MHz and 460 MHz) are available at L-band at the level of the backends (especially for the DFB, ROACH1 and SARDARA backends). 
+Additional filters (115 MHz, 230 MHz and 460 MHz) are available at L-band for the DFB, ROACH1, DBBC and SARDARA backends. The L-band (1300 - 1800 MHz) is downconverted using a local oscillator; therefore the central frequencies of these filters can be tuned to the desired range by tuning the value for the local oscillator.
 
 Backends 
 ========
@@ -156,18 +152,20 @@ The frontend (receiver) outputs are connected to the backend instruments either 
 
 These backends are available for the current call for proposals:
 
-=============== ========= ================== =================== =============== =====================
-Backend          Bands     Bandwidth (MHz)          Type           Sampling time    Max frequency bins  
-=============== ========= ================== =================== =============== =====================
-**Total Power**   C,K      250,680,1200,2000 analog/total power     1-1000 ms           1
-**XARCOS**        C,K      0.5,2.0,7.8,62.5  spectro-polarimeter      10s              2048
-**SARDARA**       C,K      420, 1500(1200)*  spectro-polarimeter    down to 5ms   1024 or 16384    
-**SARDARA**        L       128,256,460       spectro-polarimeter    down to 5ms   1024 or 16384
-**DFB3**         L,C,K     256,512,1024      pulsars                100 microsec  8192, pulsars: 2048
+=============== ======= ================= ==================== =============== =====================
+Backend          Bands   Bandwidth (MHz)          Type           Sampling time    Max frequency bins  
+=============== ======= ================= ==================== =============== =====================
+**Total Power**   C,K   250,680,1200,2000 analog/total power     1-1000 ms           1
+**XARCOS**        C,K   0.5,2.0,7.8,62.5  spectro-polarimeter      10s              2048
+**SARDARA**       C,K   420, 1500(1200*)  spectro-polarimeter    down to 5ms   1024 or 16384    
+**SARDARA**        L    115,230,460,1500  spectro-polarimeter    down to 5ms   1024 or 16384
+**DFB3**         L,C,K  256,512,1024      pulsars                100 microsec  8192, pulsars: 2048
 **ROACH1**      P,L,C,K         128          baseband recorder          -             (varies)
 **DBBC**        P,L,C,K         512          VLBI                       -                -
-=============== ========= ================== =================== =============== =====================
+=============== ======= ================= ==================== =============== =====================
  
+(1200*) the actual available bandwidth for SARDARA is 1200 MHz.
+
 Total Power 
 -----------
 
@@ -284,7 +282,7 @@ SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz b
 
 **in L band:**
 
-The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be used (XXL4, XXL2 etc.) as well as additional backend filters (128, 256 or 460 MHz).
+The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be used (XXL4, XXL2 etc.) as well as additional backend filters (115, 230 or 460 MHz).
 
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
