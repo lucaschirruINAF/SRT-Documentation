@@ -74,16 +74,18 @@ The shaped configuration is used for receivers in the Gregorian and BWG foci, wh
 Receivers
 =========
 
-In the current call for proposals, the following receivers and configurations are available:
+In the current call for proposals, the following (cryogenically-cooled) receivers are available in both single-dish and VLBI modes:
 
-=============== ============= ================= =============== ================= =============== =================================
-RF band (GHz)       Type      Offered for       Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) connected backends
-=============== ============= ================= =============== ================= =============== =================================
-P 0.30-0.36     single-feed   VLBI, single-dish   50-80             48                 0.52        DBBC,ROACH1
-L 1.3-1.8       single-feed   VLBI, single-dish   25-35             11.4               0.55       TP,DFB,DBBC,ROACH1,SARDARA
-C-high 5.7-7.7  single-feed   VLBI, single-dish   32-37             2.7                0.60       TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
-K 18-26.5        7-feed       VLBI, single-dish   90                0.8              0.45-0.65    TP,DFB,DBBC,ROACH1,SARDARA,XARCOS 
-=============== ============= ================= =============== ================= =============== =================================
+=============== ============= =============== ================= =============== ===========================================
+RF band (GHz)       Type      Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) connected backends
+=============== ============= =============== ================= =============== ===========================================
+P 0.30-0.36     single-feed      50-80             48                 0.52        DBBC,ROACH1
+L 1.3-1.8       single-feed      25-35             11.4               0.55       DFB,DBBC,ROACH1,SARDARA
+C-high 5.7-7.7  single-feed      32-37             2.7                0.60       TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
+K 18-26.5        7-feed          90                0.8              0.45-0.65    TP,DFB,DBBC,ROACH1,SARDARA (MB),XARCOS(MB) 
+=============== ============= =============== ================= =============== ===========================================
+
+(MB) means that the Multi-Beam option is available for observations in K-band with the XARCOS and SARDARA backends. 
 
 * The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
 
@@ -91,17 +93,16 @@ K 18-26.5        7-feed       VLBI, single-dish   90                0.8         
 
 * A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration. The polarization type is circular.
  
-In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec; measurements of the system temperature Tsys at 45 degrees of elevation; antenna gain; and system equivalent flux density (Sefd) (the system 
-equivalent flux density is the flux density of a radio source that doubles the system temperature). Each receiver feed allows for two polarizations.
+In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec; measurements of the system temperature Tsys at 45 degrees of elevation and antenna gain. Each receiver feed allows for two polarizations.
 
-======== ========================= =======   ========================== ================ ========== ========== =========== ==========
-Band     Frequency coverage (GHz)   Feeds     native polarization type   Focal position  Beam size  Tsys (K)   Gain (K/Jy)  Sefd (Jy)
-======== ========================= =======   ========================== ================ ========== ========== =========== ==========
-P         0.30 -- 0.36                1        linear                     primary          48'(*)     [50-80]      0.52     125
-L         1.3 -- 1.8                  1        linear                     primary         11.4'(*)     25-35       0.55     36
-C-high    5.7 -- 7.7                  1        circular                   beam waveguide   2.7'      32-37(*)   0.60         43(*)
-K         18 -- 26                    7        circular                   Gregorian       0.8'(**)    90(**)   0.45-0.65    138(**)
-======== ========================= =======   ========================== ================ ========== ========== =========== ==========
+======== ========================= =======   ========================== ================ ========== ========== =========== 
+Band     Frequency coverage (GHz)   Feeds     native polarization type   Focal position  Beam size  Tsys (K)   Gain (K/Jy)  
+======== ========================= =======   ========================== ================ ========== ========== =========== 
+P         0.30 -- 0.36                1        linear                     primary          48'(*)     [50-80]      0.52     
+L         1.3 -- 1.8                  1        linear                     primary         11.4'(*)     25-35       0.55     
+C-high    5.7 -- 7.7                  1        circular                   beam waveguide   2.7'      32-37(*)   0.60         
+K         18 -- 26                    7        circular                   Gregorian       0.8'(**)    90(**)   0.45-0.65    
+======== ========================= =======   ========================== ================ ========== ========== ===========
 
 [ ] is an estimate
 (*) at the band's central frequency
@@ -121,25 +122,28 @@ Additionally, a number of high-energy receivers are being planned for the SRT. T
 More details about current and future receivers at Italian radio telescopes (SRT, Medicina and Noto) are included in this review document: `receivers <http://rx2017.inaf.it/RX2017/Review_v8.1.pdf>`_
 
 
-RF filters
-----------
+LP-band Filters
+----------------
+
+* RF filters
 
 Different RF filters are available for the LP-band receiver. Although it is a coaxial receiver package, the control system sees it as a group of three different receivers, each one with its own code:
 
-For the PPP receiver (P-band), there is one available filter (L2):  300--360 MHz (which is needed to exclude RFI at higher frequencies).
+For the PPP receiver (P-band), there is one available filter (with code L2XX for linear or C2XX for circular):  300--360 MHz (which is needed to exclude RFI at higher frequencies).
 
-These are available for the LLP (L-band) configuration:
+For the LLP (L-band) configuration, the following filters are available for linear or circular polarizations:
 
-	1.	all band, 1300--1800 MHz (no filter)
-	2.	1320--1780 MHz
-	3.	1350--1450 MHz (VLBI band)
-	4.	1300--1800 MHz (band-pass)
-	5.	1625--1715 MHz (VLBI band)
+	XXL1 (for linear) or XXC1 (for circular):	all band, 1300--1800 MHz (no filter) (not recommended)
+	XXL2 (for linear) or XXC2 (for circular):	1320--1780 MHz
+	XXL3 (for linear) or XXC3 (for circular):	1350--1450 MHz (VLBI band)
+	XXL4 (for linear) or XXC4 (for circular): 	1300--1800 MHz (band-pass)
+	XXL5 (for linear) or XXC5 (for circular):	1625--1715 MHz (VLBI band)
 
-For the simultaneous LP configuration, all combinations of the above configurations are allowed.
+For simultaneous LP observations, all combinations of the above configurations are allowed.
 
-Additional filters (128 MHz, 256 MHz and 460 MHz) are available at L-band at the level of the backends (DFB, ROACH1 and SARDARA). The recommended filter for pulsar observations at L-band 
-is the *WIDE* filter (460 MHz of bandwidth).
+* Additional filters
+
+Additional filters (128 MHz, 256 MHz and 460 MHz) are available at L-band at the level of the backends (especially for the DFB, ROACH1 and SARDARA backends). 
 
 Backends 
 ========
@@ -200,9 +204,9 @@ This is an FX correlator developed by the Australia Telescope National Facility 
 
 The available configurations for pulsar observations are the following:
 
-========= ===== ========= ===== ====== ======= =============
-Obs type  Nbins  BW(MHz)  Nfreq  Npols  Nbits  Time_samp(s)
-========= ===== ========= ===== ====== ======= ============= 
+========= ===== ========= ========= 
+Obs type  Nbins  BW(MHz)  Nfreq  
+========= ===== ========= =========  
 folding   1024    1024    2048
 folding   1024    1024    1024
 folding   1024    1024     512
@@ -216,22 +220,19 @@ folding   512     512      512
 folding   512     256      512
 folding   512     128     2048
 folding   256     256     2048
-folding   256     256     1024   (*)
 folding   256     64      2048
-folding   256     64      1024
+folding   256     64      1024(*)
 search            1024    512
-search            512     1024    1      1         0.000125
-search            512     1024    4      1         0.000512
-search            512     1024    4      8         0.000512
-search            512      512    1      8         0.000064    
-search            512      512    4      8         0.000256 
+search            512     1024    
+search            512      512     
 search            512      128
-========= ===== ========= ===== ====== ======= =============
+========= ===== ========= =========
 
-(*) This configuration does not work with millisecond pulsars.
+(*) This configuration does not work for pulsars with periods < 1.6 ms.
 
-For search configurations, choosing 512 frequency channels works well except for polarization in the case of very fast-rotating pulsars. 
-With 1024 frequency channels, doing full Stokes works well only for slow pulsars; it is not recommended for millisecond pulsars even with just total intensity.
+* Choosing the best folding configuration depends in part on the period of the pulsar. One can find the best folding configuration for a range of folding periods `here <http://www.parkes.atnf.csiro.au/observing/utilities/pulsar_sched/configs.html>`_.
+
+* These search mode configurations have been succesfully tested for the acquisition of total intensity data (npol=1) for sampling times down to 100 microseconds. Full stokes data can be obtained only with slow sampling times (>= 512 microsec for 1024 channels over 512 MHz of bandwidth and >=256 microsec for 512 channels). 
 
 Further details about the DFB can be found in the ATNF `DFB manual <http://www.srt.inaf.it/media/uploads/astronomers/dfb.pdf>`_.
 
@@ -240,29 +241,33 @@ At the SRT, DFB observations are piloted using the SEADAS software.
 ROACH1
 ------
 
-Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.
+*Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.*
 
-The ROACH1 (or ROACH) backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire baseband data (voltages) or for real-time folding of pulsar data, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
+The ROACH1 (or ROACH) backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire **baseband data** (voltages) or for **real-time folding of pulsar data**, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
 
 The ROACH1 backend has been the backend of choice for the Large European Array for Pulsars (LEAP) project. More information on the implementation of the LEAP project with the ROACH1 backend can be found here: `OAC Internal Report N. 39 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=3>`_. It is also used to perform all P-band pulsar observations at SRT. Its ability to perform coherent de-dispersion makes it a superior backend compared to the DFB. Its 128 MHz of available bandwidth (only 128 MHz of its 512 MHz capability is currently available because of the limited number of installed CPU nodes) is largely sufficient for P-band but more limited for L-band. In the near future, access to 
 GPU nodes will increase the available bandwidth to 512 MHz. 
 
-Note: no real-time folding of data will be performed for pulsar observations with this backend. The data will be acquired in baseband mode and folded offline during the data post-processing. The final data output will be made available by antenna staff after a few hours or days.  
+Note: for the current call for proposals, no real-time folding of data will be performed for pulsar observations with this backend. The data will be acquired in baseband mode and folded offline during the data post-processing. The final data output will be made available by antenna staff after a few hours or days.  
 
 SARDARA
 -------
 
-Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.
+*Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.*
 
 SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 Available configurations consist of:
 
-* 420 MHz bandwith with 1024 or 16384 channels (only for C and K bands)
-* 1500 MHz bandwidth with 1024 or 16384 channels (only for C and K bands)
+** in C and K bands: **
 
-SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend is being used as input to SARDARA. 
+* 420 MHz bandwith with 1024 or 16384 channels 
+* 1500 MHz bandwidth with 1024 or 16384 channels 
 
-For spectro-polarimetric observations, the suggested bandwidth is 1500 MHz, while for spectroscopic observations, we recommend 128 MHz. 
+SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend's Focus Selector is being used as input to SARDARA. 
+
+** in L band: **
+
+The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be used (XXL4, XXL2 etc.) as well as additional backend filters (128, 256 or 460 MHz).
 
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
