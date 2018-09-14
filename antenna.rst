@@ -216,7 +216,7 @@ folding   512     512      512
 folding   512     256      512
 folding   512     128     2048
 folding   256     256     2048
-folding   256     25      1024   (*)
+folding   256     256     1024   (*)
 folding   256     64      2048
 folding   256     64      1024
 search            1024    512
