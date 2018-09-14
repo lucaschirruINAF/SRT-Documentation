@@ -74,6 +74,17 @@ The shaped configuration is used for receivers in the Gregorian and BWG foci, wh
 Receivers
 =========
 
+In the current call for proposals, the following receivers and configurations are available:
+
+=============== ============= ================= =============== ================= =============== =================================
+RF band (GHz)       Type      Offered for       Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) connected backends
+=============== ============= ================= =============== ================= =============== =================================
+P 0.30-0.36     single-feed   VLBI, single-dish   50-80             48                 0.52        DBBC,ROACH1
+L 1.3-1.8       single-feed   VLBI, single-dish   25-35             11.4               0.55       TP,DFB,DBBC,ROACH1,SARDARA
+C-high 5.7-7.7  single-feed   VLBI, single-dish   32-37             2.7                0.60       TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
+K 18-26.5        7-feed       VLBI, single-dish   90                0.8              0.45-0.65    TP,DFB,DBBC,ROACH1,SARDARA,XARCOS 
+=============== ============= ================= =============== ================= =============== =================================
+
 * The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
 
 * A single-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope. The polarization type is circular.
@@ -148,8 +159,6 @@ Receiver Sections Filters (MHz)          Sampling time (ms)
 K-band     14     250,680,1200,2000      1 -- 1000
 C-band      2     250,680,1200,2000      1 -- 1000
 L-band      2     2000                   1 -- 1000
-P-band      2     680                    1 -- 1000
-L-P dual    4     2000                   1 -- 1000 
 ======== ======== ====================== ==================
 
 XARCOS
@@ -173,7 +182,9 @@ It is worth noting that, given a particular configuration (e.g. XK00), the secti
 starting frequency can then be set. For more information about this procedure, see `XARCOS <https://discos.readthedocs.io/en/latest/user/srt/source/Backend.html#xarcos>`_.
 
 Notes:
+
 * XARCOS has been tested in circular polarization. Linear polarization observations are also admitted but in shared-risk mode. The full-Stokes configuration is therefore in shared-risk mode. Please contact the antenna staff.
+
 * At C-band, standing waves have been identified that affect observations for Tcontinuum/Tsys > 0.05 (value to be confirmed). 
 
 
