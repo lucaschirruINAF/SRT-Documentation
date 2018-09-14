@@ -156,9 +156,9 @@ equivalent flux density is the flux density of a radio source that doubles the s
 <td>1</td>
 <td>linear</td>
 <td>primary</td>
-<td>48’</td>
+<td>48’(*)</td>
 <td>[50-80]</td>
-<td>[0.52]</td>
+<td>0.52</td>
 <td>125</td>
 </tr>
 <tr class="row-odd"><td>L</td>
@@ -166,9 +166,9 @@ equivalent flux density is the flux density of a radio source that doubles the s
 <td>1</td>
 <td>linear</td>
 <td>primary</td>
-<td>11.4’</td>
+<td>11.4’(*)</td>
 <td>25-35</td>
-<td>[0.55]</td>
+<td>0.55</td>
 <td>36</td>
 </tr>
 <tr class="row-even"><td>C-high</td>
@@ -188,13 +188,13 @@ equivalent flux density is the flux density of a radio source that doubles the s
 <td>Gregorian</td>
 <td>0.8’(**)</td>
 <td>90(**)</td>
-<td>0.45-065</td>
+<td>0.45-0.65</td>
 <td>138(**)</td>
 </tr>
 </tbody>
 </table>
 <p>[ ] is an estimate
-(*) at 6.7 GHz
+(*) at the band’s central frequency
 (**) at 22.3 GHz with opacity 0.1 and ground air temperature of 293K.</p>
 <p>The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz)</p>
 <p>SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
@@ -581,41 +581,41 @@ and can be included in the observation schedule.</p>
 </div>
 <div class="section" id="gain-curve-calibration">
 <h2>Gain curve calibration<a class="headerlink" href="#gain-curve-calibration" title="Permalink to this headline">¶</a></h2>
-<p>From the measured gain curves (Gain vs. Elevation), one fits a 2-degree polynomial with the following parameters C0, C1 and C2:</p>
-<ul class="simple">
-<li>L-band</li>
-</ul>
-<p>Values adopted same as Bolli et al (2015)</p>
-<ul class="simple">
-<li>C-band</li>
-</ul>
+<p>From the measured gain curves (Gain vs. Elevation), one fits a 2-degree polynomial with the parameters C0, C1 and C2:</p>
+<p>gain (K/Jy) = C2 El^2 + C1 El + C0</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="28%" />
-<col width="36%" />
-<col width="36%" />
+<col width="20%" />
+<col width="25%" />
+<col width="29%" />
+<col width="27%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Value (L-band)</th>
 <th class="head">Value (C-band)</th>
 <th class="head">Value (K-band)</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>C0</td>
+<td>0.5061</td>
 <td>0.545439</td>
 <td>0.505427</td>
 </tr>
 <tr class="row-odd"><td>C1</td>
+<td>0.002390</td>
 <td>0.00525597</td>
 <td>0.00864506</td>
 </tr>
 <tr class="row-even"><td>C2</td>
+<td>-0.000021</td>
 <td>-4.55697e-5</td>
 <td>-6.37184e-5</td>
 </tr>
 </tbody>
 </table>
+<p>L-band: from Orlati et al.</p>
 <p>C-band: valid from 2018.</p>
 <p>K-band: from Prandoni et al. (2017).</p>
 </div>
@@ -755,7 +755,9 @@ spectra containing the signal from the noise diode (when used).</p>
 <p>Spectral-polarimetric techniques with SRT: <a class="reference external" href="https://arxiv.org/abs/1607.03636">Sardinia Radio Telescope wide-band spectral-polarimetric observations of the galaxy cluster 3C 129</a>.</p>
 <p>ROACH1 backend for baseband data recording and pulsar observations: <a class="reference external" href="http://www.oa-cagliari.inaf.it/area.php?page_id=10&amp;skip=3">OAC Internal Report N. 39</a>.</p>
 <p>SARDARA backend description: <a class="reference external" href="https://www.worldscientific.com/doi/full/10.1142/S2251171718500046">SARDARA</a>.</p>
-<p>Pointing calibration: <a class="reference external" href="http://www.oa-cagliari.inaf.it/area.php?page_id=10&amp;skip=4">Tarchi et al. (2013) OAC Internal Report N. 27</a> &amp; Ricci et al (2016).</p>
+<p>Gain curve calibration at L-band: <a class="reference external" href="http://www.ira.inaf.it/Library/rapp-int/499-16.pdf">Orlati et al.</a>.</p>
+<p>Pointing calibration: <cite>Tarchi et al. (2013) OAC Internal Report N. 27 &lt;http://www.oa-cagliari.inaf.it/area.php?page_id=10&amp;skip=4&gt;</cite></p>
+<p><a class="reference external" href="http://www.ira.inaf.it/Library/rapp-int/496-16.pdf">Ricci et al., “A first extented catalogue of pointing/focus calibrators for the Sardinia Radio Telescope”</a>.</p>
 </div>
 <div class="section" id="user-guide-and-observing-modes">
 <h1>User guide and observing modes<a class="headerlink" href="#user-guide-and-observing-modes" title="Permalink to this headline">¶</a></h1>

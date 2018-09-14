@@ -86,14 +86,14 @@ equivalent flux density is the flux density of a radio source that doubles the s
 ======== ========================= =======   =================   ===============  ========== ========== =========== ==========
 Band     Frequency coverage (GHz)   Feeds    Polarization type   Focal position   Beam size  Tsys (K)   Gain (K/Jy)  Sefd (Jy)
 ======== ========================= =======   =================   ===============  ========== ========== =========== ==========
-P         0.30 -- 0.36                1        linear              primary           48'     [50-80]       [0.52]     125
-L         1.3 -- 1.8                  1        linear              primary          11.4'     25-35        [0.55]     36
+P         0.30 -- 0.36                1        linear              primary           48'(*)     [50-80]      0.52     125
+L         1.3 -- 1.8                  1        linear              primary          11.4'(*)     25-35       0.55     36
 C-high    5.7 -- 7.7                  1        circular           beam waveguide    2.7'      32-37(*)   0.60         43(*)
-K         18 -- 26                    7        circular           Gregorian         0.8'(**)    90(**)   0.45-065    138(**)
+K         18 -- 26                    7        circular           Gregorian         0.8'(**)    90(**)   0.45-0.65    138(**)
 ======== ========================= =======   =================   ===============  ========== ========== =========== ==========
 
 [ ] is an estimate
-(*) at 6.7 GHz
+(*) at the band's central frequency
 (**) at 22.3 GHz with opacity 0.1 and ground air temperature of 293K.
 
 The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz)
@@ -276,21 +276,19 @@ The observer should perform a focus calibration before starting an observing ses
 Gain curve calibration
 ----------------------
 
-From the measured gain curves (Gain vs. Elevation), one fits a 2-degree polynomial with the following parameters C0, C1 and C2:
+From the measured gain curves (Gain vs. Elevation), one fits a 2-degree polynomial with the parameters C0, C1 and C2:
 
-* L-band
+gain (K/Jy) = C2 El^2 + C1 El + C0
 
-Values adopted same as Bolli et al (2015)
+=========== ============== ================ ===============
+Parameter   Value (L-band) Value (C-band)    Value (K-band)
+=========== ============== ================ ===============
+C0           0.5061          0.545439        0.505427
+C1           0.002390        0.00525597      0.00864506
+C2           -0.000021       -4.55697e-5     -6.37184e-5
+=========== ============== ================ ===============
 
-* C-band
-
-=========== ============== ==============
-Parameter   Value (C-band) Value (K-band)
-=========== ============== ==============
-C0          0.545439        0.505427
-C1          0.00525597      0.00864506
-C2          -4.55697e-5     -6.37184e-5
-=========== ============== ==============
+L-band: from Orlati et al. 
 
 C-band: valid from 2018.
 
@@ -373,7 +371,11 @@ ROACH1 backend for baseband data recording and pulsar observations: `OAC Interna
 
 SARDARA backend description: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
-Pointing calibration: `Tarchi et al. (2013) OAC Internal Report N. 27 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=4>`_ & Ricci et al (2016).
+Gain curve calibration at L-band: `Orlati et al. <http://www.ira.inaf.it/Library/rapp-int/499-16.pdf>`_.
+
+Pointing calibration: `Tarchi et al. (2013) OAC Internal Report N. 27 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=4>`
+
+`Ricci et al., "A first extented catalogue of pointing/focus calibrators for the Sardinia Radio Telescope" <http://www.ira.inaf.it/Library/rapp-int/496-16.pdf>`_.
 
 User guide and observing modes
 ==============================
