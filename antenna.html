@@ -56,7 +56,7 @@ to observe at declinations above -33 degrees.</p>
 <p>Scientific tests and applications for the SRT are described in the following scientific validation paper:
 <a class="reference external" href="https://www.aanda.org/articles/aa/abs/2017/12/aa30243-16/aa30243-16.html">Prandoni et. al, A&amp;A 608, A40 (2017)</a>.</p>
 <p>Science done with SRT during its early-science run (2016) with the various hardware and software described below can be found here: <a class="reference external" href="http://www.srt.inaf.it/astronomers/science_srt/">Science with SRT</a>.</p>
-<p>In the following sections, we outline information that is useful for observing with the SRT.</p>
+<p>In the following sections, we outline information that is useful for observing with the SRT in the current call for proposals (published September 14, 2018 with a deadline of October 9, 2018). We note that remote observing is not currently available for the Sardinia Radio Telescope; each proposing team will need to send at least one observer to the SRT to prepare the observing schedules and perform the observations on site.</p>
 </div>
 <div class="section" id="antenna">
 <h1>Antenna<a class="headerlink" href="#antenna" title="Permalink to this headline">¶</a></h1>
@@ -538,7 +538,7 @@ starting frequency can then be set. For more information about this procedure, s
 </div>
 <div class="section" id="roach1">
 <h2>ROACH1<a class="headerlink" href="#roach1" title="Permalink to this headline">¶</a></h2>
-<p><em>Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.</em></p>
+<p><em>The use of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.</em></p>
 <p>The ROACH1 (or ROACH) backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire <strong>baseband data</strong> (voltages) or for <strong>real-time folding of pulsar data</strong>, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).</p>
 <p>The ROACH1 backend has been the backend of choice for the Large European Array for Pulsars (LEAP) project. More information on the implementation of the LEAP project with the ROACH1 backend can be found here: <a class="reference external" href="http://www.oa-cagliari.inaf.it/area.php?page_id=10&amp;skip=3">OAC Internal Report N. 39</a>. It is also used to perform all P-band pulsar observations at SRT. Its ability to perform coherent de-dispersion makes it a superior backend compared to the DFB. Its 128 MHz of available bandwidth (only 128 MHz of its 512 MHz capability is currently available because of the limited number of installed CPU nodes) is largely sufficient for P-band but more limited for L-band. In the near future, access to
 GPU nodes will increase the available bandwidth to 512 MHz.</p>
@@ -546,7 +546,7 @@ GPU nodes will increase the available bandwidth to 512 MHz.</p>
 </div>
 <div class="section" id="sardara">
 <h2>SARDARA<a class="headerlink" href="#sardara" title="Permalink to this headline">¶</a></h2>
-<p><em>Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.</em></p>
+<p><em>The use of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.</em></p>
 <p>SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 Available configurations consist of:</p>
 <p><strong>in C and K bands:</strong></p>
@@ -558,6 +558,7 @@ Available configurations consist of:</p>
 <p><strong>in L band:</strong></p>
 <p>The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be used (XXL4, XXL2 etc.) as well as additional backend filters (115, 230 or 460 MHz).</p>
 <p>More detailed information on the SARDARA backend can be found here: <a class="reference external" href="https://www.worldscientific.com/doi/full/10.1142/S2251171718500046">SARDARA</a>.</p>
+<p>Note: for spectroscopic observations in L-band with SARDARA, only total intensity is offered.</p>
 </div>
 </div>
 <div class="section" id="calibration">
@@ -771,13 +772,13 @@ central beam.</p>
 </div>
 <div class="section" id="data-quicklook">
 <h1>Data quicklook<a class="headerlink" href="#data-quicklook" title="Permalink to this headline">¶</a></h1>
-<p>Information about a data quicklook will be inserted here.</p>
+<p>Information about a data quicklook will be inserted here very soon.</p>
 </div>
 <div class="section" id="data-conversion">
 <h1>Data conversion<a class="headerlink" href="#data-conversion" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="conversion-of-data-acquired-in-spectroscopic-mode">
 <h2>Conversion of data acquired in spectroscopic mode<a class="headerlink" href="#conversion-of-data-acquired-in-spectroscopic-mode" title="Permalink to this headline">¶</a></h2>
-<p>Conversion to the GILDAS data format is provided for data acquired in Nodding and Position Switching mde with the SARDARA and XARCOS backends, including
+<p>Conversion to the GILDAS data format is provided for data acquired in Nodding and Position Switching modes with the SARDARA and XARCOS backends, including
 spectra containing the signal from the noise diode (when used).</p>
 </div>
 </div>

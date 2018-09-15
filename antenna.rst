@@ -21,7 +21,8 @@ Scientific tests and applications for the SRT are described in the following sci
 
 Science done with SRT during its early-science run (2016) with the various hardware and software described below can be found here: `Science with SRT <http://www.srt.inaf.it/astronomers/science_srt/>`_. 
 
-In the following sections, we outline information that is useful for observing with the SRT.
+In the following sections, we outline information that is useful for observing with the SRT in the current call for proposals (published September 14, 2018 with a deadline of October 9, 2018). We note that remote observing is not currently available for the Sardinia Radio Telescope; each proposing team will need to send at least one observer to the SRT to prepare the observing schedules and perform the observations on site. 
+
 
 Antenna 
 =======
@@ -256,7 +257,7 @@ At the SRT, DFB observations are piloted using the SEADAS software.
 ROACH1
 ------
 
-*Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.*
+*The use of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.*
 
 The ROACH1 (or ROACH) backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire **baseband data** (voltages) or for **real-time folding of pulsar data**, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
 
@@ -268,7 +269,7 @@ Note: for the current call for proposals, no real-time folding of data will be p
 SARDARA
 -------
 
-*Usage of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.*
+*The use of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.*
 
 SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 Available configurations consist of:
@@ -285,6 +286,8 @@ SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz b
 The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be used (XXL4, XXL2 etc.) as well as additional backend filters (115, 230 or 460 MHz).
 
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
+
+Note: for spectroscopic observations in L-band with SARDARA, only total intensity is offered.
 
 Calibration
 ===========
@@ -389,7 +392,7 @@ The derotator has been aligned within 1-2 arcseconds.
 Data quicklook
 ==============
 
-Information about a data quicklook will be inserted here.
+Information about a data quicklook will be inserted here very soon.
 
 Data conversion
 ===============
@@ -397,7 +400,7 @@ Data conversion
 Conversion of data acquired in spectroscopic mode
 -------------------------------------------------
 
-Conversion to the GILDAS data format is provided for data acquired in Nodding and Position Switching mde with the SARDARA and XARCOS backends, including
+Conversion to the GILDAS data format is provided for data acquired in Nodding and Position Switching modes with the SARDARA and XARCOS backends, including
 spectra containing the signal from the noise diode (when used).
 
 Useful links
