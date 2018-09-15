@@ -82,8 +82,8 @@ RF band (GHz)       Type      Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) 
 =============== ============= =============== ================= =============== ================================================
 P 0.30-0.36     single-feed      50-80             48                 0.52        DBBC,ROACH1
 L 1.3-1.8       single-feed      25-35             11.4               0.55       DFB,DBBC,ROACH1,SARDARA
-C-high 5.7-7.7  single-feed      32-37             2.7                0.60       TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
-K 18-26.5        7-feed          90                0.8              0.45-0.65    TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),XARCOS(MB) 
+C-high 5.7-7.7  single-feed      32-37             2.7                0.66       TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
+K 18-26.5        7-feed          90                0.8                0.66      TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),XARCOS(MB) 
 =============== ============= =============== ================= =============== ================================================
 
 (MB) means that the Multi-Beam option is available for observations in K-band with the TP, XARCOS and SARDARA backends. 
@@ -101,12 +101,12 @@ Band     Frequency coverage (GHz)   Feeds     native polarization type   Focal p
 ======== ========================= =======   ========================== ================ ========== ========== =========== 
 P         0.30 -- 0.36                1        linear                     primary          48'(*)     [50-80]      0.52     
 L         1.3 -- 1.8                  1        linear                     primary         11.4'(*)     25-35       0.55     
-C-high    5.7 -- 7.7                  1        circular                   beam waveguide   2.7'      32-37(*)   0.60         
-K         18 -- 26                    7        circular                   Gregorian       0.8'(**)    90(**)   0.45-0.65    
+C-high    5.7 -- 7.7                  1        circular                   beam waveguide   2.7'      32-37(*)   0.66 (*)         
+K         18 -- 26                    7        circular                   Gregorian       0.8'(**)    90(**)     [0.66]    
 ======== ========================= =======   ========================== ================ ========== ========== ===========
 
 [ ] is an estimate
-(*) at the band's central frequency
+(*) at the band's central frequency (for C-band: 45 degrees EL @ 7.3 GHz)
 (**) at 22.3 GHz with opacity 0.1 and ground air temperature of 293K.
 
 The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz)
@@ -287,7 +287,7 @@ The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be
 
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
-Note: for spectroscopic observations in L-band with SARDARA, only total intensity is offered.
+Note: for spectroscopic observations in L-band with SARDARA (with the 115 MHz filter), only total intensity is offered.
 
 Calibration
 ===========
