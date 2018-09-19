@@ -153,17 +153,17 @@ The frontend (receiver) outputs are connected to the backend instruments either 
 
 These backends are available for the current call for proposals:
 
-=============== ======= ================= ==================== =============== =====================
-Backend          Bands   Bandwidth (MHz)          Type           Sampling time    Max frequency bins  
-=============== ======= ================= ==================== =============== =====================
-**Total Power**   C,K   250,680,1200,2000 analog/total power     1-1000 ms           1
-**XARCOS**        C,K   0.5,2.0,7.8,62.5  spectro-polarimeter      10s              2048
-**SARDARA**       C,K   420, 1500(1200*)  spectro-polarimeter    down to 5ms   1024 or 16384    
-**SARDARA**        L    115,230,460,1500  spectro-polarimeter    down to 5ms   1024 or 16384
-**DFB3**         L,C,K  256,512,1024      pulsars                100 microsec  8192, pulsars: 2048
-**ROACH1**      P,L,C,K         128          baseband recorder          -             (varies)
-**DBBC**        P,L,C,K         512          VLBI                       -                -
-=============== ======= ================= ==================== =============== =====================
+=============== ======= ================= =============== ===================== ====================================================================== 
+Backend          Bands   Bandwidth (MHz)  Sampling time   Max freq. bins        Observing modes                                  
+=============== ======= ================= =============== ===================== ====================================================================== 
+**Total Power**   C,K   250,680,1200,2000 1-1000 ms          1                  continuum (analog)
+**XARCOS**        C,K   0.5,2.0,7.8,62.5  10s               2048                spectro-polarimeter
+**SARDARA**       C,K   420, 1500(1200*)  down to 5ms       1024 or 16384       continuum (includes polarization) & spectroscopy (no polarization)    
+**SARDARA**        L    115,230,460,1500  down to 5ms       1024 or 16384       continuum (no polarization) & spectroscopy (no polarization)
+**DFB3**         L,C,K  256,512,1024      100 microsec      8192, pulsars: 2048 online pulsar folding + pulsar/transient search 
+**ROACH1**      P,L,C,K         128             -             (varies)          baseband recorder + offline pulsar folding + pulsar/transient search
+**DBBC**        P,L,C,K         512             -                -              VLBI 
+=============== ======= ================= =============== ===================== ====================================================================== 
  
 (1200*) the actual available bandwidth for SARDARA is 1200 MHz.
 
@@ -287,7 +287,7 @@ The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be
 
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
-Note: for spectroscopic observations in L-band with SARDARA (with the 115 MHz filter), only total intensity is offered.
+Note: for this call, only total intensity is offered for spectroscopic observations with SARDARA (no spectro-polarimetry). Instead for continuum observations, polarization is available in C and K-bands (but not L-band).
 
 Calibration
 ===========

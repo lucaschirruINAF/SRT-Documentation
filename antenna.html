@@ -276,80 +276,80 @@ Additionally, a number of high-energy receivers are being planned for the SRT. T
 <p>These backends are available for the current call for proposals:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="7%" />
-<col width="18%" />
-<col width="21%" />
-<col width="16%" />
-<col width="22%" />
+<col width="10%" />
+<col width="5%" />
+<col width="12%" />
+<col width="10%" />
+<col width="14%" />
+<col width="48%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Backend</th>
 <th class="head">Bands</th>
 <th class="head">Bandwidth (MHz)</th>
-<th class="head">Type</th>
 <th class="head">Sampling time</th>
-<th class="head">Max frequency bins</th>
+<th class="head">Max freq. bins</th>
+<th class="head">Observing modes</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><strong>Total Power</strong></td>
 <td>C,K</td>
 <td>250,680,1200,2000</td>
-<td>analog/total power</td>
 <td>1-1000 ms</td>
 <td>1</td>
+<td>continuum (analog)</td>
 </tr>
 <tr class="row-odd"><td><strong>XARCOS</strong></td>
 <td>C,K</td>
 <td>0.5,2.0,7.8,62.5</td>
-<td>spectro-polarimeter</td>
 <td>10s</td>
 <td>2048</td>
+<td>spectro-polarimeter</td>
 </tr>
 <tr class="row-even"><td><strong>SARDARA</strong></td>
 <td>C,K</td>
 <td>420, 1500(1200*)</td>
-<td>spectro-polarimeter</td>
 <td>down to 5ms</td>
 <td>1024 or 16384</td>
+<td>continuum (includes polarization) &amp; spectroscopy (no polarization)</td>
 </tr>
 <tr class="row-odd"><td><strong>SARDARA</strong></td>
 <td>L</td>
 <td>115,230,460,1500</td>
-<td>spectro-polarimeter</td>
 <td>down to 5ms</td>
 <td>1024 or 16384</td>
+<td>continuum (no polarization) &amp; spectroscopy (no polarization)</td>
 </tr>
 <tr class="row-even"><td><strong>DFB3</strong></td>
 <td>L,C,K</td>
 <td>256,512,1024</td>
-<td>pulsars</td>
 <td>100 microsec</td>
 <td>8192, pulsars: 2048</td>
+<td>online pulsar folding + pulsar/transient search</td>
 </tr>
 <tr class="row-odd"><td><strong>ROACH1</strong></td>
 <td>P,L,C,K</td>
 <td>128</td>
-<td>baseband recorder</td>
 <td><ul class="first last simple">
 <li></li>
 </ul>
 </td>
 <td>(varies)</td>
+<td>baseband recorder + offline pulsar folding + pulsar/transient search</td>
 </tr>
 <tr class="row-even"><td><strong>DBBC</strong></td>
 <td>P,L,C,K</td>
 <td>512</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
 <td>VLBI</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
-</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
-</td>
 </tr>
 </tbody>
 </table>
@@ -558,7 +558,7 @@ Available configurations consist of:</p>
 <p><strong>in L band:</strong></p>
 <p>The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be used (XXL4, XXL2 etc.) as well as additional backend filters (115, 230 or 460 MHz).</p>
 <p>More detailed information on the SARDARA backend can be found here: <a class="reference external" href="https://www.worldscientific.com/doi/full/10.1142/S2251171718500046">SARDARA</a>.</p>
-<p>Note: for spectroscopic observations in L-band with SARDARA (with the 115 MHz filter), only total intensity is offered.</p>
+<p>Note: for this call, only total intensity is offered for spectroscopic observations with SARDARA (no spectro-polarimetry). Instead for continuum observations, polarization is available in C and K-bands (but not L-band).</p>
 </div>
 </div>
 <div class="section" id="calibration">
