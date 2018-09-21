@@ -159,7 +159,7 @@ Backend          Bands   Bandwidth (MHz)  Sampling time   Max freq. bins        
 **Total Power**   C,K   250,680,1200,2000 1-1000 ms          1                  continuum (analog)
 **XARCOS**        C,K   0.5,2.0,7.8,62.5  10s               2048                spectro-polarimeter
 **SARDARA**       C,K   420, 1500(1200*)  down to 5ms       1024 or 16384       spectro-polarimeter(*)    
-**SARDARA**        L    115,230,460,1500  down to 5ms       1024 or 16384       spectro-polarimeter(**)
+**SARDARA**        L    115,230,460,1500  down to 5ms       1024 or 16384       spectro-polarimeter(*)
 **DFB3**         L,C,K  256,512,1024      100 microsec      8192, pulsars: 2048 online pulsar folding + pulsar/transient search 
 **ROACH1**      P,L,C,K         128             -             (varies)          baseband recorder + offline pulsar folding + pulsar/transient search
 **DBBC**        P,L,C,K         512             -                -              VLBI 
@@ -167,9 +167,8 @@ Backend          Bands   Bandwidth (MHz)  Sampling time   Max freq. bins        
  
 (1200*) the actual available bandwidth for SARDARA is 1200 MHz.
 
-(*) at C and K bands, polarization is offered for continuum observations but not for observations in spectral line mode
+(*) only total intensity is offered for observations in spectral line mode with SARDARA; for continuum observations, the spectro-polarimetric observing mode has been tested for C and K bands, but not for L-band. 
 
-(**) at L-band, polarization is not offered in spectral line mode. it could be offered for continuum observations but has not been fully tested.
 
 Total Power 
 -----------
