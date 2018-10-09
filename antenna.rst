@@ -59,6 +59,9 @@ The antenna's main characheristics are:
    * - Pointing accuracy (rms)
      - 2 -- 5"
 
+We note that while the elevation limits range from 5 to 90 degrees, observations should be planned for an elevation between 6 and 82 degrees. Only in
+exceptional cases should the observations go below 6 degrees or above 82 degrees. 
+
 Active surface
 
 The primary reflector, which is 64 m across, is made of 1008 aluminium panels (with an RMS ≤ 65 μm each) driven by 1116 electromechanical actuators. This *active surface*
