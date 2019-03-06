@@ -269,6 +269,85 @@ Additionally, a number of high-energy receivers are being planned for the SRT. T
 <h1>Backends<a class="headerlink" href="#backends" title="Permalink to this headline">¶</a></h1>
 <p>The frontend (receiver) outputs are connected to the backend instruments either by coaxial cables or optical fibers, depending on whether the backend is located in the main building or below the dish. The following backends, designed for specific scientific activities, are available at the site:</p>
 <p>These backends are available for the current call for proposals:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="5%" />
+<col width="14%" />
+<col width="10%" />
+<col width="14%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Backend</th>
+<th class="head">Bands</th>
+<th class="head">Bandwidth (MHz)</th>
+<th class="head">Sampling time</th>
+<th class="head">Max freq. bins</th>
+<th class="head">Observing modes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Total Power</strong></td>
+<td>C,K</td>
+<td>250,680,1200,2000</td>
+<td>1-1000 ms</td>
+<td>1</td>
+<td>continuum (analog)</td>
+</tr>
+<tr class="row-odd"><td><strong>XARCOS</strong></td>
+<td>C,K</td>
+<td>0.5,2.0,7.8,62.5</td>
+<td>10s</td>
+<td>2048</td>
+<td>spectro-polarimeter</td>
+</tr>
+<tr class="row-even"><td><strong>SARDARA</strong></td>
+<td>C,K</td>
+<td>420(300*),1500(1200*)</td>
+<td>down to 5ms</td>
+<td>1024 or 16384</td>
+<td>spectro-polarimeter(*)</td>
+</tr>
+<tr class="row-odd"><td><strong>SARDARA</strong></td>
+<td>L</td>
+<td>420(100*),1500(500*)</td>
+<td>down to 5ms</td>
+<td>1024 or 16384</td>
+<td>spectro-polarimeter(*)</td>
+</tr>
+<tr class="row-even"><td><strong>DFB3</strong></td>
+<td>L,C,K</td>
+<td>256,512,1024</td>
+<td>100 microsec</td>
+<td>8192, pulsars: 2048</td>
+<td>online pulsar folding + pulsar/transient search</td>
+</tr>
+<tr class="row-odd"><td><strong>ROACH1</strong></td>
+<td>P,L,C,K</td>
+<td>128</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>(varies)</td>
+<td>baseband recorder + offline pulsar folding + pulsar/transient search</td>
+</tr>
+<tr class="row-even"><td><strong>DBBC</strong></td>
+<td>P,L,C,K</td>
+<td>512</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>VLBI</td>
+</tr>
+</tbody>
+</table>
 <p>(*) For the 1500 MHz SARDARA configuration, the actual available RF bandwidth is 1200 MHz with the C-band and K-band receivers.
 Similarly, for the 420 MHz SARDARA configuration, the effective RF bandwidth is 300 MHz with the K-band and C-band receivers. Instead, the L-band receiver only has 500 MHz of RF bandwidth; when the SARDARA 420 MHz configuration is needed, the actual available RF bandwidth for SARDARA is 100 or 90 MHz, according to the selected receiver RF filter.</p>
 <div class="section" id="total-power">

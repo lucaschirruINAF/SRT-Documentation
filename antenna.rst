@@ -158,9 +158,9 @@ Backend          Bands   Bandwidth (MHz)      Sampling time   Max freq. bins    
 **XARCOS**        C,K   0.5,2.0,7.8,62.5      10s               2048                spectro-polarimeter
 **SARDARA**       C,K   420(300*),1500(1200*)  down to 5ms       1024 or 16384       spectro-polarimeter(*)    
 **SARDARA**        L    420(100*),1500(500*)   down to 5ms       1024 or 16384       spectro-polarimeter(*)    
-**DFB3**         L,C,K  256,512,1024          100 microsec      8192, pulsars: 2048 online pulsar folding + pulsar/transient search 
-**ROACH1**      P,L,C,K         128             -             (varies)          baseband recorder + offline pulsar folding + pulsar/transient search
-**DBBC**        P,L,C,K         512             -                -              VLBI 
+**DFB3**         L,C,K  256,512,1024          100 microsec      8192, pulsars: 2048  online pulsar folding + pulsar/transient search 
+**ROACH1**      P,L,C,K         128             -             (varies)               baseband recorder + offline pulsar folding + pulsar/transient search
+**DBBC**        P,L,C,K         512             -                -                   VLBI 
 =============== ======= ===================== =============== ===================== ====================================================================== 
  
 (*) For the 1500 MHz SARDARA configuration, the actual available RF bandwidth is 1200 MHz with the C-band and K-band receivers. 
