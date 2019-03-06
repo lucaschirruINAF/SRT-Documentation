@@ -252,9 +252,6 @@ Additionally, a number of high-energy receivers are being planned for the SRT. T
 <p>More details about current and future receivers at Italian radio telescopes (SRT, Medicina and Noto) are included in this review document: <a class="reference external" href="http://rx2017.inaf.it/RX2017/Review_v8.1.pdf">receivers</a></p>
 <div class="section" id="lp-band-filters">
 <h2>LP-band Filters<a class="headerlink" href="#lp-band-filters" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>RF filters</li>
-</ul>
 <p>Different RF filters are available for the LP-band receiver. Although it is a coaxial receiver package, the control system sees it as a group of three different receivers, each one with its own code:</p>
 <p>For the PPP receiver (P-band), there is one available filter (with code L2XX for linear or C2XX for circular):  300–360 MHz (which is needed to exclude RFI at higher frequencies).</p>
 <p>For the LLP (L-band) configuration, the following filters are available for linear or circular polarizations:</p>
@@ -266,97 +263,14 @@ Additionally, a number of high-energy receivers are being planned for the SRT. T
 <li>XXL5 (for linear) or XXC5 (for circular):     1625–1715 MHz (VLBI band)</li>
 </ul>
 <p>For simultaneous LP observations, all combinations of the above configurations are allowed.</p>
-<ul class="simple">
-<li>Additional filters</li>
-</ul>
-<p>Additional filters (115 MHz, 230 MHz and 460 MHz) are available at L-band for the DFB, ROACH1, DBBC and SARDARA backends. The L-band (1300 - 1800 MHz) is downconverted using a local oscillator; therefore the central frequencies of these filters can be tuned to the desired range by tuning the value for the local oscillator.</p>
 </div>
 </div>
 <div class="section" id="backends">
 <h1>Backends<a class="headerlink" href="#backends" title="Permalink to this headline">¶</a></h1>
 <p>The frontend (receiver) outputs are connected to the backend instruments either by coaxial cables or optical fibers, depending on whether the backend is located in the main building or below the dish. The following backends, designed for specific scientific activities, are available at the site:</p>
 <p>These backends are available for the current call for proposals:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="10%" />
-<col width="5%" />
-<col width="12%" />
-<col width="10%" />
-<col width="14%" />
-<col width="48%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Backend</th>
-<th class="head">Bands</th>
-<th class="head">Bandwidth (MHz)</th>
-<th class="head">Sampling time</th>
-<th class="head">Max freq. bins</th>
-<th class="head">Observing modes</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>Total Power</strong></td>
-<td>C,K</td>
-<td>250,680,1200,2000</td>
-<td>1-1000 ms</td>
-<td>1</td>
-<td>continuum (analog)</td>
-</tr>
-<tr class="row-odd"><td><strong>XARCOS</strong></td>
-<td>C,K</td>
-<td>0.5,2.0,7.8,62.5</td>
-<td>10s</td>
-<td>2048</td>
-<td>spectro-polarimeter</td>
-</tr>
-<tr class="row-even"><td><strong>SARDARA</strong></td>
-<td>C,K</td>
-<td>420, 1500(1200*)</td>
-<td>down to 5ms</td>
-<td>1024 or 16384</td>
-<td>spectro-polarimeter(*)</td>
-</tr>
-<tr class="row-odd"><td><strong>SARDARA</strong></td>
-<td>L</td>
-<td>115,230,460,1500</td>
-<td>down to 5ms</td>
-<td>1024 or 16384</td>
-<td>spectro-polarimeter(*)</td>
-</tr>
-<tr class="row-even"><td><strong>DFB3</strong></td>
-<td>L,C,K</td>
-<td>256,512,1024</td>
-<td>100 microsec</td>
-<td>8192, pulsars: 2048</td>
-<td>online pulsar folding + pulsar/transient search</td>
-</tr>
-<tr class="row-odd"><td><strong>ROACH1</strong></td>
-<td>P,L,C,K</td>
-<td>128</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
-</td>
-<td>(varies)</td>
-<td>baseband recorder + offline pulsar folding + pulsar/transient search</td>
-</tr>
-<tr class="row-even"><td><strong>DBBC</strong></td>
-<td>P,L,C,K</td>
-<td>512</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
-</td>
-<td><ul class="first last simple">
-<li></li>
-</ul>
-</td>
-<td>VLBI</td>
-</tr>
-</tbody>
-</table>
-<p>(1200*) the actual available bandwidth for SARDARA is 1200 MHz.</p>
-<p>(*) only total intensity is offered for observations in spectral line mode with SARDARA; for continuum observations, the spectro-polarimetric observing mode has been tested for C and K bands, but not for L-band.</p>
+<p>(*) For the 1500 MHz SARDARA configuration, the actual available RF bandwidth is 1200 MHz with the C-band and K-band receivers.
+Similarly, for the 420 MHz SARDARA configuration, the effective RF bandwidth is 300 MHz with the K-band and C-band receivers. Instead, the L-band receiver only has 500 MHz of RF bandwidth; when the SARDARA 420 MHz configuration is needed, the actual available RF bandwidth for SARDARA is 100 or 90 MHz, according to the selected receiver RF filter.</p>
 <div class="section" id="total-power">
 <h2>Total Power<a class="headerlink" href="#total-power" title="Permalink to this headline">¶</a></h2>
 <p>The Total Power backend is a single-band, seven-beam backend for continuum observations. Located just below the dish, this backend is formed by 14 voltage-to-frequency converters that digitize the incoming RF signals. Different IF inputs can be selected from three focal points. Different bandwidths (maximum bandwidth: 0.1 - 2.1 GHz) and attenuation levels can be selected.</p>
@@ -555,7 +469,7 @@ GPU nodes will increase the available bandwidth to 512 MHz.</p>
 <div class="section" id="sardara">
 <h2>SARDARA<a class="headerlink" href="#sardara" title="Permalink to this headline">¶</a></h2>
 <p><em>The use of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.</em></p>
-<p>SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
+<p>The SARDARA backend is composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 Available configurations consist of:</p>
 <p><strong>in C and K bands:</strong></p>
 <ul class="simple">
@@ -563,10 +477,10 @@ Available configurations consist of:</p>
 <li>1500 MHz bandwidth with 1024 or 16384 channels</li>
 </ul>
 <p>SARDARA’s spectral resolution and sensitivity are defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend’s Focus Selector is being used as input to SARDARA.</p>
-<p><strong>in L band:</strong></p>
-<p>The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be used (XXL4, XXL2 etc.) as well as additional backend filters (115, 230 or 460 MHz).</p>
+<p><strong>L-band setup</strong></p>
+<p>The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters must be used (choose between XXL4, XXL2 etc.). For the 420 MHz configuration, the available filters are: XXL3, XXL5, XXC3 and XXC5 (to be selected following the needed sky frequency and polarization). We note that with these filters, the effective RF bandwidth is 100 MHz or 90 MHz.</p>
+<p><strong>SARDARA is offered in shared-risk mode in all of its configurations.</strong></p>
 <p>More detailed information on the SARDARA backend can be found here: <a class="reference external" href="https://www.worldscientific.com/doi/full/10.1142/S2251171718500046">SARDARA</a>.</p>
-<p>Note: for this call, only total intensity is offered for observations in spectral line mode with SARDARA. Instead for continuum observations, the spectro-polarimetric observing mode has been tested for C and K bands, but not for L-band.</p>
 </div>
 </div>
 <div class="section" id="calibration">
