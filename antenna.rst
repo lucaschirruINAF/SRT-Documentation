@@ -151,20 +151,20 @@ The frontend (receiver) outputs are connected to the backend instruments either 
 
 These backends are available for the current call for proposals:
 
-=============== ======= ===================== =============== ===================== ====================================================================== 
-Backend          Bands   Bandwidth (MHz)      Sampling time   Max freq. bins        Observing modes                                  
-=============== ======= ===================== =============== ===================== ====================================================================== 
-**Total Power**   C,K   250,680,1200,2000     1-1000 ms          1                  continuum (analog)
-**XARCOS**        C,K   0.5,2.0,7.8,62.5      10s               2048                spectro-polarimeter
-**SARDARA**       C,K   420(300*),1500(1200*)  down to 5ms       1024 or 16384       spectro-polarimeter(*)    
-**SARDARA**        L    420(100*),1500(500*)   down to 5ms       1024 or 16384       spectro-polarimeter(*)    
-**DFB3**         L,C,K  256,512,1024          100 microsec      8192, pulsars: 2048  online pulsar folding + pulsar/transient search 
-**ROACH1**      P,L,C,K         128             -             (varies)               baseband recorder + offline pulsar folding + pulsar/transient search
-**DBBC**        P,L,C,K         512             -                -                   VLBI 
-=============== ======= ===================== =============== ===================== ====================================================================== 
+=============== ======= ======================= =============== ===================== ====================================================================== 
+Backend          Bands   Bandwidth (MHz)        Sampling time   Max freq. bins        Observing modes                                  
+=============== ======= ======================= =============== ===================== ====================================================================== 
+**Total Power**   C,K   250,680,1200,2000       1-1000 ms          1                  continuum (analog)
+**XARCOS**        C,K   0.5,2.0,7.8,62.5        10s               2048                spectro-polarimeter
+**SARDARA**       C,K   420(300*),1500(1200*)     down to 5ms       1024 or 16384       spectro-polarimeter(*)    
+**SARDARA**        L    420(90/100*),1500(500*)   down to 5ms       1024 or 16384       spectro-polarimeter(*)    
+**DFB3**         L,C,K  256,512,1024            100 microsec      8192, pulsars: 2048  online pulsar folding + pulsar/transient search 
+**ROACH1**      P,L,C,K         128             -                (varies)              baseband recorder + offline pulsar folding + pulsar/transient search
+**DBBC**        P,L,C,K         512             -                -                     VLBI 
+=============== ======= ======================= =============== ===================== ====================================================================== 
  
 (*) For the 1500 MHz SARDARA configuration, the actual available RF bandwidth is 1200 MHz with the C-band and K-band receivers. 
-Similarly, for the 420 MHz SARDARA configuration, the effective RF bandwidth is 300 MHz with the K-band and C-band receivers. Instead, the L-band receiver only has 500 MHz of RF bandwidth; when the SARDARA 420 MHz configuration is needed, the actual available RF bandwidth for SARDARA is 100 or 90 MHz, according to the selected receiver RF filter.
+Similarly, for the 420 MHz SARDARA configuration, the effective RF bandwidth is 300 MHz with the K-band and C-band receivers. Instead, the L-band receiver only has 500 MHz of RF bandwidth; when the SARDARA 420 MHz configuration is needed, the actual available RF bandwidth for SARDARA is 100 MHz (when selecting the XXL3 or XXC3 filters) or 90 MHz (when selecting the XXL5 or XXC5 filters).
 
 Total Power 
 -----------
@@ -283,7 +283,7 @@ SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz b
 
 **L-band setup**
 
-The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters must be used (choose between XXL4, XXL2 etc.). For the 420 MHz configuration, the available filters are: XXL3, XXL5, XXC3 and XXC5 (to be selected following the needed sky frequency and polarization). We note that with these filters, the effective RF bandwidth is 100 MHz or 90 MHz. 
+The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters must be used (choose between XXL4, XXL2 etc.). For the 420 MHz configuration, the available filters are: XXL3, XXL5, XXC3 and XXC5 (to be selected following the needed sky frequency and polarization). We note that with these filters, the effective RF bandwidth is 100 MHz (using the XXL3 or XXC3 filters) or 90 MHz (using the XXL5 or XXC5 filters). 
 
 **SARDARA is offered in shared-risk mode in all of its configurations.**
 
