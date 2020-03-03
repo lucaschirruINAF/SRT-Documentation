@@ -118,14 +118,14 @@ SRT receiver changes are quick, allowing for an efficient frequency agility. The
 However, the use of a Gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected. 
 An automatic system for the installation and removal of the Gregorian cover is currently under development and will permit smooth and efficient frequency changes.
 
-*Special considerations about the L/P dual-band receiver*: the RFI levels need to be minimized. A Gregorian cover limits RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover for this purpose is not a priori guaranteed.
+*Special considerations about the L/P dual-band receiver*: the RFI levels need to be minimized. A Gregorian cover limits RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover is not a priori guaranteed.
 
 *Special considerations about the multi-beam K-band receiver*: we have measured the sensibility of each channel. Here are the details below:
 
 =========== ========= ==================
 Feed,Pol    RMS(mJy)  Ratio w/feed2,pol1
 =========== ========= ==================
-Feed0,Pol0     19          1.00
+Feed0,Pol0     19          1.00          
 Feed0,Pol1     27          1.42
 Feed1,Pol0     18          0.95
 Feed1,Pol1     23          1.21
@@ -138,8 +138,8 @@ Feed4,Pol1     17          0.89
 Feed5,Pol0    -9999        -526.26
 Feed5,Pol1     39          2.05
 Feed6,Pol0     17          0.89
-Feed6,Pol1     138         7.26
-========== ========= ====================
+Feed6,Pol1     138         7.26                        
+=========== ========= ==================
 
 The second column indicates the RMS of the calibrator map (using 3c147). The third column indicates the sensibility ratio of each channel with respect to the Right channel of the second feed (which is stable). Channel 5,Pol0 (Left) is not usable.
 
