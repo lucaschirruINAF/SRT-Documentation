@@ -118,7 +118,30 @@ SRT receiver changes are quick, allowing for an efficient frequency agility. The
 However, the use of a Gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected. 
 An automatic system for the installation and removal of the Gregorian cover is currently under development and will permit smooth and efficient frequency changes.
 
-Note about the L/P dual-band receiver: the RFI levels need to be minimized. The availability of the Gregorian cover for this purpose is not a priori guaranteed. 
+*Special considerations about the L/P dual-band receiver*: the RFI levels need to be minimized. A Gregorian cover limits RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover for this purpose is not a priori guaranteed.
+
+*Special considerations about the multi-beam K-band receiver*: we have measured the sensibility of each channel. Here are the details below:
+
+=========== ========= ==================
+Feed,Pol    RMS(mJy)  Ratio w/feed2,pol1
+=========== ========= ==================
+Feed0,Pol0     19          1.00
+Feed0,Pol1     27          1.42
+Feed1,Pol0     18          0.95
+Feed1,Pol1     23          1.21
+Feed2,Pol0     21          1.11
+Feed2,Pol1     19          1.00
+Feed3,Pol0     15	   0.79 
+Feed3,Pol1     50          2.63
+Feed4,Pol0     303         15.95
+Feed4,Pol1     17          0.89
+Feed5,Pol0    -9999        -526.26
+Feed5,Pol1     39          2.05
+Feed6,Pol0     17          0.89
+Feed6,Pol1     138         7.26
+========== ========= ====================
+
+The second column indicates the RMS of the calibrator map (using 3c147). The third column indicates the sensibility ratio of each channel with respect to the Right channel of the second feed (which is stable). Channel 5,Pol0 (Left) is not usable.
 
 Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2019.   
 Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/Gregorian focus. 
@@ -327,16 +350,16 @@ gain (K/Jy) = C2 El^2 + C1 El + C0
 =========== ============== ================ ===============
 Parameter   Value (L-band) Value (C-band)    Value (K-band)
 =========== ============== ================ ===============
-C0           0.5061          0.545439        0.505427
-C1           0.002390        0.00525597      0.00864506
-C2           -0.000021       -4.55697e-5     -6.37184e-5
+C0           0.5061          0.545439        0.364897
+C1           0.002390        0.00525597      0.00624137
+C2           -0.000021       -4.55697e-5     -4.60020e-5
 =========== ============== ================ ===============
 
 L-band: from Orlati et al. 
 
 C-band: valid from 2018.
 
-K-band: from Prandoni et al. (2017).
+K-band: from Prandoni et al. (2017). The DPFU is 0.60 K/Jy.
 
 Beam shape
 ----------
