@@ -247,16 +247,31 @@ SARDARA
 The SARDARA backend is composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 Available configurations consist of:
 
-**in C and K bands:**
+**in C-low, C-high and K bands:**
 
 * 420 MHz bandwith with 1024 or 16384 channels 
 * 1500 MHz bandwidth with 1024 or 16384 channels 
 
 SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend's Focus Selector is being used as input to SARDARA. 
 
-
-
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
+
+
+SKARAB
+______
+The SKARAB  backend is composed of seven fully-reconfigurable SKARAB  boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SKARAB include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
+
+
+The available bandwidhths are:
+
+
+* 16, 20, 23, 32, 40, 46.875, 64, 80, 93.75, 128, 160, 187.5, 1400 MHz
+
+Each band can be divided in 65536 frequency bins or 32768 for full Stokes configurations.
+The 1400 MHz bandwidth can have also 2048 frequency bins in full Stokes mode
+
+
+
 
 Calibration
 ===========
