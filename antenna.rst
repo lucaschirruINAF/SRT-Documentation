@@ -258,7 +258,8 @@ More detailed information on the SARDARA backend can be found here: `SARDARA <ht
 
 
 SKARAB
-______
+------
+
 The SKARAB  backend is composed of seven fully-reconfigurable SKARAB  boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SKARAB include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 
 
