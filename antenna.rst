@@ -85,7 +85,7 @@ RF band (GHz)       Type      Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) 
 =============== ============= =============== ================= =============== ================================================
 C-Low           single-feed      25                4.2                0.75       TP, DFB,DBBC,SARDARA,SKARAB 
 C-high 5.7-7.7  single-feed      32-37             2.7                0.66       TP,DFB,DBBC,ROACH1,SARDARA
-K 18-26.5        7-feed          90                0.8                0.66      TP (MB),DFB,DBBC,SARDARA (MB),SKARAB(MB) 
+K 18-26.5        7-feed          70                0.8                0.66      TP (MB),DFB,DBBC,SARDARA (MB),SKARAB(MB) 
 =============== ============= =============== ================= =============== ================================================
 
 (MB) means that the Multi-Beam option is available for observations in K-band with the TP, XARCOS and SARDARA backends. 
