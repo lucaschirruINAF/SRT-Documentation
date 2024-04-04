@@ -3,12 +3,14 @@
 Introduction
 ============
 
-The Sardinia Radio Telescope is a 64-meter single-dish radio telescope. It is located in the Pranu Sanguni area of San Basilio, Sardinia, Italy, 
-about 40 km north of Cagliari. 
+The Sardinia Radio Telescope (SRT) is the result of a scientific and technical project carried out by the Italian National Institute for Astrophysics (INAF), and it is managed by the Astronomical Observatory of Cagliari. It is a fully steerable multi-reflector antenna designed to operate with high efficiency across the 0.3–116 GHz frequency range. The telescope is located in the Pranu Sanguni area of San Basilio, Sardinia, Italy, about 35 km northeast of Cagliari (Latitude 39.493072° N, Longitude 9.245151° E), at 650 m above sea level. 
 
-Its state-of-the-art technology includes an active surface with 1008 panels, which allows observations at high frequencies (from 0.3 up to 115 GHz). 
+Its state-of-the-art technology includes an optical design based on a quasi-Gregorian configuration with a shaped 64-m diameter primary reflector and a 7.9-m
+diameter secondary reflector, in order to minimize the spillover and the standing wave between secondary mirror and feed. Moreover, the telescope is equipped with a beam wave guide (BWG) room, where there are available four 2.9-m mirrors and one 3.9-m mirror, for a total of four additional focal positions. This complex optical design permits the telescope to accomodate up to 20 receivers.
+One of the most important properties of SRT is the active surface system, which allows compensation for the gravitational deformation, thermal gradients, and wind pressure on the 64-meter dish (through an electro-mechanical control), guaranteeing high antenna efficiency at high frequencies.
+ 
 There are three main focal points where reveivers can be placed: primary focus (currently hosting the L-P dual band receiver); Gregorian focus (K-band receiver), and Beam Wave Guide focus (C-band receiver).
-In total, the telescope can accomodate up to 20 receivers. A number of additional receivers are currently being planned and built. 
+A number of additional receivers are currently being planned and built. 
 
 The telescope can be operated in single-dish or VLBI mode for radio astronomy, geodynamical studies or space science. Its geographical location allows it
 to observe at declinations above -33 degrees.
