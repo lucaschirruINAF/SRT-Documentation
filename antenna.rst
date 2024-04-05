@@ -8,12 +8,15 @@ The Sardinia Radio Telescope (SRT) is the result of a scientific and technical p
 Its state-of-the-art technology includes an optical design based on a quasi-Gregorian configuration with a shaped 64-m diameter primary reflector and a 7.9-m
 diameter secondary reflector, in order to minimize the spillover and the standing wave between secondary mirror and feed. Moreover, the telescope is equipped with a beam wave guide (BWG) room, where there are available four 2.9-m mirrors and one 3.9-m mirror, for a total of four additional focal positions. This complex optical design permits the telescope to accomodate up to 20 receivers.
 One of the most important properties of SRT is the active surface system, which allows compensation for the gravitational deformation, thermal gradients, and wind pressure on the 64-meter dish (through an electro-mechanical control), guaranteeing high antenna efficiency at high frequencies.
- 
-There are three main focal points where reveivers can be placed: primary focus (currently hosting the L-P dual band receiver); Gregorian focus (K-band receiver), and Beam Wave Guide focus (C-band receiver).
-A number of additional receivers are currently being planned and built. 
 
-The telescope can be operated in single-dish or VLBI mode for radio astronomy, geodynamical studies or space science. Its geographical location allows it
-to observe at declinations above -33 degrees.
+Currently, eight receivers are installed on SRT, covering the entire frequency range from 300 MHz to 116 GHz. The majority of them are still in the commissioning phase, as they arrive thanks to the Italian National Operational Program (PON) funding. This project has been allocated to INAF by the Italian Ministry of University and Research (MIUR) with the aim of installing four new receivers on the telescope. These receivers operate in the Q-band (33–50 GHz) and W-band (70–116 GHz), thus extending the operational frequency to new high frequencies (up to 116 GHz) not yet covered by SRT. Further details for all receivers of SRT are reported in the "Receivers" section.
+In addition, two new receivers are currently under design and development: a C-band (4-8 GHz) phased array feed (PAF) and an S-band receiver (3–4.5 GHz). 
+
+SRT offers several digital backends for data storage and processing purposes, such as Total Power, SARDARA, SKARAB, DFB, DBBC2 and DBBC3. Further details for all backends of SRT are reported in the "Backends" section.
+
+The control software produced for SRT is named DISCOS, a distributed system based on ACS (ALMA Common Software), commanding all the devices of the telescope and allowing the user to perform radio astronomy observations. Specific details are available at the following link: `Observing with SRT <https://srt-procedures.readthedocs.io/en/latest/index.html>`_.
+
+The telescope can be operated in single-dish or Very Long Baseline Interferometry (VLBI) mode for radio astronomy, geodynamical studies or space science. Its geographical location allows it to observe at declinations above -33 degrees.
 
 A general description of the SRT, including technical commissioning information and first light results, can be found in the technical commissioning paper:
 `Bolli et. al, Journal of Astronomical Instrumentation, Vol. 4, Nos. 3 & 4 (2015) 1550008 <https://www.worldscientific.com/doi/abs/10.1142/S2251171715500087>`_.
@@ -23,7 +26,7 @@ Scientific tests and applications for the SRT are described in the following sci
 
 Science done with SRT during its early-science run (2016) with the various hardware and software described below can be found here: `Science with SRT <http://www.srt.inaf.it/astronomers/science_srt/>`_. 
 
-In the following sections, we outline information that is useful for observing with the SRT in the current call for proposals (published September 14, 2018 with a deadline of October 9, 2018). We note that remote observing is not currently available for the Sardinia Radio Telescope; each proposing team will need to send at least one observer to the SRT to prepare the observing schedules and perform the observations on site. 
+In the following sections, useful information for observing with the SRT in the current call for proposals (published ------ with a deadline of -------) are outlined. We note that remote observing is not currently available for the Sardinia Radio Telescope; each proposing team will need to send at least one observer to the SRT to prepare the observing schedules and perform the observations on site. 
 
 
 Antenna 
