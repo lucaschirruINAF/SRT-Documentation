@@ -14,7 +14,7 @@ In addition, two new receivers are currently under design and development: a C-b
 
 SRT offers several digital backends for data storage and processing purposes, such as Total Power, SARDARA, SKARAB, DFB, DBBC2 and DBBC3. Further details for all backends of SRT are reported in the "Backends" section.
 
-The control software produced for SRT is named DISCOS, a distributed system based on ACS (ALMA Common Software), commanding all the devices of the telescope and allowing the user to perform radio astronomy observations. Specific details are available at the following link: `Observing with SRT <https://srt-procedures.readthedocs.io/en/latest/index.html>`_.
+The control software produced for SRT is named DISCOS, a distributed system based on ALMA Common Software (ACS), commanding all the devices of the telescope and allowing the user to perform radio astronomy observations. Specific details are available at the following link: `Observing with SRT <https://srt-procedures.readthedocs.io/en/latest/index.html>`_.
 
 The telescope can be operated in single-dish or Very Long Baseline Interferometry (VLBI) mode for radio astronomy, geodynamical studies or space science. Its geographical location allows it to observe at declinations above -33 degrees.
 
