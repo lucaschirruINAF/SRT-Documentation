@@ -68,7 +68,8 @@ The Sardinia Radio Telescope (SRT) consists of a quasi-Gregorian system that can
      - 2 - 5"
 
 It is worth noting that while the elevation limits range from 5 to 90 degrees, observations should ideally be planned for an elevation between 6 and 82 degrees. Only in exceptional cases should observations fall below 6 degrees or exceed 82 degrees.
-One of the most important features of the Sardinia Radio Telescope (SRT) is its active surface system for the primary mirror, M1. Comprising 1008 aluminum panels and 1116 electromechanical actuators, this primary reflector compensates for gravitational deformation in quasi-real-time and undergoes continuous adjustments during observations. The actuators also facilitate the conversion of the primary mirror's shaped surface to the ideal parabolic profile during primary focus observations. The active primary reflector panels are aligned to a surface accuracy of approximately 300 μm root mean square (RMS).
+One of the most important features of the Sardinia Radio Telescope (SRT) is its active surface system for the primary mirror, M1. Comprising 1008 aluminum panels and 1116 electromechanical actuators, this primary reflector compensates for gravitational deformation in quasi-real-time and undergoes continuous adjustments during observations. The actuators also facilitate the conversion of the primary mirror's shaped surface to the ideal parabolic profile during primary focus observations. The active primary reflector panels are aligned to a surface accuracy of approximately 300 μm root mean square (RMS). Further details about the active surface of SRT are reported in the following paper: 
+`Bolli et. al, IEEE Antennas Wirel. Propag. Lett., vol. 13, pp. 1713-1716 (2014) <https://ieeexplore.ieee.org/document/6880807>`_.
 
 Consequently, during astronomical observations, the observer can choose among three configurations:
 
