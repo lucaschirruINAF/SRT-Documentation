@@ -67,21 +67,16 @@ The Sardinia Radio Telescope (SRT) consists of a quasi-Gregorian system that can
    * - **Pointing accuracy (rms)**
      - 2 - 5"
 
-We note that while the elevation limits range from 5 to 90 degrees, observations should be planned for an elevation between 6 and 82 degrees. Only in
-exceptional cases should the observations go below 6 degrees or above 82 degrees. 
+It is worth noting that while the elevation limits range from 5 to 90 degrees, observations should ideally be planned for an elevation between 6 and 82 degrees. Only in exceptional cases should observations fall below 6 degrees or exceed 82 degrees.
+One of the most important features of the Sardinia Radio Telescope (SRT) is its active surface system for the primary mirror, M1. Comprising 1008 aluminum panels and 1116 electromechanical actuators, this primary reflector compensates for gravitational deformation in quasi-real-time and undergoes continuous adjustments during observations. The actuators also facilitate the conversion of the primary mirror's shaped surface to the ideal parabolic profile during primary focus observations. The active primary reflector panels are aligned to a surface accuracy of approximately 300 μm root mean square (RMS).
 
-Active surface
+Consequently, during astronomical observations, the observer can choose among three configurations:
 
-The primary reflector, which is 64 m across, is made of 1008 aluminium panels (with an RMS ≤ 65 μm each) driven by 1116 electromechanical actuators. This *active surface*
-is designed to compensate for the gravitational deformations of the whole surface at different elevations.
+* shaped surface in tracking mode (it adjusts according to the observed elevation position);
+* ideal parabolic profile in fixed position (optimized for an elevation of 45 degrees);
+* ideal parabolic profile in tracking mode (it adjusts according to the observed elevation position).
 
-The observer can choose among three configurations:
-
-* shaped  in tracking (it adjusts according to the observed elevation position)
-* parabolic  in fixed position (optimized for El=45°)
-* parabolic  in tracking (it adjusts according to the observed elevation position)
-
-The shaped configuration is used for receivers in the Gregorian and BWG foci, while the parabolic configurations are used for the primary focus systems.
+The shaped configuration is used for receivers in the Gregorian (7.5-116 GHz) and BWG (1.4-35 GHz) foci, while the ideal parabolic configurations are used for receivers of the primary focus (0.3-20 GHz).
 
 Receivers
 =========
