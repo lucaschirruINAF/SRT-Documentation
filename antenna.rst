@@ -29,8 +29,8 @@ Science done with SRT during its early-science run (2016) with the various hardw
 In the following sections, useful information for observing with the SRT in the current call for proposals (published ------ with a deadline of -------) are outlined. We note that remote observing is not currently available for the Sardinia Radio Telescope; each proposing team will need to send at least one observer to the SRT to prepare the observing schedules and perform the observations on site. 
 
 
-Antenna 
-=======
+Technical features of the telescope 
+===================================
 
 The Sardinia Radio Telescope (SRT) consists of a quasi-Gregorian system that can operate in a frequency range between 300 MHz and 116 GHz, with a radiation efficiency of up to 60 percent. Its optical design comprises a quasi-parabolic 64-m main mirror (M1) and a quasi-elliptical 7.9-m subreflector (M2), offering two focal positions (i.e., the primary F1 and the Gregorian or secondary F2 focal points). Additionally, the telescope is equipped with a beam waveguide (BWG) room, which includes one 3.9-m mirror (M3) and two 2.9-m mirrors (M4 & M5), for a total of four additional focal positions (i.e., F3 & F4 and F5 & F6). The focal length to diameter ratio (f/D) and the frequency range of each focal point are listed in the following table. In this table, mechanical, logistical, and technical characteristics are also listed.
 
