@@ -32,9 +32,9 @@ In the following sections, useful information for observing with the SRT in the 
 Antenna 
 =======
 
-The Sardinia Radio Telescope (SRT) is a 64-meter Gregorian radio telescope with shaped optics, a quasi-parabolic main mirror and a quasi-elliptical subreflector. 
+The Sardinia Radio Telescope (SRT) consists of a qusi-Gregorian system that can operates in a frequency range between 300 MHz and 116 GHz, with a radiation frequency up to 60 percent. Its optical design is composed of a quasi-parabolic 64-m main mirror and a quasi-elliptical 7.9-m subreflector, offering two focal positions (i.e. the primary F1 and the Gregorain or secondary F2 focal points). In addition, the telescope is equipped with a beam waveguide (BWG) room, which includes two 2.9-m mirrors and one 3.9-m mirror, for a total of four additional focal positions (i.e. F3, F4, F5 and F6). 
 
-The antenna's main characheristics are:
+The antenna's main mechanical and optical characheristics are:
 
 .. list-table::
    :widths: 10 20
