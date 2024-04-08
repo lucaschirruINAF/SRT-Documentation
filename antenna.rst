@@ -41,7 +41,7 @@ The Sardinia Radio Telescope (SRT) consists of a quasi-Gregorian system that can
    * - **Position**
      - Pranu Sanguni, San Basilio, Sardinia
    * - **Geodetic Coordinates** 
-     - Lat 39° 29' 34.93742" N;  Long 9° 14' 42.5764" E (WGS84)
+     - Latitude 39° 29' 34.93742" N;  Longitude 9° 14' 42.5764" E (WGS84)
    * - **Frequency coverage**
      - 0.3 - 116 GHz
    * - **Optical configuration and frequency range**
