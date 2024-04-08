@@ -3,7 +3,7 @@
 Introduction
 ============
 
-The Sardinia Radio Telescope (SRT) is the result of a scientific and technical project carried out by the Italian National Institute for Astrophysics (INAF), and it is managed by the Astronomical Observatory of Cagliari. It is a fully steerable multi-reflector antenna designed to operate with high efficiency across the 0.3–116 GHz frequency range. The telescope is located in the Pranu Sanguni area of San Basilio, Sardinia, Italy, about 35 km northeast of Cagliari (Latitude 39.493072° N, Longitude 9.245151° E), at 650 m above sea level. 
+The Sardinia Radio Telescope (SRT) is the result of a scientific and technical project carried out by the Italian National Institute for Astrophysics (INAF), and it is managed by the Astronomical Observatory of Cagliari. It is a fully steerable multi-reflector antenna designed to operate with high efficiency across the 0.3–116 GHz frequency range. The telescope is located in the Pranu Sanguni area of San Basilio, Sardinia, Italy, about 35 km northeast of Cagliari (Latitude 39.493072° N, Longitude 9.245151° E), at about 650 m above sea level. 
 
 Its state-of-the-art technology includes an optical design based on a quasi-Gregorian configuration with a shaped 64-m diameter primary reflector and a 7.9-m
 diameter secondary reflector, in order to minimize the spillover and the standing wave between secondary mirror and feed. Moreover, the telescope is equipped with a beam wave guide (BWG) room, where there are available four 2.9-m mirrors and one 3.9-m mirror, for a total of four additional focal positions. This complex optical design permits the telescope to accomodate up to 20 receivers.
@@ -32,37 +32,40 @@ In the following sections, useful information for observing with the SRT in the 
 Antenna 
 =======
 
-The Sardinia Radio Telescope (SRT) consists of a qusi-Gregorian system that can operates in a frequency range between 300 MHz and 116 GHz, with a radiation frequency up to 60 percent. Its optical design is composed of a quasi-parabolic 64-m main mirror and a quasi-elliptical 7.9-m subreflector, offering two focal positions (i.e. the primary F1 and the Gregorain or secondary F2 focal points). In addition, the telescope is equipped with a beam waveguide (BWG) room, which includes two 2.9-m mirrors and one 3.9-m mirror, for a total of four additional focal positions (i.e. F3, F4, F5 and F6). 
+The Sardinia Radio Telescope (SRT) consists of a quasi-Gregorian system that can operate in a frequency range between 300 MHz and 116 GHz, with a radiation efficiency of up to 60 percent. Its optical design comprises a quasi-parabolic 64-m main mirror (M1) and a quasi-elliptical 7.9-m subreflector (M2), offering two focal positions (i.e., the primary F1 and the Gregorian or secondary F2 focal points). Additionally, the telescope is equipped with a beam waveguide (BWG) room, which includes one 3.9-m mirror (M3) and two 2.9-m mirrors (M4 & M5), for a total of four additional focal positions (i.e., F3 & F4 and F5 & F6). The focal length to diameter ratio (f/D) and the frequency range of each focal point are listed in the following table. In this table, mechanical, logistical, and technical characteristics are also listed.
 
-The antenna's main mechanical and optical characheristics are:
 
 .. list-table::
    :widths: 10 20
 
-   * - Position
+   * - **Position**
      - Pranu Sanguni, San Basilio, Sardinia
-   * - Geodetic Coordinates 
+   * - **Geodetic Coordinates** 
      - Lat 39° 29' 34.93742" N;  Long 9° 14' 42.5764" E (WGS84)
-   * - Optical configuration 
-     - Primary, Gregorian & Beam Waveguide (BWG)
-   * - Primary mirror diameter
+   * - **Frequency coverage**
+     - 0.3 - 116 GHz
+   * - **Optical configuration and frequency range**
+     - Primary focus (0.3-20 GHz), Gregorian focus (7.5-116 GHz), beam wave guide (1.4-35 GHz)
+   * - **Primary quasi-parabolic mirror (M1) diameter**
      - 64 m
-   * - Subreflector diameter
-     - 8 m
-   * - Focal positions
-     - primary f/D = 0.33; Gregorian f/D = 2.34; Beam waveguide (BWG) f/D = 1.8
-   * - Azimuth range
-     - --90 to 450 degrees
-   * - Elevation range
-     - 5 -- 90 degrees
-   * - Slew rate
+   * - **Quasi-elliptical subreflector (M2) diameter**
+     - 7.9 m
+   * - **Beam wave guide mirrors (M3, M4 and M5)**
+     - M3 of 3.9 m; M4&M5 of 2.9 m. 
+   * - **Focal positions**
+     - F1 (primary focus); F2 (Gregorian focus); F3&F4 and F5&F6 (BWG).
+   * - **Focal length to diameter ratio (f/D)**
+     - f1/D = 0.33; f2/D = 2.34; f3&f5/D = 1.38; f4&f6/D = 2.81
+   * - **Azimuth range**
+     - -90 to 450 degrees
+   * - **Elevation range**
+     - 5 to 90 degrees
+   * - **Maximum slew rate**
      - 0.85 degrees/s in azimuth; 0.5 degrees/s in elevation
-   * - Frequency coverage
-     - 0.3 -- 115 GHz
-   * - Primary surface accuracy
+   * - **Primary surface accuracy**
      - 300 μm rms
-   * - Pointing accuracy (rms)
-     - 2 -- 5"
+   * - **Pointing accuracy (rms)**
+     - 2 - 5"
 
 We note that while the elevation limits range from 5 to 90 degrees, observations should be planned for an elevation between 6 and 82 degrees. Only in
 exceptional cases should the observations go below 6 degrees or above 82 degrees. 
