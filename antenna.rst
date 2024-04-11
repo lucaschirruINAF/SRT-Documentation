@@ -13,7 +13,7 @@ The official inauguration of SRT took place in September 2013. Following a six-m
 
 Currently, a total of eight receivers are installed on SRT, covering the entire frequency range from 4.2 GHz to 116 GHz. The majority of them, such as the 16-beam Caruso receiver (70-116 GHz), the 19-beam Q-band receiver (33-50 GHz), Mistral (77-103 GHz) and the Tri-band receiver (18-26 GHz, 34-50 GHz and 80-116 GHz) are still in the commissioning phase, as they arrive thanks to the Italian National Operational Program (PON) funding. This project has been allocated to INAF by the Italian Ministry of University and Research (MIUR) with the aim of installing four new hig-frequency receivers on the telescope. These receivers will extend the operational frequency to new high frequencies (up to 116 GHz) not yet covered by SRT. During the PON-related works, the dual-band L-P receiver underwent an upgrade and is not yet available. In addition, two new receivers are currently under design and development: a C-band (4-8 GHz) phased array feed (PAF) and an S-band receiver (3–4.5 GHz).
 
-The available receivers for the current call for proposals are: the C-low receiver, the C-high receiver and the 7-beam K-band receiver Further details for all receivers of SRT are reported in the "Receivers" section.  
+The available receivers for the current call for proposals are: the C-low receiver, the C-high receiver and the 7-beam K-band receiver. Further details for all receivers of SRT are reported in the "Receivers" section.  
 
 SRT offers several digital backends for data storage and processing purposes, such as Total Power, SARDARA, SKARAB, DFB, DBBC2 and DBBC3. Further details for all backends of SRT are reported in the "Backends" section.
 
