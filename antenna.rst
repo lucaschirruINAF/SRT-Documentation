@@ -82,8 +82,14 @@ Consequently, during astronomical observations, the observer can choose among th
 
 The shaped configuration is used for receivers in the Gregorian (7.5-116 GHz) and BWG (1.4-35 GHz) foci, while the ideal parabolic configurations are used for receivers of the primary focus (0.3-20 GHz).
 
-Receivers
-=========
+
+Criogenic receivers of SRT
+===========================
+
+All radio receivers of SRT are cryogenically-cooled systems that operate at temperatures below 20 K. In this way, the thermal noise introduced by the receiver itself (Trec) is reduced, consequently decreasing the overall system noise temperature (Tsys), allowing for greater sensitivity in detecting weak signals from space. As mentioned in the Introduction section, 8 receivers are installed on SRT, but only 3 of them are available for the current call for proposals. In the following sections, a brief description of all SRT receivers is reported.
+
+Receivers available for the current Call for Proposals
+-------------------------------------------------------
 
 In the current call for proposals, the following (cryogenically-cooled) receivers are available in both single-dish and VLBI modes:
 
