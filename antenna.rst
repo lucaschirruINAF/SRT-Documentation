@@ -91,7 +91,7 @@ All radio receivers of SRT are cryogenically-cooled systems that operate at temp
 Receivers available for the current Call for Proposals
 -------------------------------------------------------
 
-In the current call for proposals, the following (cryogenically-cooled) receivers are available in both single-dish and VLBI modes:
+The available receivers for the current Call for Proposals are summarized in the following table, indicating the receiver name, frequency band, number of beams, type of polarization (linear or circular), focal position, system temperature, beam size, maximum gain, and available backends. Each receiver is available in both single-dish and VLBI modes.
 
 ========= ================ ============ =========  =============== ================= ================ ============ ============================== 
 Receiver  Frequency [GHz]  Beams x Pol. Pol. type  Focal Position  Tsys @ El=90° [K] Beamsize [armin] Gain [k/Jy]   Available backends
@@ -103,9 +103,11 @@ K-band    18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       90           
 
 (MB) means that the Multi-Beam option is available for observations in K-band with the TP, XARCOS and SARDARA backends. 
 
+Below is a brief description of each receiver available for this Call for Proposals, highlighting its main features.
+
 * The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
 
-* A single-feed C-high band receiver is installed at the Beam Wave Guide (BWG) focus of the telescope. The polarization type is circular.
+* A single-feed **C-high band receiver** is installed at the Beam Wave Guide (BWG) focus of the telescope. The polarization type is circular.
 
 * A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration. The polarization type is circular.
  
