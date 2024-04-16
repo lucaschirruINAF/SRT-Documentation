@@ -105,6 +105,12 @@ K-band    18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       90           
 
 Below is a brief description of each receiver available for this Call for Proposals, highlighting its main features.
 
+* **C-low receiver**: ...
+
+* **C-high receiver**: ...
+
+* **K-band receiver**: ...
+
 * The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
 
 * A single-feed **C-high band receiver** is installed at the Beam Wave Guide (BWG) focus of the telescope. The polarization type is circular.
