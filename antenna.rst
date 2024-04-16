@@ -93,14 +93,14 @@ Receivers available for the current Call for Proposals
 
 In the current call for proposals, the following (cryogenically-cooled) receivers are available in both single-dish and VLBI modes:
 
-=============== ============= =============== ================= =============== ================================================
-RF band (GHz)       Type      Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) connected backends
-=============== ============= =============== ================= =============== ================================================
-P 0.30-0.36     single-feed      50-80             48                 0.52        DBBC,ROACH1
-L 1.3-1.8       single-feed      25-35             11.4               0.55       DFB,DBBC,ROACH1,SARDARA
-C-high 5.7-7.7  single-feed      32-37             2.7                0.66       TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
-K 18-26.5        7-feed          90                0.8                0.66      TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),XARCOS(MB) 
-=============== ============= =============== ================= =============== ================================================
+================ ================= ============= =============== ============ ========== ================================================ 
+ Receiver name    Frequency range      Type       Tsys @ El=90°    Beamsize    Max gain   Available backends
+                      [GHz]                           [K]          [arcmin]      [K/Jy]
+================ ================= ============= =============== ============ ========== ================================================ 
+C-low               4.2 - 5.6      single-feed      x                  x           x      x
+C-high              5.7 - 7.7      single-feed      32-37             2.7        0.66     TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
+K                   18 - 26.5        7-feed          90               0.8        0.66     TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),XARCOS(MB) 
+================ ================= ============= =============== ============ ========== ================================================ 
 
 (MB) means that the Multi-Beam option is available for observations in K-band with the TP, XARCOS and SARDARA backends. 
 
