@@ -105,7 +105,7 @@ K-band    18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       90           
 
 Below is a brief description of each receiver available for this Call for Proposals, highlighting its main features.
 
-* **C-low receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 4.2 to 5.6 GHz. This receiver is installed in one of the BWG focal points of SRT. To analyze the entire frequency band ranging from 4.2 to 5.6 GHz and shift it down to baseband, the local oscillator must be set to 8.2 GHz. Since a high presence of unwanted signals (i.e. radio frequency interference or RFI) has been noted in the receiver's band, the local oscillator frequency can be adjusted to avoid backend saturation. A recommended example value for the local oscillator frequency is: ---- GHz.
+* **C-low receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 4.2 to 5.6 GHz. This receiver is installed on the Gregorian focus of SRT. To analyze the entire frequency band ranging from 4.2 to 5.6 GHz and shift it down to baseband, the local oscillator must be set to 8.2 GHz. Since a high presence of unwanted signals (i.e. radio frequency interference or RFI) has been noted in the receiver's band, the local oscillator frequency can be adjusted to avoid backend saturation. A recommended example value for the local oscillator frequency is: ---- GHz.
 
 * **C-high receiver**: ...
 
