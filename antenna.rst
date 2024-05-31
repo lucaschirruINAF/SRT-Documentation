@@ -102,43 +102,16 @@ K-band    18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       90           
 ========= ================ ============ =========  =============== ================= ================ ============ ============================== 
 
 (MB) means that the Multi-Beam option is available for observations in K-band with the TP, XARCOS and SARDARA backends. 
-
-Below is a brief description of each receiver available for this Call for Proposals, highlighting its main features.
-
-* **C-low receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 4.2 to 5.6 GHz. This receiver is installed on the Gregorian focus of SRT. To analyze the entire frequency band ranging from 4.2 to 5.6 GHz and shift it down to baseband, the local oscillator must be set to 8.2 GHz. Since a high presence of unwanted signals (i.e. radio frequency interference or RFI) has been noted in the receiver's band, the local oscillator frequency can be adjusted to avoid backend saturation. A recommended example value for the local oscillator frequency is: ---- GHz.
-
-* **C-high receiver**: ...
-
-* **K-band receiver**: ...
-
-* The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
-
-* A single-feed **C-high band receiver** is installed at the Beam Wave Guide (BWG) focus of the telescope. The polarization type is circular.
-
-* A multi-feed K-band receiver is installed at the (secondary) Gregorian focus. Both C and K band receivers require the shaped configuration. The polarization type is circular.
- 
-In the following table, we outline, for each receiver: its frequency coverage; number of feeds; polarization type; focal position; its beam-size in arcmin or arcsec; measurements of the system temperature Tsys at 45 degrees of elevation and antenna gain. Each receiver feed allows for two polarizations.
-
-======== ========================= =======   ========================== ================ ========== ========== =========== 
-Band     Frequency coverage (GHz)   Feeds     native polarization type   Focal position  Beam size  Tsys (K)   Gain (K/Jy)  
-======== ========================= =======   ========================== ================ ========== ========== =========== 
-P         0.30 -- 0.36                1        linear                     primary          48'(*)     [50-80]      0.52     
-L         1.3 -- 1.8                  1        linear                     primary         11.4'(*)     25-35       0.55     
-C-high    5.7 -- 7.7                  1        circular                   beam waveguide   2.7'      32-37(*)   0.66 (*)         
-K         18 -- 26                    7        circular                   Gregorian       0.8'(**)    90(**)     [0.66]    
-======== ========================= =======   ========================== ================ ========== ========== ===========
-
-[ ] is an estimate
-(*) at the band's central frequency (for C-band: 45 degrees EL @ 7.3 GHz)
-(**) at 22.3 GHz with opacity 0.1 and ground air temperature of 293K.
-
-The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz)
+The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz).
 
 SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
-However, the use of a Gregorian cover to limit RFI in L/P band observations does not currently allow a quick receiver change between L/P bands and other bands (C or K). Receiver changes between C and K-bands are not affected. 
-An automatic system for the installation and removal of the Gregorian cover is currently under development and will permit smooth and efficient frequency changes.
+Below is a brief description of each receiver available for this Call for Proposals, highlighting its main features.
 
-*Special considerations about the L/P dual-band receiver*: the RFI levels need to be minimized. A Gregorian cover limits RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover is not a priori guaranteed.
+* **C-low receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 4.2 to 5.6 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. To analyze the entire frequency band ranging from 4.2 to 5.6 GHz and shift it down to baseband, the local oscillator must be set to 8.2 GHz. Since a high presence of unwanted signals (i.e. radio frequency interference or RFI) has been noted in the receiver's band, the local oscillator frequency can be adjusted to avoid backend saturation. A recommended example value for the local oscillator frequency is: ---- GHz.
+
+* **C-high receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 5.7 to 7.7 GHz. This receiver is installed in one of the BWG focal points of SRT and requires the shaped configuration. 
+
+* **K-band receiver**: It is a seven-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 18 to 26.5 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. 
 
 *Special considerations about the multi-beam K-band receiver*: we have measured the sensibility of each channel. Here are the details below:
 
@@ -163,15 +136,17 @@ Feed6,Pol1     138         7.26
 
 The second column indicates the RMS of the calibrator map (using 3c147). The third column indicates the sensibility ratio of each channel with respect to the Right channel of the second feed (which is stable). Channel 5,Pol0 (Left) is not usable.
 
-Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2021.   
-Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/Gregorian focus. 
- 
+
 More details about current and future receivers at Italian radio telescopes (SRT, Medicina and Noto) are included in this review document: `receivers <http://rx2017.inaf.it/RX2017/Review_v8.1.pdf>`_
 
 
 Receivers in the commissioning phase
 -------------------------------------------------------
 The ...
+
+* The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
+
+*Special considerations about the L/P dual-band receiver*: the RFI levels need to be minimized. A Gregorian cover limits RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover is not a priori guaranteed.
 
 =============== ============= =============== ================= =============== ================================================
 RF band (GHz)       Type      Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) connected backends
@@ -182,7 +157,9 @@ C-high 5.7-7.7  single-feed      32-37             2.7                0.66      
 K 18-26.5        7-feed          90                0.8                0.66      TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),XARCOS(MB) 
 =============== ============= =============== ================= =============== ================================================
 
-
+Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2021.   
+Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/Gregorian focus. 
+ 
 
 LP-band Filters
 ----------------
