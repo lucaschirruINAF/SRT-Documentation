@@ -83,7 +83,7 @@ Consequently, during astronomical observations, the observer can choose among th
 The shaped configuration is used for receivers in the Gregorian (7.5-116 GHz) and BWG (1.4-35 GHz) foci, while the ideal parabolic configurations are used for receivers of the primary focus (0.3-20 GHz).
 
 
-Criogenic receivers of SRT
+Cryogenic receivers of SRT
 ===========================
 
 All radio receivers of SRT are cryogenically-cooled systems that operate at temperatures below 20 K. In this way, the thermal noise introduced by the receiver itself (Trec) is reduced, consequently decreasing the overall system noise temperature (Tsys), allowing for greater sensitivity in detecting weak signals from space. As mentioned in the Introduction section, 8 receivers are installed on SRT, but only 3 of them are available for the current call for proposals. In the following sections, a brief description of all SRT receivers is reported.
@@ -93,23 +93,23 @@ Receivers available for the current Call for Proposals
 
 The available receivers for the current Call for Proposals are summarized in the following table, indicating the receiver name, frequency band, number of beams, type of polarization (linear or circular), focal position, system temperature, beam size, maximum gain, and available backends. Each receiver is available in both single-dish and VLBI modes.
 
-========= ================ ============ =========  =============== ================= ================ ============ ============================== 
-Receiver  Frequency [GHz]  Beams x Pol. Pol. type  Focal Position  Tsys @ El=90° [K] Beamsize [armin] Gain [k/Jy]   Available backends
-========= ================ ============ =========  =============== ================= ================ ============ ============================== 
-C-low     4.2 - 5.6        1 x 2        LHCP/RHCP  Gregorian       -                 -                -            -
-C-high    5.7 - 7.7        1 x 2        LHCP/RHCP  Beam Wave Guide 32-37             2.7              0.66         TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
-K-band    18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       90                0.8              0.66         TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),                                                                                                                              XARCOS(MB) 
-========= ================ ============ =========  =============== ================= ================ ============ ============================== 
+================== ================ ============ =========  =============== ================= ================= ============ ============================== 
+Receiver           Frequency [GHz]  Beams x Pol. Pol. type  Focal Position  Tsys @ El=90° [K] Beamsize [arcmin] Gain [k/Jy]   Available backends
+================== ================ ============ =========  =============== ================= ================= ============ ============================== 
+C-low              4.2 - 5.6        1 x 2        LHCP/RHCP  Gregorian       -                 3.9 @4.8GHz       0.62         TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
+C-high or M-band   5.7 - 7.7        1 x 2        LHCP/RHCP  Beam Wave Guide 32-37             2.7 @             0.66         TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
+K-band             18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       90                0.8 @             0.66         TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),                                                                                                                              XARCOS (MB) 
+================== ================ ============ =========  =============== ================= ================= ============ ============================== 
 
 (MB) means that the Multi-Beam option is available for observations in K-band with the TP, XARCOS and SARDARA backends. 
-The FWHM beam size, as a function of the frequency f,  can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz).
+The full width half maximum (FWHM) beam size, as a function of the frequency f, can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz).
 
 SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
 Below is a brief description of each receiver available for this Call for Proposals, highlighting its main features.
 
-* **C-low receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 4.2 to 5.6 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. To analyze the entire frequency band ranging from 4.2 to 5.6 GHz and shift it down to baseband, the local oscillator must be set to 8.2 GHz. Since a high presence of unwanted signals (i.e. radio frequency interference or RFI) has been noted in the receiver's band, the local oscillator frequency can be adjusted to avoid backend saturation. A recommended example value for the local oscillator frequency is: ---- GHz.
+* **C-low receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 4.2 to 5.6 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. To analyze the entire frequency band ranging from 4.2 to 5.6 GHz and shift it down to baseband, the local oscillator must be set to XXX GHz. 
 
-* **C-high receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 5.7 to 7.7 GHz. This receiver is installed in one of the BWG focal points of SRT and requires the shaped configuration. 
+* **C-high or M-band receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 5.7 to 7.7 GHz. This receiver is installed in one of the BWG focal points of SRT and requires the shaped configuration. 
 
 * **K-band receiver**: It is a seven-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 18 to 26.5 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. 
 
@@ -336,36 +336,39 @@ and can be included in the observation schedule.
 
 In the table below, we report the calculated rms values in ideal conditions:
 
-========== ====================== ======================= ======================
-Parameter  Value (deg) for L-band  Value (deg) for C-band Value (deg) for K-band
-========== ====================== ======================= ======================
-Az-mean                                +0.000440               +0.000850
-Az-rms       +0.001944(*)              +0.000790               +0.000870
-El-mean                                -0.001660               -0.001280
-El-rms       +0.001944(*)              +0.000910               +0.001200
-========== ====================== ======================= ======================
+========== ======================== ====================== ======================= ======================
+Parameter  Value (deg) for L-band** Value (deg) for C-low  Value (deg) for C-high  Value (deg) for K-band
+========== ======================== ====================== ======================= ======================
+Az-mean                                                        +0.000440               +0.000850
+Az-rms       +0.001944(*)                                      +0.000790               +0.000870
+El-mean                                                        -0.001660               -0.001280
+El-rms       +0.001944(*)                                      +0.000910               +0.001200
+========== ======================== ====================== ======================= ======================
 
+(**) As noticed above, the L-band receiver is in the commissioning phase.
 (*) values for L-band from Bolli et al (2015)
 
 Focus curve calibration
 -----------------------
 
-The focus curve is applied in real time. However, it is highly recommended that for C and K-band observations, the observer perform a focus calibration before starting an observing session. 
+The focus curve is applied in real time. However, it is highly recommended that for C-low, C-high (M-band) and K-band observations, the observer performs a focus calibration before starting an observing session. Since a high presence of unwanted signals (i.e. radio frequency interference or RFI) has been noted at the beginning of the C-low band (at about 4.2 GHz), the local oscillator frequency can be adjusted to avoid backend saturation. A recommended example value for this local oscillator frequency is 4.6 GHz with a bandwidth of 300 MHz.
 
 Gain curve calibration
 ----------------------
 
 From the measured gain curves (Gain vs. Elevation), one fits a 2-degree polynomial with the parameters C0, C1 and C2:
 
-gain (K/Jy) = C2 El^2 + C1 El + C0
+Gain (K/Jy) = C2 El^2 + C1 El + C0
 
-=========== ============== ================ ===============
-Parameter   Value (L-band) Value (C-band)    Value (K-band)
-=========== ============== ================ ===============
-C0           0.5061          0.545439        0.364897
-C1           0.002390        0.00525597      0.00624137
-C2           -0.000021       -4.55697e-5     -4.60020e-5
-=========== ============== ================ ===============
+========== ======================== ====================== ======================= ======================
+Parameter  Value (deg) for L-band** Value (deg) for C-low  Value (deg) for C-high  Value (deg) for K-band
+========== ======================== ====================== ======================= ======================
+C0         0.5061                                          0.545439                0.364897
+C1         0.002390                                        0.00525597              0.00624137
+C2         -0.000021                                       -4.55697e-5             -4.60020e-5
+========== ======================== ====================== ======================= ======================
+
+(**) As noticed above, the L-band receiver is in the commissioning phase.
 
 L-band: from Orlati et al. 
 
@@ -379,7 +382,20 @@ Beam shape
 In the following tables, the second lobe and third lobe percentages correspond to the contribution of the counts in that lobe as compared to the
 central beam. 
 
-* C-band
+* C-low
+
+===================== =============== ==============
+Elevation range (deg) Second lobe (%) Third lobe (%)
+===================== =============== ==============
+15-25                                
+25-35                  
+35-50                  
+50-65                  
+65-75                  
+75-85                  
+===================== =============== ==============
+
+* C-high or M-band
 
 ===================== =============== ==============
 Elevation range (deg) Second lobe (%) Third lobe (%)
