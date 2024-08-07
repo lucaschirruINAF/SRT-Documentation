@@ -346,6 +346,7 @@ El-rms       +0.001944(*)                                      +0.000910        
 ========== ======================== ====================== ======================= ======================
 
 (**) As noticed above, the L-band receiver is in the commissioning phase.
+
 (*) values for L-band from Bolli et al (2015)
 
 Focus curve calibration
