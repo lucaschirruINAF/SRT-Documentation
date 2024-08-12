@@ -147,26 +147,7 @@ Caruso (W-band)        70-116                      16 x 2       linear          
 MISTRAL                77-103                      408          -                    Gregorian       -                       -                                      -
 ====================== =========================== ============ ===================  =============== ======================= ================= =================== ===============================================
 
-* **L-P band receiver**: it is a single-feed, dual-frequency receiver installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
-
-*Special considerations about the L/P dual-band receiver*: the RFI levels need to be minimized. A Gregorian cover limits RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover is not a priori guaranteed.
-
-LP-band Filters
-----------------
-
-Different RF filters are available for the LP-band receiver. Although it is a coaxial receiver package, the control system sees it as a group of three different receivers, each one with its own code:
-
-For the PPP receiver (P-band), there is one available filter (with code L2XX for linear or C2XX for circular):  300--360 MHz (which is needed to exclude RFI at higher frequencies).
-
-For the LLP (L-band) configuration, the following filters are available for linear or circular polarizations:
-
-* XXL1 (for linear) or XXC1 (for circular):	all band, 1300--1800 MHz (no filter) (not recommended)
-* XXL2 (for linear) or XXC2 (for circular):	1320--1780 MHz
-* XXL3 (for linear) or XXC3 (for circular):	1350--1450 MHz (VLBI band)
-* XXL4 (for linear) or XXC4 (for circular): 	1300--1800 MHz (band-pass)
-* XXL5 (for linear) or XXC5 (for circular):	1625--1715 MHz (VLBI band)
-
-For simultaneous LP observations, all combinations of the above configurations are allowed.
+* **L-P band receiver**: it is a single-feed, dual-frequency receiver installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular (LHCP and RHCP) thanks to a hybrid converter. Unfortunately, this receiver operates in a frequency range that is heavily affected by the presence of radio frequency interference (RFI) from both the surrounding area and self-produced by the telescope's electronic components. The RFI level needs to be minimized. A Gregorian cover limits self-produced RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover is not a priori guaranteed. In orther to mitigate the presence of RFI, different radio frequency filters are available for the LP-band receiver. More details on the most up-to-date frequency bands of these filters are given in the following paper: `Schirru et. al, Universe (2023), vol. 9(9), 390; <https://doi.org/10.3390/universe9090390>`_.
 
 * **Tri-band (K, Q and W) receiver**: It is a simultaneous microwave compact Triple-Band receiving system to be installed on the three Italian radio telescopes (SRT, Medicina and Noto). The three cryogenic microwave receivers will operate simultaneously in the K / Q / W Bands (18 – 26 GHz, 34 – 50 GHz, 80 – 116 GHz). Having the same type of receiver in the three Italian antennas will allow us to strengthen the role of SRT in both the Italian and European VLBI networks. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration.
 
