@@ -358,16 +358,16 @@ The focus curve is applied in real time. However, it is highly recommended that 
 Gain curve calibration
 ----------------------
 
-From the measured gain curves (Gain vs. Elevation), one fits a 2-degree polynomial with the parameters C0, C1 and C2:
+From the measured gain curves (Gain vs. Elevation), one fits a 2-degree polynomial with the parameters $C_0$, $C_1$ and $C_2$:
 
-Gain (K/Jy) = C2 El^2 + C1 El + C0
+$Gain (K/Jy) = C_2*El^2 + C_1*El + C_0$
 
 ========== ======================== ====================== ======================= ======================
-Parameter  Value (deg) for L-band** Value (deg) for C-low  Value (deg) for C-high  Value (deg) for K-band
+Parameter  Value [deg] for L-band** Value [deg] for C-low  Value [deg] for C-high  Value [deg] for K-band
 ========== ======================== ====================== ======================= ======================
-C0         0.5061                                          0.545439                0.364897
-C1         0.002390                                        0.00525597              0.00624137
-C2         -0.000021                                       -4.55697e-5             -4.60020e-5
+$C_0$         0.5061                                          0.545439                0.364897
+$C_1$         0.002390                                        0.00525597              0.00624137
+$C_2$         -0.000021                                       -4.55697e-5             -4.60020e-5
 ========== ======================== ====================== ======================= ======================
 
 (**) As noticed above, the L-band receiver is in the commissioning phase.
@@ -384,7 +384,7 @@ Beam shape
 In the following tables, the second lobe and third lobe percentages correspond to the contribution of the counts in that lobe as compared to the
 central beam. 
 
-* C-low
+* **C-low receiver**
 
 ===================== =============== ==============
 Elevation range (deg) Second lobe (%) Third lobe (%)
@@ -397,7 +397,7 @@ Elevation range (deg) Second lobe (%) Third lobe (%)
 75-85                  
 ===================== =============== ==============
 
-* C-high or M-band
+* **C-high or M-band receiver**
 
 ===================== =============== ==============
 Elevation range (deg) Second lobe (%) Third lobe (%)
@@ -410,7 +410,7 @@ Elevation range (deg) Second lobe (%) Third lobe (%)
 75-85                 2.0             0.40
 ===================== =============== ==============
 
-* K-band
+* **K-band receiver**
 
 ===================== =============== ==============
 Elevation range (deg) Second lobe (%) Third lobe (%)
