@@ -93,13 +93,13 @@ Receivers available for the current Call for Proposals
 
 The available receivers for the current Call for Proposals are summarized in the following table, indicating the receiver name, frequency band, number of beams, type of polarization (linear or circular), focal position, system temperature, beam size, maximum gain, and available backends. Each receiver is available in both single-dish and VLBI modes.
 
-================== ================ ============ =========  =============== ================= ================= ============ ============================== 
+================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
 Receiver           Frequency [GHz]  Beams x Pol. Pol. type  Focal Position  Tsys @ El=90° [K] Beamsize [arcmin] Gain [k/Jy]   Available backends
-================== ================ ============ =========  =============== ================= ================= ============ ============================== 
+================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
 C-low              4.2 - 5.6        1 x 2        LHCP/RHCP  Gregorian       -                 3.9 @4.8GHz       0.62         TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
 C-high or M-band   5.7 - 7.7        1 x 2        LHCP/RHCP  Beam Wave Guide 32-37             2.7 @             0.66         TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
-K-band             18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       90                0.8 @             0.66         TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),                                                                                                                              XARCOS (MB) 
-================== ================ ============ =========  =============== ================= ================= ============ ============================== 
+K-band             18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       90                0.8 @             0.66         TP(MB),DFB,DBBC,ROACH1,SARDARA(MB),XARCOS (MB) 
+================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
 
 (MB) means that the Multi-Beam option is available for observations in K-band with the TP, XARCOS and SARDARA backends. 
 The full width half maximum (FWHM) beam size, as a function of the frequency f, can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz).
@@ -111,9 +111,7 @@ Below is a brief description of each receiver available for this Call for Propos
 
 * **C-high or M-band receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 5.7 to 7.7 GHz. This receiver is installed in one of the BWG focal points of SRT and requires the shaped configuration. 
 
-* **K-band receiver**: It is a seven-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 18 to 26.5 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. 
-
-*Special considerations about the multi-beam K-band receiver*: we have measured the sensibility of each channel. Here are the details below:
+* **K-band receiver**: It is a seven-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 18 to 26.5 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. For each channel, the root mean square (RMS) of the calibrator map, indicated in mJy and using 3c147, and the sensibility ratio with respect to the Right channel of the second feed (which is stable), are reported in the following table (NEW RESULTS ARE NECESSARY):
 
 =========== ========= ==================
 Feed,Pol    RMS(mJy)  Ratio w/feed2,pol1
@@ -134,13 +132,10 @@ Feed6,Pol0     17          0.89
 Feed6,Pol1     138         7.26                        
 =========== ========= ==================
 
-The second column indicates the RMS of the calibrator map (using 3c147). The third column indicates the sensibility ratio of each channel with respect to the Right channel of the second feed (which is stable). Channel 5,Pol0 (Left) is not usable.
-
-
 More details about current and future receivers at Italian radio telescopes (SRT, Medicina and Noto) are included in this review document: `receivers <http://rx2017.inaf.it/RX2017/Review_v8.1.pdf>`_
 
 
-Receivers in the commissioning phase
+Receivers in the Commissioning Phase and available in the next future
 -------------------------------------------------------
 The ...
 
