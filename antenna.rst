@@ -132,39 +132,24 @@ Feed6,Pol0     17          0.89
 Feed6,Pol1     138         7.26                        
 =========== ========= ==================
 
-More details about current and future receivers at Italian radio telescopes (SRT, Medicina and Noto) are included in this review document: `receivers <http://rx2017.inaf.it/RX2017/Review_v8.1.pdf>`_
-
 
 Receivers in the Commissioning Phase and available in the next future
 -------------------------------------------------------
 The receivers in the Commissioning Phase and available in the next future are summarized in the following table, indicating the receiver name, frequency band, number of beams, type of polarization (linear or circular), focal position, system temperature (estimated), beam size (estimated), maximum gain (estimated), and available backends. Each receiver will be available in both single-dish and VLBI modes.
 
-================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
-Receiver           Frequency [GHz]  Beams x Pol. Pol. type  Focal Position  Tsys @ El=90° [K] Beamsize [arcmin] Gain [k/Jy]   Available backends
-================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
-P-band             0.25-0.46        1 x 2
-L-band             1.3-1.8          1 x 2
-Tri-band
-Q-band
-Caruso (W-band)
-Mistral
+====================== =========================== ============ ===================  =============== ======================= ================= =================== =============================================== 
+Receiver               Frequency [GHz]             Beams x Pol. Pol. type            Focal Position  Tsys @ El=90° [K]       Beamsize [arcmin] Gain [k/Jy]         Available backends
+====================== =========================== ============ ===================  =============== ======================= ================= =================== =============================================== 
+L-P band               0.25-0.46(P); 1.3-1.8(L)    1 x 2        linear and circular  primary         50-80(P) and 25-35(L)   48(P) and 11.4(L) 0.52(P) and 0.55(L)  DBBC,ROACH1 (P) and DFB,DBBC,ROACH1,SARDARA (L)
+Tri-band (K, Q and W)  18-26(K);34-50(Q);80-116(W) 1 x 2        LHCP/RHCP            Gregorian       -                       -                                      -
+Q-band                 33-50                       19 x 2       LHCP/RHCP            Gregorian       -                       -                                      -
+Caruso (W-band)        70-116                      16 x 2       linear               Gregorian       -                       -                                      -
+MISTRAL                77-103                      408          -                    Gregorian       -                       -                                      -
+====================== =========================== ============ ===================  =============== ======================= ================= =================== ===============================================
 
-=============== ============= =============== ================= =============== ================================================
-RF band (GHz)       Type      Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) connected backends
-=============== ============= =============== ================= =============== ================================================
-P 0.30-0.36     single-feed      50-80             48                 0.52        DBBC,ROACH1
-L 1.3-1.8       single-feed      25-35             11.4               0.55       DFB,DBBC,ROACH1,SARDARA
-C-high 5.7-7.7  single-feed      32-37             2.7                0.66       TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
-K 18-26.5        7-feed          90                0.8                0.66      TP (MB),DFB,DBBC,ROACH1,SARDARA (MB),XARCOS(MB) 
-=============== ============= =============== ================= =============== ================================================
-
-* The single-feed, L-P band dual-frequency receiver was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
+* **The single-feed, L-P band dual-frequency receiver** was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
 
 *Special considerations about the L/P dual-band receiver*: the RFI levels need to be minimized. A Gregorian cover limits RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover is not a priori guaranteed.
-
-Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2021.   
-Additionally, a number of high-energy receivers are being planned for the SRT. This includes a multi-feed W receiver and a cryocooled, 19-pixel dual-polarized Q-band system at the secondary/Gregorian focus. 
- 
 
 LP-band Filters
 ----------------
@@ -182,6 +167,17 @@ For the LLP (L-band) configuration, the following filters are available for line
 * XXL5 (for linear) or XXC5 (for circular):	1625--1715 MHz (VLBI band)
 
 For simultaneous LP observations, all combinations of the above configurations are allowed.
+
+* **Tri-band (K, Q and W) receiver**: ...
+
+* **Q-band receiver**: ...
+
+* **Caruso (W-band) receiver**: ...
+
+* **MISTRAL receiver**: ...
+
+
+Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2026.   
 
 
 Backends 
