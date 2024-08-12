@@ -168,16 +168,15 @@ For the LLP (L-band) configuration, the following filters are available for line
 
 For simultaneous LP observations, all combinations of the above configurations are allowed.
 
-* **Tri-band (K, Q and W) receiver**: ...
+* **Tri-band (K, Q and W) receiver**: It is a simultaneous microwave compact Triple-Band receiving system to be installed on the three Italian radio telescopes (SRT, Medicina and Noto). The three cryogenic microwave receivers will operate simultaneously in the K / Q / W Bands (18 – 26 GHz, 34 – 50 GHz, 80 – 116 GHz). Having the same type of receiver in the three Italian antennas will allow us to strengthen the role of SRT in both the Italian and European VLBI networks. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration.
 
-* **Q-band receiver**: ...
+* **Q-band receiver**: It is a 19-beam cryogenic receiver operating in the 33 – 50 GHz frequency band (Q Band) for SRT, composed of 19 double circular polarization beams. This receiver is ideal for surveying large areas of the sky in radio continuum emission and in broadband spectro-polarimetry. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration.
 
-* **Caruso (W-band) receiver**: ...
+* **Caruso (W-band) receiver**: It is a 16-beam cryogenic receiver operating in the 70 – 116 GHz frequency band (W Band) for SRT, composed of 16 double linear polarization beams. This receiver is fundamental for the detection of complex organic molecules through polarimetric studies of galactic and extragalactic sources. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration.
 
-* **MISTRAL receiver**: ...
+* **MISTRAL receiver**: It is a bolometric millimetre camera for SRT operating in the 77 – 103 GHz frequency band composed of an array of 408 detectors (pixels) that simultaneously sample a wide field of view. This will be suitable for the observation of extensive and diffused emission with low surface brightness. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration.
 
-
-Future receivers: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2026.   
+**Future receivers**: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2026.   
 
 
 Backends 
@@ -331,14 +330,12 @@ Calibration
 Pointing model
 ---------------
 
-This calibration procedure was used to calculate the pointing errors in ideal conditions, i.e. at night without sunlight. Actual conditions will most likely 
-require new pointing measurements in order to take into account possible errors due to environmental factors. Pointing measurements before starting an observing session are highly recommended
-and can be included in the observation schedule.
+This calibration procedure was used to calculate the pointing errors in ideal conditions, i.e. at night without sunlight. Actual conditions will most likely require new pointing measurements in order to take into account possible errors due to environmental factors. Pointing measurements before starting an observing session are highly recommended and can be included in the observation schedule.
 
 In the table below, we report the calculated rms values in ideal conditions:
 
 ========== ======================== ====================== ======================= ======================
-Parameter  Value (deg) for L-band** Value (deg) for C-low  Value (deg) for C-high  Value (deg) for K-band
+Parameter  Value [deg] for L-band** Value [deg] for C-low  Value [deg] for C-high  Value [deg] for K-band
 ========== ======================== ====================== ======================= ======================
 Az-mean                                                        +0.000440               +0.000850
 Az-rms       +0.001944(*)                                      +0.000790               +0.000870
@@ -358,25 +355,60 @@ The focus curve is applied in real time. However, it is highly recommended that 
 Gain curve calibration
 ----------------------
 
-From the measured gain curves (Gain vs. Elevation), one fits a 2-degree polynomial with the parameters $C_0$, $C_1$ and $C_2$:
+From the measured gain curves (Gain vs. Elevation pointing), one fits a 2-degree polynomial with the parameters $C_0$, $C_1$ and $C_2$ is considered:
 
 $Gain (K/Jy) = C_2*El^2 + C_1*El + C_0$
 
-========== ======================== ====================== ======================= ======================
-Parameter  Value [deg] for L-band** Value [deg] for C-low  Value [deg] for C-high  Value [deg] for K-band
-========== ======================== ====================== ======================= ======================
-$C_0$         0.5061                                          0.545439                0.364897
-$C_1$         0.002390                                        0.00525597              0.00624137
-$C_2$         -0.000021                                       -4.55697e-5             -4.60020e-5
-========== ======================== ====================== ======================= ======================
+for each receiver available for the current Call for Proposals, a summary of these optimal values are reported in the following.
 
-(**) As noticed above, the L-band receiver is in the commissioning phase.
+* **C-low receiver**: the parameters refer to a peak gain of 0.60 K/Jy at 52.2 degrees of elevation (*LHCP channel*) and to a peak gain of 0.64 K/Jy at 51.7 degrees of elevation (*RHCP channel*).  
+
+========== ===================== ====================== 
+Parameter  Value [deg] for LHCP  Value [deg] for RHCP  
+========== ===================== ====================== 
+$C_0$      0.57 ± 0.09           0.58 ± 0.1                          
+$C_1$      0.0013 ± 0.0011       0.0025 ± 0.0027                            
+$C_2$      -1.3e-5 ± 1.1e-5      -2.4e-5 ± 2.2e-5                            
+========== ===================== ====================== 
+
+* **C-high or M-band receiver**: OLD RESULTS
+
+========== ======================= 
+Parameter  Value [deg] for C-high  
+========== =======================
+$C_0$      0.545439                
+$C_1$      0.00525597              
+$C_2$      -4.55697e-5
+========== =======================
+
+C-high or M-band: valid from 2018.
+
+* **K-band receiver**: OLD RESULTS
+
+========== ======================
+Parameter  Value [deg] for K-band
+========== ======================
+$C_0$      0.364897
+$C_1$      0.00624137
+$C_2$      -4.60020e-5
+========== ======================
+
+K-band: from Prandoni et al. (2017). The DPFU is 0.60 K/Jy.
+
+Regarding new receivers in the Commissining Phase, old values of $C_0$, $C_1$ and $C_2$ are available for the L-band receiver. Results about others receivers will be presented in the next future.
+
+* **L-band receiver**: OLD RESULTS
+
+========== ======================== 
+Parameter  Value [deg] for L-band** 
+========== ======================== 
+$C_0$         0.5061                
+$C_1$         0.002390              
+$C_2$         -0.000021             
+========== ======================== 
 
 L-band: from Orlati et al. 
 
-C-band: valid from 2018.
-
-K-band: from Prandoni et al. (2017). The DPFU is 0.60 K/Jy.
 
 Beam shape
 ----------
