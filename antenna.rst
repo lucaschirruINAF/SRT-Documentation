@@ -147,7 +147,7 @@ Caruso (W-band)        70-116                      16 x 2       linear          
 MISTRAL                77-103                      408          -                    Gregorian       -                       -                                      -
 ====================== =========================== ============ ===================  =============== ======================= ================= =================== ===============================================
 
-* **The single-feed, L-P band dual-frequency receiver** was installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
+* **L-P band receiver**: it is a single-feed, dual-frequency receiver installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular thanks to a hybrid converter. 
 
 *Special considerations about the L/P dual-band receiver*: the RFI levels need to be minimized. A Gregorian cover limits RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover is not a priori guaranteed.
 
