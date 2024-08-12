@@ -137,11 +137,17 @@ More details about current and future receivers at Italian radio telescopes (SRT
 
 Receivers in the Commissioning Phase and available in the next future
 -------------------------------------------------------
-The receivers in the Commissioning Phase and available in the next future are summarized in the following table, indicating the receiver name, frequency band, number of beams, type of polarization (linear or circular), focal position, system temperature, beam size, maximum gain, and available backends. Each receiver is available in both single-dish and VLBI modes.
+The receivers in the Commissioning Phase and available in the next future are summarized in the following table, indicating the receiver name, frequency band, number of beams, type of polarization (linear or circular), focal position, system temperature (estimated), beam size (estimated), maximum gain (estimated), and available backends. Each receiver will be available in both single-dish and VLBI modes.
 
 ================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
 Receiver           Frequency [GHz]  Beams x Pol. Pol. type  Focal Position  Tsys @ El=90° [K] Beamsize [arcmin] Gain [k/Jy]   Available backends
 ================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
+P-band             0.25-0.46        1 x 2
+L-band             1.3-1.8          1 x 2
+Tri-band
+Q-band
+Caruso (W-band)
+Mistral
 
 =============== ============= =============== ================= =============== ================================================
 RF band (GHz)       Type      Tsys@90degEL(K) Beamsize (arcmin) Max gain (K/Jy) connected backends
