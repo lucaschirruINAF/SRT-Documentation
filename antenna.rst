@@ -94,43 +94,24 @@ Receivers available for the current Call for Proposals
 The available receivers for the current Call for Proposals are summarized in the following table, indicating the receiver name, frequency band, number of beams, type of polarization (linear or circular), focal position, system temperature, beam size, maximum gain, and available backends. Each receiver is available in both single-dish and VLBI modes.
 
 ================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
-Receiver           Frequency [GHz]  Beams x Pol. Pol. type  Focal Position  Tsys @ El=90° [K] Beamsize [arcmin] Gain [k/Jy]   Available backends
+Receiver           Frequency [GHz]  Beams x Pol. Pol. type  Focal Position  Tsys @ El=45° [K] Beamsize [arcmin] Gain [K/Jy]   Available backends
 ================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
-C-low              4.2 - 5.6        1 x 2        LHCP/RHCP  Gregorian       -                 3.9 @4.8GHz       0.62         TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
-C-high or M-band   5.7 - 7.7        1 x 2        LHCP/RHCP  Beam Wave Guide 32-37             2.7 @             0.66         TP,DFB,DBBC,ROACH1,SARDARA,XARCOS
-K-band             18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       90                0.8 @             0.66         TP(MB),DFB,DBBC,ROACH1,SARDARA(MB),XARCOS (MB) 
+C-low              4.2 - 5.6        1 x 2        LHCP/RHCP  Gregorian       30                3.9 @4.8GHz       0.62         TP,DFB,DBBC,SARDARA,SKARAB
+C-high or M-band   5.7 - 7.7        1 x 2        LHCP/RHCP  Beam Wave Guide 32                2.7 @6.7GHz       0.66         TP,DFB,DBBC,SARDARA,SKARAB
+K-band             18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       60                0.8 @20.4GHz      0.66         TP(MB),DFB,DBBC,SARDARA(MB),SKARAB(MB) 
 ================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
 
-(MB) means that the Multi-Beam option is available for observations in K-band with the TP, XARCOS and SARDARA backends. 
+(MB) means that the Multi-Beam option is available for observations in K-band with the TP, SARDARA and SKARAB backends. 
 The full width half maximum (FWHM) beam size, as a function of the frequency f, can be approximated by the following rule: FWHM(arcmin)=19.7/ f(GHz).
 
 SRT receiver changes are quick, allowing for an efficient frequency agility. The selected receiver is set in its focal position within at most a few minutes.
 Below is a brief description of each receiver available for this Call for Proposals, highlighting its main features.
 
-* **C-low receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 4.2 to 5.6 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. To analyze the entire frequency band ranging from 4.2 to 5.6 GHz and shift it down to baseband, the local oscillator must be set to XXX GHz. 
+* **C-low receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 4.2 to 5.6 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. To analyze the entire frequency band ranging from 4.2 to 5.6 GHz and shift it down to baseband, the local oscillator must be set to 4.2 GHz. However, due to a presence of strong radio frequency interferences (RFI) at the beginning of the band, it is possible to set the local oscillator at 4.6 GHz and a bandwidth of 300 MHz (available on DISCOS functions) to have a free-of-RFI band. 
 
 * **C-high or M-band receiver**: It is a single-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 5.7 to 7.7 GHz. This receiver is installed in one of the BWG focal points of SRT and requires the shaped configuration. 
 
-* **K-band receiver**: It is a seven-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 18 to 26.5 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. For each channel, the root mean square (RMS) of the calibrator map, indicated in mJy and using 3c147, and the sensibility ratio with respect to the Right channel of the second feed (which is stable), are reported in the following table (NEW RESULTS ARE NECESSARY):
-
-=========== ========= ==================
-Feed,Pol    RMS(mJy)  Ratio w/feed2,pol1
-=========== ========= ==================
-Feed0,Pol0     19          1.00          
-Feed0,Pol1     27          1.42
-Feed1,Pol0     18          0.95
-Feed1,Pol1     23          1.21
-Feed2,Pol0     21          1.11
-Feed2,Pol1     19          1.00
-Feed3,Pol0     15	   0.79 
-Feed3,Pol1     50          2.63
-Feed4,Pol0     303         15.95
-Feed4,Pol1     17          0.89
-Feed5,Pol0    -9999        -526.26
-Feed5,Pol1     39          2.05
-Feed6,Pol0     17          0.89
-Feed6,Pol1     138         7.26                        
-=========== ========= ==================
+* **K-band receiver**: It is a seven-feed cryogenic system that allows the processing of signals in circular polarization (i.e. LHCP and RHCP) within the frequency range from 18 to 26.5 GHz. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration. 
 
 
 Receivers in the Commissioning Phase and available in the next future
@@ -147,7 +128,7 @@ Caruso (W-band)        70-116                      16 x 2       linear          
 MISTRAL                77-103                      408          -                    Gregorian       -                       -                                      -
 ====================== =========================== ============ ===================  =============== ======================= ================= =================== ===============================================
 
-* **L-P band receiver**: it is a single-feed, dual-frequency receiver installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular (LHCP and RHCP) thanks to a hybrid converter. Unfortunately, this receiver operates in a frequency range that is heavily affected by the presence of radio frequency interference (RFI) from both the surrounding area and self-produced by the telescope's electronic components. The RFI level needs to be minimized. A Gregorian cover limits self-produced RFI at L and P bands; if desired, it needs to be requested in the observation proposal. However the availability of the Gregorian cover is not a priori guaranteed. In orther to mitigate the presence of RFI, different radio frequency filters are available for the LP-band receiver. More details on the most up-to-date frequency bands of these filters are given in the following paper: `Schirru et. al, Universe (2023), vol. 9(9), 390; <https://doi.org/10.3390/universe9090390>`_.
+* **L-P band receiver**: it is a single-feed, dual-frequency receiver installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular (LHCP and RHCP) thanks to a hybrid converter. Unfortunately, this receiver operates in a frequency range that is heavily affected by the presence of RFI from both the surrounding area and self-produced by the telescope's electronic components. The RFI level needs to be minimized. A Gregorian cover, which limits self-produced RFI at L and P bands, is always set during observation. In orther to mitigate the presence of RFI, different radio frequency filters are available for the LP-band receiver. More details on the most up-to-date frequency bands of these filters are given in the following paper: `Schirru et. al, Universe (2023), vol. 9(9), 390; <https://doi.org/10.3390/universe9090390>`_.
 
 * **Tri-band (K, Q and W) receiver**: It is a simultaneous microwave compact Triple-Band receiving system to be installed on the three Italian radio telescopes (SRT, Medicina and Noto). The three cryogenic microwave receivers will operate simultaneously in the K / Q / W Bands (18 – 26 GHz, 34 – 50 GHz, 80 – 116 GHz). Having the same type of receiver in the three Italian antennas will allow us to strengthen the role of SRT in both the Italian and European VLBI networks. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration.
 
@@ -157,7 +138,7 @@ MISTRAL                77-103                      408          -               
 
 * **MISTRAL receiver**: It is a bolometric millimetre camera for SRT operating in the 77 – 103 GHz frequency band composed of an array of 408 detectors (pixels) that simultaneously sample a wide field of view. This will be suitable for the observation of extensive and diffused emission with low surface brightness. This receiver is installed on the Gregorian focus of SRT and requires the shaped configuration.
 
-**Future receivers**: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The receiver had its first light in November 2016 (for its central feed). The full commissioning of this receiver is expected to end in 2026.   
+**Future receivers**: the SRT was designed to accomodate up to 20 receivers. A 7-feed S-band receiver (3 -- 4.5 GHz) is undergoing testing and designed to be placed at the primary focus of the telescope (requiring the parabolic configuration). The full commissioning of this receiver is expected to end in 2026.   
 
 
 Backends 
