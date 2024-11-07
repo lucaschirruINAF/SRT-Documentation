@@ -97,8 +97,8 @@ The available receivers for the current Call for Proposals are summarized in the
 Receiver           Frequency [GHz]  Beams x Pol. Pol. type  Focal Position  Tsys @ El=45° [K] Beamsize [arcmin] Gain [K/Jy]   Available backends
 ================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
 C-low              4.2 - 5.6        1 x 2        LHCP/RHCP  Gregorian       30                3.9 @4.8GHz       0.62         TP,DFB,DBBC,SARDARA,SKARAB
-C-high or M-band   5.7 - 7.7        1 x 2        LHCP/RHCP  Beam Wave Guide 32                2.7 @6.7GHz       0.66         TP,DFB,DBBC,SARDARA,SKARAB
-K-band             18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       60                0.8 @20.4GHz      0.66         TP(MB),DFB,DBBC,SARDARA(MB),SKARAB(MB) 
+C-high or M-band   5.7 - 7.7        1 x 2        LHCP/RHCP  Beam Wave Guide 32                2.7 @6.7GHz       0.69         TP,DFB,DBBC,SARDARA,SKARAB
+K-band             18 - 26.5        7 x 2        LHCP/RHCP  Gregorian       60                0.8 @20.4GHz      0.62         TP(MB),DFB,DBBC,SARDARA(MB),SKARAB(MB) 
 ================== ================ ============ =========  =============== ================= ================= ============ =============================================== 
 
 (MB) means that the Multi-Beam option is available for observations in K-band with the TP, SARDARA and SKARAB backends. 
@@ -319,7 +319,7 @@ $C_1$      0.0013 ± 0.0011       0.0025 ± 0.0027
 $C_2$      -1.3e-5 ± 1.1e-5      -2.4e-5 ± 2.2e-5                            
 ========== ===================== ====================== 
 
-* **C-high or M-band receiver**: valid since 2018.
+* **C-high or M-band receiver**: valid since 2018 and reported in `SRT Performance Measurements <http://hdl.handle.net/20.500.12386/32536>`_.
 
 ========== ======================= 
 Parameter  Value [deg] for C-high  
@@ -335,27 +335,25 @@ $C_2$      -4.55697e-5
 Parameter  Value [deg] until 2022*            Value [deg] since 2022**
 ========== ================================== ===================================
 $C_0$      0.364897                           -0.0704387 ± 0.07
-$C_1$      0.00624137
-$C_2$      -4.60020e-5
+$C_1$      0.00624137                         0.0238473 ± 0.00645442
+$C_2$      -4.60020e-5                        -0.00020666 ± 6.16686e-5
 ========== ================================== ===================================
 
 (*) results from `Prandoni et al. (2017) <https://doi.org/10.1051/0004-6361/201630243>`_.
 
 (**) results obtained after the receiver upgrade with the installation of new cryogenic low noise amplifiers (LNA).
 
-Regarding new receivers in the Commissining Phase, old values of $C_0$, $C_1$ and $C_2$ are available for the L-band receiver. Results about others receivers will be presented in the next future.
+Regarding receivers in the Commissining Phase, previous values of $C_0$, $C_1$ and $C_2$ are available for the L-band receiver. Results about others receivers will be presented in the next future.
 
-* **L-band receiver**: OLD RESULTS
+* **L-band receiver**: valid since 2015 and reported in `Bolli et al. (2015) <https://doi.org/10.1142/S2251171715500087>`_.
 
 ========== ======================== 
-Parameter  Value [deg] for L-band** 
+Parameter  Value [deg] for L-band 
 ========== ======================== 
-$C_0$         0.5061                
-$C_1$         0.002390              
-$C_2$         -0.000021             
+$C_0$      0.5061                
+$C_1$      0.002390              
+$C_2$      -0.000021             
 ========== ======================== 
-
-L-band: from Orlati et al. 
 
 
 Beam shape
