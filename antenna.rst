@@ -29,7 +29,7 @@ Scientific tests and applications for the SRT are described in the following sci
 
 Science done with SRT during its early-science run (2016) with the various hardware and software described below can be found here: `Science with SRT <http://www.srt.inaf.it/astronomers/science_srt/>`_. 
 
-In the following sections, useful information for observing with the SRT in the current `Call for Proposals <https://www.radiotelescopes.inaf.it/>`_ are outlined. We note that remote observing is not currently available for the Sardinia Radio Telescope; each proposing team will need to send at least one observer to the SRT to prepare the observing schedules and perform the observations on site. 
+In the following sections, useful information for observing with the SRT in the current `Call for Proposals <https://www.radiotelescopes.inaf.it/>`_ are outlined.  
 
 
 Technical features of the telescope 
