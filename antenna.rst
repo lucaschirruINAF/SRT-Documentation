@@ -288,31 +288,17 @@ More detailed information on the SARDARA backend can be found here: `SARDARA <ht
 
 Calibration
 ===========
+Tests of characterization are periodically performed at SRT in order to check the status of the antenna, ensure a good functioning of the different components (e.g. active surface, receivers, backends, etc), and improve the observing performances at the different frequencies. In particular, the tests include measurements of pointing, focus curve, gain curve and beam shape for the different receivers. More details about previous test results are available in `SRT Performance Measurements <http://hdl.handle.net/20.500.12386/32536>`_.
 
 Pointing model
 ---------------
 
-This calibration procedure was used to calculate the pointing errors in ideal conditions, i.e. at night without sunlight. Actual conditions will most likely require new pointing measurements in order to take into account possible errors due to environmental factors. Pointing measurements before starting an observing session are highly recommended and can be included in the observation schedule.
-
-In the table below, we report the calculated rms values in ideal conditions:
-
-========== ======================== ====================== ======================= ======================
-Parameter  Value [deg] for L-band** Value [deg] for C-low  Value [deg] for C-high  Value [deg] for K-band
-========== ======================== ====================== ======================= ======================
-Az-mean                                                        +0.000440               +0.000850
-Az-rms       +0.001944(*)                                      +0.000790               +0.000870
-El-mean                                                        -0.001660               -0.001280
-El-rms       +0.001944(*)                                      +0.000910               +0.001200
-========== ======================== ====================== ======================= ======================
-
-(**) As noticed above, the L-band receiver is in the commissioning phase.
-
-(*) values for L-band from Bolli et al (2015)
+This calibration procedure was used to calculate the pointing errors in ideal conditions, i.e. at night without sunlight. Actual conditions will most likely require new pointing measurements in order to take into account possible errors due to environmental factors. Pointing measurements before starting an observing session are highly recommended above 18 GHz.
 
 Focus curve calibration
 -----------------------
 
-The focus curve is applied in real time. However, it is highly recommended that for C-low, C-high (M-band) and K-band observations, the observer performs a focus calibration before starting an observing session. Since a high presence of unwanted signals (i.e. radio frequency interference or RFI) has been noted at the beginning of the C-low band (at about 4.2 GHz), the local oscillator frequency can be adjusted to avoid backend saturation. A recommended example value for this local oscillator frequency is 4.6 GHz with a bandwidth of 300 MHz.
+The focus curve is applied in real time. However, it is highly recommended that the observer performs a focus calibration before starting an observing session above 18 GHz. 
 
 Gain curve calibration
 ----------------------
@@ -333,7 +319,7 @@ $C_1$      0.0013 ± 0.0011       0.0025 ± 0.0027
 $C_2$      -1.3e-5 ± 1.1e-5      -2.4e-5 ± 2.2e-5                            
 ========== ===================== ====================== 
 
-* **C-high or M-band receiver**: OLD RESULTS
+* **C-high or M-band receiver**: valid since 2018.
 
 ========== ======================= 
 Parameter  Value [deg] for C-high  
@@ -341,21 +327,21 @@ Parameter  Value [deg] for C-high
 $C_0$      0.545439                
 $C_1$      0.00525597              
 $C_2$      -4.55697e-5
-========== =======================
+========== ======================= 
 
-C-high or M-band: valid from 2018.
+* **K-band receiver**: since 2022, the parameters refer to a peak gain of 0.62 K/Jy at 57.7 degrees of elevation. 
 
-* **K-band receiver**: OLD RESULTS
-
-========== ======================
-Parameter  Value [deg] for K-band
-========== ======================
-$C_0$      0.364897
+========== ================================== ===================================
+Parameter  Value [deg] until 2022*            Value [deg] since 2022**
+========== ================================== ===================================
+$C_0$      0.364897                           -0.0704387 ± 0.07
 $C_1$      0.00624137
 $C_2$      -4.60020e-5
-========== ======================
+========== ================================== ===================================
 
-K-band: from Prandoni et al. (2017). The DPFU is 0.60 K/Jy.
+(*) results from `Prandoni et al. (2017) <https://doi.org/10.1051/0004-6361/201630243>`_.
+
+(**) results obtained after the receiver upgrade with the installation of new cryogenic low noise amplifiers (LNA).
 
 Regarding new receivers in the Commissining Phase, old values of $C_0$, $C_1$ and $C_2$ are available for the L-band receiver. Results about others receivers will be presented in the next future.
 
