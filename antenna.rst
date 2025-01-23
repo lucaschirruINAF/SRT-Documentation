@@ -279,10 +279,10 @@ $C_1$      0.0013 ± 0.0011        0.0025 ± 0.0027        0.00304114
 $C_2$      -1.3e-5 ± 1.1e-5       -2.4e-5 ± 2.2e-5       -2.92721e-5                     
 ========== ====================== ====================== ======================
 
-* **C-high or M-band receiver**: valid since 2018 and reported in `SRT Performance Measurements <http://hdl.handle.net/20.500.12386/32536>`_.
+* **C-high or M-band receiver**: the parameters refer to a peak gain of 0.69 K/Jy at 45 degrees of elevation (*LHCP and RHCP channels*), valid since 2018 and reported in `SRT Performance Measurements <http://hdl.handle.net/20.500.12386/32536>`_.
 
 ========== ======================= 
-Parameter  7.3 GHz - normalized  
+Parameter  7.3 GHz [K/Jy]   
 ========== =======================
 $C_0$      0.545439                
 $C_1$      0.00525597              
