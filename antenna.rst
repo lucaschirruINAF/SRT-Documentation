@@ -271,18 +271,18 @@ for each receiver available for the current Call for Proposals, a summary of the
 
 * **C-low receiver**: the parameters refer to a peak gain of 0.60 K/Jy at 52.2 degrees of elevation (*LHCP channel*) and to a peak gain of 0.64 K/Jy at 51.7 degrees of elevation (*RHCP channel*).  
 
-========== ===================== ====================== 
-Parameter  Value [deg] for LHCP  Value [deg] for RHCP  
-========== ===================== ====================== 
-$C_0$      0.57 ± 0.09           0.58 ± 0.1                          
-$C_1$      0.0013 ± 0.0011       0.0025 ± 0.0027                            
-$C_2$      -1.3e-5 ± 1.1e-5      -2.4e-5 ± 2.2e-5                            
-========== ===================== ====================== 
+========== ====================== ====================== ======================
+Parameter  4.7 GHz [K/Jy] - LHCP  4.7 GHz [K/Jy] - RHCP  4.7 GHz - normalized
+========== ====================== ====================== ====================== 
+$C_0$      0.57 ± 0.09            0.58 ± 0.1             0.920907             
+$C_1$      0.0013 ± 0.0011        0.0025 ± 0.0027        0.00304114                    
+$C_2$      -1.3e-5 ± 1.1e-5       -2.4e-5 ± 2.2e-5       -2.92721e-5                     
+========== ====================== ====================== ======================
 
 * **C-high or M-band receiver**: valid since 2018 and reported in `SRT Performance Measurements <http://hdl.handle.net/20.500.12386/32536>`_.
 
 ========== ======================= 
-Parameter  Value [deg] for C-high  
+Parameter  7.3 GHz - normalized  
 ========== =======================
 $C_0$      0.545439                
 $C_1$      0.00525597              
