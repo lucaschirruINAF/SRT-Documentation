@@ -121,11 +121,11 @@ The receivers in the Commissioning Phase and available in the next future are su
 ====================== =========================== ============ ===================  =============== ======================= ================= =================== =============================================== 
 Receiver               Frequency [GHz]             Beams x Pol. Pol. type            Focal Position  Tsys @ El=90° [K]       Beamsize [arcmin] Gain [k/Jy]         Available backends
 ====================== =========================== ============ ===================  =============== ======================= ================= =================== =============================================== 
-L-P band               0.25-0.46(P); 1.3-1.8(L)    1 x 2        linear and circular  primary         50-80(P) and 25-35(L)   48(P) and 11.4(L) 0.52(P) and 0.55(L)  DBBC,ROACH1 (P) and DFB,DBBC,ROACH1,SARDARA (L)
-Tri-band (K, Q and W)  18-26(K);34-50(Q);80-116(W) 1 x 2        LHCP/RHCP            Gregorian       -                       -                                      -
-Q-band                 33-50                       19 x 2       LHCP/RHCP            Gregorian       -                       -                                      -
-Caruso (W-band)        70-116                      16 x 2       linear               Gregorian       -                       -                                      -
-MISTRAL                77-103                      408          -                    Gregorian       -                       -                                      -
+L-P band               0.25-0.46(P); 1.3-1.8(L)    1 x 2        linear and circular  primary         50-80(P) and 25-35(L)   48(P) and 11.4(L) 0.52(P) and 0.55(L)  DFB,DBBC, SARDARA, SKARAB
+Tri-band (K, Q and W)  18-26(K);34-50(Q);80-116(W) 1 x 2        LHCP/RHCP            Gregorian       -                       -                                      SARDARA, SKARAB
+Q-band                 33-50                       19 x 2       LHCP/RHCP            Gregorian       -                       -                                      SARDARA (7 feed), SKARAB
+Caruso (W-band)        70-116                      16 x 2       linear               Gregorian       -                       -                                      SARDARA (7 feed), SKARAB
+MISTRAL                77-103                      408          -                    Gregorian       -                       -                                      Dedicated Roach 2 backend
 ====================== =========================== ============ ===================  =============== ======================= ================= =================== ===============================================
 
 * **L-P band receiver**: it is a single-feed, dual-frequency receiver installed at the primary focus of the telescope, and therefore requires the parabolic configuration. It allows for simultaneous observations at L and P bands. The polarization type is linear but is also transformed to circular (LHCP and RHCP) thanks to a hybrid converter. Unfortunately, this receiver operates in a frequency range that is heavily affected by the presence of RFI from both the surrounding area and self-produced by the telescope's electronic components. The RFI level needs to be minimized. A Gregorian cover, which limits self-produced RFI at L and P bands, is always set during observation. In orther to mitigate the presence of RFI, different radio frequency filters are available for the LP-band receiver. More details on the most up-to-date frequency bands of these filters are given in the following paper: `Schirru et. al, Universe (2023), vol. 9(9), 390; <https://doi.org/10.3390/universe9090390>`_.
@@ -148,18 +148,18 @@ The frontend (receiver) outputs are connected to the backend instruments either 
 
 These backends are available for the current call for proposals:
 
-=============== ======= ======================= =============== ===================== ====================================================================== 
-Backend          Bands   Bandwidth (MHz)        Sampling time   Max freq. bins        Observing modes                                  
-=============== ======= ======================= =============== ===================== ====================================================================== 
-**Total Power**   C,K   250,680,1200,2000       1-1000 ms          1                  continuum (analog)
-**XARCOS**        C,K   0.5,2.0,7.8,62.5        10s               2048                spectro-polarimeter
-**SARDARA**       C,K   420(300*),1500(1200*)     down to 5ms       1024 or 16384       spectro-polarimeter(*)    
-**SARDARA**        L    420(90/100*),1500(500*)   down to 5ms       1024 or 16384       spectro-polarimeter(*)    
-**DFB3**         L,C,K  256,512,1024            100 microsec      8192, pulsars: 2048  online pulsar folding + pulsar/transient search 
-**ROACH1**      P,L,C,K         128             -                (varies)              baseband recorder + offline pulsar folding + pulsar/transient search
-**DBBC**        P,L,C,K         512             -                -                     VLBI 
-=============== ======= ======================= =============== ===================== ====================================================================== 
- 
+=============== ========== ========================================================== =============== ===================== ======================================================================  
+Backend         Receivers   Bandwidth (MHz)                                           Sampling time   Max freq. bins        Observing modes                                  
+=============== ========== ========================================================== =============== ===================== ====================================================================== 
+**Total Power**   all      250,680,1200,2000                                          1-1000 ms          1                  continuum (analog)
+**SARDARA**       all      300, 1200                                                  down to 5ms       1024 or 16384       spectro-polarimeter(*)    
+**SARDARA**        L-P     1000 (L) - 500 (P)                                         down to 5ms       1024 or 16384       spectro-polarimeter(*)    
+**DFB3**         all       256,512,1024                                               100 microsec      8192, pulsars: 2048  online pulsar folding + pulsar/transient search 
+**DBBC**        all        512                                                        -                -                     VLBI 
+**SKARAB**      all        1400                                                       down to 1 ms    32768                 spectro-polarimeter 
+**SKARAB**      all        187.5,160,128,93.75,80,64,46.875,40,32,23.4375,20,16       down to 1 ms    65536                 spectro-polarimeter
+=============== ========== ========================================================== =============== ===================== ====================================================================== 
+
 (*) For the 1500 MHz SARDARA configuration, the actual available RF bandwidth is 1200 MHz with the C-band and K-band receivers. 
 Similarly, for the 420 MHz SARDARA configuration, the effective RF bandwidth is 300 MHz with the K-band and C-band receivers. Instead, the L-band receiver only has 500 MHz of RF bandwidth; when the SARDARA 420 MHz configuration is needed, the actual available RF bandwidth for SARDARA is 100 MHz (when selecting the XXL3 or XXC3 filters) or 90 MHz (when selecting the XXL5 or XXC5 filters).
 
@@ -176,33 +176,6 @@ Receiver Sections Filters (MHz)          Sampling time (ms)
 K-band     14     250,680,1200,2000      1 -- 1000
 C-band      2     250,680,1200,2000      1 -- 1000
 ======== ======== ====================== ==================
-
-XARCOS
-------
-
-This is a seven-beam, narrow-band, digital spectro-polarimeter with 8x2 input channels. The working bandwidth is 135-240 MHz and the maximum number of spectral channels is 2x2048 per polarization and per output channel. The instantaneous bandwidth ranges between 0.488 and 62.5 MHz and the maximum effective spectral resolution is ~500 Hz.
-
-XARCOS is a spectro-polarimeter with a maximum bandwidth of 62.5 MHz capable of processing up to 16 IFs, thus fitting the seven-feed dual polarization K-band receiver array SRT is equipped with. Because its dump time is set to 10 seconds, it is not suitable for On-The-Fly (OTF) observations. 
-The observer can select the following configurations:
-
-* XK77, to use the full K-band array; each digital sample has a 6-bit range. Full-Stokes sections are recorded, each having a 62.5MHz bandwidth and 2048(x4) channels.
-* XK03, to use the K-band feeds #0 and #3. Each feed outputs two full Stokes sections respectively having bandwidths of 62.5 MHz and 4 MHz and 2048(x4) channels. Each digital sample has an 8-bit range.
-* XK06, to use the K-band feeds #0 and #6. Each feed outputs two full Stokes sections respectively having bandwidths of 62.5 MHz and 4 MHz and 2048(x4) channels. Each digital sample has an 8-bit range.
-* XK00, to use only the K-band central feed. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz, each having 2048(x4) channels. Each digital sample has an 8-bit range.
-* XC00 , to use the C-band receiver. It outputs four full-Stokes sections respectively with bandwidths of 62.5 MHz, 8 MHz, 2 MHz and 0.5 MHz.
-
-More information about XARCOS configurations can be found here: 
-`Melis et al., OAC Internal report N. 52 <http://www.oa-cagliari.inaf.it/download.php?id_file=YQ9rg6JYb9mniCarnPrkZ6SZIvrwI1S%2FVGL58uBsIkX36r28s%2FDbSXyE0smKJiWa5FCsB7mRWR5SOZaxg83MVg%3D%3D>`_.
-
-It is worth noting that, given a particular configuration (e.g. XK00), the sections are obtained simultaneously. For each section, the bandwidth and
-starting frequency can then be set. For more information about this procedure, see `XARCOS <https://discos.readthedocs.io/en/latest/user/srt/source/Backend.html#xarcos>`_.
-
-Notes:
-
-* XARCOS has been tested in circular polarization. Linear polarization observations are also admitted but in shared-risk mode. The full-Stokes configuration is therefore in shared-risk mode. Please contact the antenna staff.
-
-* At C-band, standing waves have been identified that affect observations for Tcontinuum/Tsys > 0.05 (value to be confirmed). 
-
 
 Digital Base Band Converter (DBBC)
 ----------------------------------
@@ -250,18 +223,6 @@ search            512      128
 Further details about the DFB can be found in the ATNF `DFB manual <http://www.srt.inaf.it/media/uploads/astronomers/dfb.pdf>`_.
 
 At the SRT, DFB observations are piloted using the SEADAS software. 
-
-ROACH1
-------
-
-*The use of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.*
-
-The ROACH1 (or ROACH) backend is an FPGA board developed by the CASPER collaboration, with two ADC converters and a reprogrammable architecture. It can be used to acquire **baseband data** (voltages) or for **real-time folding of pulsar data**, thanks to the PSRDADA software. The currently available bandwidth is 128 MHz using a CPU cluster with 8 nodes (each node processes 16 MHz, so 8 x 16 MHz in total).
-
-The ROACH1 backend has been the backend of choice for the Large European Array for Pulsars (LEAP) project. More information on the implementation of the LEAP project with the ROACH1 backend can be found here: `OAC Internal Report N. 39 <http://www.oa-cagliari.inaf.it/area.php?page_id=10&skip=3>`_. It is also used to perform all P-band pulsar observations at SRT. Its ability to perform coherent de-dispersion makes it a superior backend compared to the DFB. Its 128 MHz of available bandwidth (only 128 MHz of its 512 MHz capability is currently available because of the limited number of installed CPU nodes) is largely sufficient for P-band but more limited for L-band. In the near future, access to 
-GPU nodes will increase the available bandwidth to 512 MHz. 
-
-Note: for the current call for proposals, no real-time folding of data will be performed for pulsar observations with this backend. The data will be acquired in baseband mode and folded offline during the data post-processing. The final data output will be made available by antenna staff after a few hours or days.  
 
 SARDARA
 -------
