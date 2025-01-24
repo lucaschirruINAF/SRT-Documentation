@@ -149,10 +149,10 @@ Backends
 The frontend (receiver) outputs are connected to the backend instruments either by coaxial cables or optical fibers, depending on whether the backend is located in the main building or below the dish. The following backends, designed for specific scientific activities, are available at the SRT site. These backends are available for both the current Call for Proposals and the Commissioning Phase:
 
 =============== ========== ========================================================== =============== ===================== ======================================================================  
-Backend         Receivers  Effective Bandwidth (MHz)                                           Sampling time   Max freq. bins        Observing modes                                  
+Backend         Receivers  Effective Bandwidth (MHz)                                  Sampling time   Max freq. bins        Observing modes                                  
 =============== ========== ========================================================== =============== ===================== ====================================================================== 
 **Total Power**   all      250,680,1200,2000                                          1-1000 ms          1                  continuum (analog)
-**SARDARA**       all      300, 1200                                                  down to 5ms       1024 or 16384       spectro-polarimeter(*)    
+**SARDARA**     C and K      300, 1200                                                  down to 5ms       1024 or 16384       spectro-polarimeter(*)    
 **SARDARA**        L-P     1000 (L) - 500 (P)                                         down to 5ms       1024 or 16384       spectro-polarimeter(*)    
 **DFB3**         all       256,512,1024                                               100 microsec      8192, pulsars: 2048  online pulsar folding + pulsar/transient search 
 **DBBC**        all        512                                                        -                -                     VLBI 
@@ -160,21 +160,21 @@ Backend         Receivers  Effective Bandwidth (MHz)                            
 **SKARAB**      all        187.5,160,128,93.75,80,64,46.875,40,32,23.4375,20,16       down to 1 ms    65536                 spectro-polarimeter
 =============== ========== ========================================================== =============== ===================== ====================================================================== 
 
-For the Total Power and SARDARA, the backend configuration with DISCOS has different bandwidths from effective ones. For SARDARA, note that the actual available effective bandwidth of 1200 MHz corresponds to 1500 MHz in the backend setting. Similarly, for the effective bandwidth of 300 MHz, a bandwitdh of 420 MHz in the backend configuration is necessary. In the case of the Total Power, the four effective bandwidths correspond to 300, 730, 1250 or 2000 MHz, respectively. 
+For the Total Power and SARDARA, the backend configuration with DISCOS (more detail at the link `Observing with SRT <https://srt-procedures.readthedocs.io/en/latest/index.html>`_) has different bandwidths from effective ones. For SARDARA, note that the actual available effective bandwidth of 1200 MHz corresponds to 1500 MHz in the backend setting. Similarly, for the effective bandwidth of 300 MHz, a bandwitdh of 420 MHz in the backend configuration is necessary. In the case of the Total Power, the four effective bandwidths correspond to 300, 730, 1250 or 2000 MHz, respectively. 
 
 Total Power 
 -----------
 
-The Total Power backend is a single-band, seven-beam backend for continuum observations. Located just below the dish, this backend is formed by 14 voltage-to-frequency converters that digitize the incoming RF signals. Different IF inputs can be selected from three focal points. Different bandwidths (maximum bandwidth: 0.1 - 2.1 GHz) and attenuation levels can be selected.
+The Total Power backend is a single-band, seven-beam backend for continuum observations. Located just below the primary mirror M1 and the Gregorian room, this backend is formed by 14 voltage-to-frequency converters that digitize the incoming radio frequency signals. Different radio frequency inputs can be selected from three focal points (i.e. primary focus, Gregorian focus and BWG focus) where the receivers are installed. Different bandwidths (maximum bandwidth: 0.1 - 2.1 GHz) and attenuation levels can be selected.
 
-This backend consists of 14 sections. Each section processes a single IF channel with a single polarization, as input. The signal is detected by a broadband square-law detector and then digitized by an A/D converter. The nominal IF band is 2 GHz (0.1-2.1 GHz). On-board filters can restrict the band to 250, 680, or 1200 MHz. The same boards also perform the focus selection for the SARDARA backend. Here are the possible configurations of the Total Power backend for different receivers:
+This backend consists of 14 sections. Each section processes a single IF channel with a single polarization, as input. The signal is detected by a broadband square-law detector and then digitized by an A/D converter. The nominal baseband is 2 GHz (0.1-2.1 GHz), corresponds to the baseband of the SRT. On-board filters can restrict the effective band to 250, 680, or 1200 MHz. The same boards also perform the focus selection for the SARDARA backend. Here are the possible configurations of the Total Power backend for different receivers:
 
 ======== ======== ====================== ==================
 Receiver Sections Filters (MHz)          Sampling time (ms)
 ======== ======== ====================== ==================
 K-band     14     250,680,1200,2000      1 -- 1000
 C-high      2     250,680,1200,2000      1 -- 1000
-C-low      2      250,680,1200,2000       1 -- 1000
+C-low      2      250,680,1200           1 -- 1000
 ======== ======== ====================== ==================
 
 
@@ -223,7 +223,7 @@ search            512      128
 
 Further details about the DFB can be found in the ATNF `DFB manual <http://www.srt.inaf.it/media/uploads/astronomers/dfb.pdf>`_.
 
-At the SRT, DFB observations are piloted using the SEADAS software. 
+At the SRT, DFB observations are piloted using the ad hoc SEADAS software. 
 
 SARDARA
 -------
@@ -236,21 +236,20 @@ Available configurations consist of:
 
 SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend's Focus Selector is being used as input to SARDARA. 
 
-More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
+More detailed information on the SARDARA backend can be found here: `Melis et al., Journal of Astronomical Instrumentation, Vol. 07, 1850004 (2018) <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
 SKARAB
 ------
 
+**SKARAB is offered in shared-risk mode in all of its configurations.**
 *The use of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.*
 
-SKARAB backend is composed of ten fully-reconfigurable SKARAB (aka Roach 3) boards that allow it to perform wide-band spectro-polarimetric observations, as well as high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 1ms to 1 s. For pulsar applications, the sampling time can be set up to 16 microsec for pulsars search. Baseband recording is going to be available from 16 to 512 MHz. The full description of the SKARAB board is reported in `A. Melis et al. The SKARAB Board in the Framework of Single-Dish Radio Astronomy <https://www.worldscientific.com/doi/full/10.1142/S2251171724500089?srsltid=AfmBOopnWjd6olCUgtwWLE6MsVDWdBXZKRj9yycO6KIzi4ITdUGQovur>`_.
-
-**SKARAB is offered in shared-risk mode in all of its configurations.**
+SKARAB backend is composed of ten fully-reconfigurable SKARAB (aka Roach 3) boards that allow it to perform wide-band spectro-polarimetric observations, as well as high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 1ms to 1 s. For pulsar applications, the sampling time can be set up to 16 microsec for pulsars search. Baseband recording is going to be available from 16 to 512 MHz. The full description of the SKARAB board is reported in `Melis et al.,  Journal of Astronomical Instrumentation, Vol. 13, 2450008 (2024) <https://www.worldscientific.com/doi/full/10.1142/S2251171724500089?srsltid=AfmBOopnWjd6olCUgtwWLE6MsVDWdBXZKRj9yycO6KIzi4ITdUGQovur>`_.
 
 
 Calibration
 ===========
-Tests of characterization are periodically performed at SRT in order to check the status of the antenna, ensure a good functioning of the different components (e.g. active surface, receivers, backends, etc), and improve the observing performances at the different frequencies. In particular, the tests include measurements of pointing, focus curve, gain curve and beam shape for the different receivers. More details about previous test results are available in `SRT Performance Measurements <http://hdl.handle.net/20.500.12386/32536>`_.
+Tests of characterization are periodically performed at SRT in order to check the status of the antenna, ensure a good functioning of the different components (e.g. active surface, receivers, backends, etc), and improve the observing performances at the different frequencies. In particular, the tests include measurements of pointing, focus curve, gain curve and beam shape for the different receivers. More details about previous test results are available in `Egron et al., SRT Performance Measurements (2018-2021) <http://hdl.handle.net/20.500.12386/32536>`_.
 
 Pointing model
 ---------------
@@ -291,7 +290,7 @@ $C_1$      0.00525597
 $C_2$      -4.55697e-5
 ========== ======================= 
 
-* **K-band receiver**: since 2022, with the installation of new low noise amplifiers (LNA) and using the look up table (LUT) named act_rev02.txt, the parameters refer to three different frequencies (18.6, 21.5 and 24.5 GHz) with a peak gain of approximately 0.6 K/Jy at about 57 degrees of elevation. In the following Table, the gain curve parameters are normalized.
+* **K-band receiver**: since 2022, with the installation of new cryogenic low noise amplifiers (LNA) and using the look up table (LUT) named act_rev02.txt, the parameters refer to three different frequencies (18.6, 21.5 and 24.5 GHz) with a peak gain of approximately 0.6 K/Jy at about 57 degrees of elevation. In the following Table, the gain curve parameters are normalized.
 
 ========== ============= ================================== =================================== ===================================
 Feed       Parameter     18.6 GHz                           21.5 GHz                            24.5 GHz 
@@ -398,7 +397,7 @@ Feed       Polarization  Parameter     18.6 GHz [K/Jy]                    21.5 G
 6          RHCP          $C_2$         -7.114e-5 ± 1.759e-5               -0.000132548 ± 6.20251e-05          -0.000135688 ± 5.57525e-05
 ========== ============= ============= ================================== =================================== ===================================
 
-For the observations performed unitl 2022, where the receiver was equipped with old LNAs, the gain curve parameters corresponding to the Feed 0 are listed in the following table: 
+For the observations performed unitl 2022, where the receiver was equipped with old cryogenic LNAs, the gain curve parameters corresponding to the Feed 0 are listed in the following table: 
 
 ========== ================================== ================================== 
 Parameter  25.5 GHz [K/Jy] until 2018 (*)     20 GHz [K/Jy] until 2022 (**)
@@ -407,15 +406,15 @@ $C_0$      0.364897                           0.131822
 $C_1$      0.00624137                         0.0129284
 $C_2$      -4.60020e-5                        -9.79198e-5
 ========== ================================== ==================================
-(*) `Prandoni et al. (2017) <https://doi.org/10.1051/0004-6361/201630243>`_.
+(*) `Prandoni et. al, A&A 608, A40 (2017) <https://doi.org/10.1051/0004-6361/201630243>`_.
 
-(**) `SRT Performance Measurements <http://hdl.handle.net/20.500.12386/32536>`_.
+(**) `Egron et al., SRT Performance Measurements (2018-2021) <http://hdl.handle.net/20.500.12386/32536>`_.
 
 
 
 Regarding receivers in the Commissining Phase, previous values of $C_0$, $C_1$ and $C_2$ are available for the L-band receiver. Results about others receivers will be presented in the next future.
 
-* **L-band receiver**: valid since 2015 and reported in `Bolli et al. (2015) <https://doi.org/10.1142/S2251171715500087>`_.
+* **L-band receiver**: valid since 2015 and reported in `Bolli et. al, Journal of Astronomical Instrumentation, Vol. 4, Nos. 3 & 4 (2015) 1550008 <https://doi.org/10.1142/S2251171715500087>`_.
 
 ========== ======================== 
 Parameter  Value [deg] for L-band 
